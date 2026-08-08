@@ -151,7 +151,6 @@ document.addEventListener('DOMContentLoaded', function() {
 		const modalIcon = document.getElementById('modalIcon');
 		const modalSubtitle = document.getElementById('modalSubtitle');
 		const modalText = document.getElementById('modalText');
-		const modalCrown = document.getElementById('modalCrown');
 
 		modalTitle.textContent = text.name;
 		
@@ -199,12 +198,51 @@ document.addEventListener('DOMContentLoaded', function() {
 
 $(document).ready(function() {
 
-	// --- 1. LEADERBOARD (Étape 2 : Squelette Minimal) ---
+	// --- 1. LEADERBOARD ---
 	if ($('#leaderboard').length > 0) {
+		const pageName = window.location.pathname.split('/').pop() || '';
+		let showAllPlayers = !pageName.includes('_'); 
+
+		$('#tierFilterCheckbox').prop('checked', showAllPlayers);
+
+		$.extend($.fn.dataTable.ext.type.order, { 
+			"rank-pre": function (d) { 
+				if (d === "♔") return 0; 
+				if (d === "-" || d === "–" || d === "—") return 9999;
+				return parseInt(d); 
+			} 
+		});
+
+		$.fn.dataTable.ext.search.push(function(settings, data, dataIndex) {
+			if (settings.nTable.id !== 'leaderboard') return true;
+			if (showAllPlayers) return true; 
+			const rowNode = settings.aoData[dataIndex].nTr;
+			return rowNode && rowNode.dataset.tier !== 'unassigned';
+		});
+
 		const leaderboardTable = $('#leaderboard').DataTable({
-			"order": [],        // Conserve l'ordre fourni par le HTML/Python
-			"pageLength": 50,    // 50 joueurs par page
-			"responsive": true
+			"order": [],
+			"responsive": true, 
+			"pageLength": 50,
+			"dom": 'rt<"bottom"p><"clear">',
+			"columnDefs": [ 
+				{ "targets": 0, "type": "rank" },
+				{ "targets": 2, "className": "player-name-cell" },
+				{ "targets": 3, "className": "elo-cell" },
+				{ "className": "numeric-cell", "targets": [0, 3, 4, 5, 6, 7, 8] },
+				{ "responsivePriority": 1, "targets": [2, 3] },
+				{ "responsivePriority": 2, "targets": 0 },
+				{ "responsivePriority": 3, "targets": 1 },
+				{ "responsivePriority": 8, "targets": 6 },
+				{ "responsivePriority": 10, "targets": [4, 5, 7, 8] }
+			]
+		});
+
+		leaderboardTable.draw();
+
+		$(document).on('change', '#tierFilterCheckbox', function() {
+			showAllPlayers = $(this).is(':checked');
+			$('#leaderboard').DataTable().draw();
 		});
 	}
 
@@ -427,7 +465,7 @@ $(document).on('dblclick', '.player-name-cell', function() {
    ========================================================================= */
 
 function getRelationsIconHtml(tier) {
-    if (!tier || tier === 'unassigned' || typeof CONFIG === 'undefined' || !CONFIG.icons || !CONFIG.icons[tier]) return '';
+    if (!tier || tier === 'unranked' || typeof CONFIG === 'undefined' || !CONFIG.icons || !CONFIG.icons[tier]) return '';
     const iconUrl = CONFIG.icons[tier];
     return `<img src="${iconUrl}" class="tier-icon" alt="${tier}">`;
 }
