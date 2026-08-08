@@ -642,12 +642,10 @@ $(document).ready(function() {
 
     const profileMap = window.PLAYER_PROFILE_MAP || {};
 
-    // 1. Trouve le nom propre d'affichage à partir d'un Slug ou d'un Nom
     function getCanonicalName(query) {
         if (!query) return "";
         const q = query.trim().toLowerCase();
 
-        // Parcourt profileMap : match soit sur le nom (clé), soit sur le slug (valeur)
         for (const [name, slug] of Object.entries(profileMap)) {
             if (name.toLowerCase() === q || (slug && String(slug).toLowerCase() === q)) {
                 return name;
@@ -656,13 +654,11 @@ $(document).ready(function() {
         return query;
     }
 
-    // 2. Application du filtre et mise à jour des éléments
     function applyGlobalSearch(val) {
         const query = (val || "").trim();
         const cleanName = getCanonicalName(query);
         const slug = profileMap[cleanName];
 
-        // Bouton Root DB
         const dbBtn = document.getElementById('root-db-btn');
         if (dbBtn) {
             if (slug) {
@@ -679,14 +675,16 @@ $(document).ready(function() {
             }
         }
 
-        // Persistance
         if (cleanName) {
             localStorage.setItem('selectedPlayer', cleanName);
+            const tierCheckbox = $('#tierFilterCheckbox');
+            if (tierCheckbox.length > 0 && !tierCheckbox.is(':checked')) {
+                tierCheckbox.prop('checked', true).trigger('change');
+            }
         } else {
             localStorage.removeItem('selectedPlayer');
         }
 
-        // DataTables & Vue Joueur (filtrés sur le Nom d'affichage)
         $('.dataTable').each(function() {
             if ($.fn.dataTable.isDataTable(this)) {
                 $(this).DataTable().search(cleanName).draw();
@@ -697,12 +695,10 @@ $(document).ready(function() {
         if (typeof window.updateChart === 'function' && document.getElementById('progressionChart')) window.updateChart();
     }
 
-    // Événements
     $(input).on('input change', function() {
         applyGlobalSearch(this.value);
     });
 
-    // 3. Initialisation (URL > LocalStorage)
     const urlParam = new URLSearchParams(window.location.search).get('player');
     const savedPlayer = localStorage.getItem('selectedPlayer');
     const initialQuery = urlParam || savedPlayer || "";
