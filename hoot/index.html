@@ -1,0 +1,2036 @@
+
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Rootelo • Root Digital League Elo Leaderboard</title>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400..900;1,9..144,400..900&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.13.6/css/jquery.dataTables.min.css">
+    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/responsive/2.5.0/css/responsive.dataTables.min.css">
+    
+    <!-- Chemin dynamique pour le CSS -->
+    <link rel="stylesheet" href="static/style.css">
+    
+    <style>
+        :root {
+			/* --- 1. LAYOUT CONFIG (Automatic loop) --- */
+			
+			--window-max-width: clamp(600px, 60vw, 1600px);
+			
+			--window-padding: clamp(20px, 2.5vw, 40px);
+			
+			--window-gap: 20px;
+			
+
+			/* --- 2. TYPOGRAPHY (Automatic loop) --- */
+			
+			--font-title: 'Fraunces', serif;
+			
+			--font-ui: 'Inter', sans-serif;
+			
+			--font-mono: 'JetBrains Mono', monospace;
+			
+			--font-hand: 'Segoe Print', 'Bradley Hand', 'Apple Chancery', 'Comic Sans MS', cursive;
+			
+			--bold: 900;
+			
+			--medium: 600;
+			
+			--normal: 400;
+			
+			--size-xs: 0.75rem;
+			
+			--size-sm: 0.85rem;
+			
+			--size-modal: 0.90rem;
+			
+			--size-base: 0.95rem;
+			
+			--size-md: 1.2rem;
+			
+			--size-lg: 2.0rem;
+			
+			--size-xl: 2.5rem;
+			
+			--size-display: 2.8rem;
+			
+			--track-slight: 0.5px;
+			
+			--track-wide: 1px;
+			
+			--track-display: 4px;
+			
+
+			/* --- 3. GLOBAL UI (Automatic loop) --- */
+			
+			--bg-overlay-top: rgba(0, 0, 0, 0.1);
+			
+			--bg-overlay-bottom: rgba(0, 0, 0, 0.8);
+			
+			--bg-container: #1c1c1c;
+			
+			--bg-surface: rgba(255, 255, 255, 0.03);
+			
+			--bg-hover: rgba(255, 255, 255, 0.08);
+			
+			--border-soft: #333333;
+			
+			--border-dark: rgba(0, 0, 0, 0.4);
+			
+			--border-light: rgba(255, 255, 255, 0.05);
+			
+			--glass-bg: #1c1c1cd9;
+			
+			--glass-border: rgba(255, 255, 255, 0.08);
+			
+			--glass-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+			
+			--text-bright: #ffffff;
+			
+			--text-main: #E0E0E0;
+			
+			--text-muted: #A0A0A0;
+			
+			--text-dark: #111111;
+			
+			--dt-table-bg: rgba(0, 0, 0, 0.15);
+			
+			--dt-header-bg: rgba(0, 0, 0, 0.25);
+			
+			--dt-row-border: rgba(255, 255, 255, 0.03);
+			
+			--dt-row-hover: rgba(255, 255, 255, 0.07);
+			
+			--dt-input-bg: rgba(0, 0, 0, 0.2);
+			
+
+			/* --- 4. TIER DYNAMICS (Loop with logic) --- */
+			
+			--color-bird: #7AB5E0;
+			--color-bird-bg: #7AB5E014;
+			
+			--color-fox: #E55555;
+			--color-fox-bg: #E5555514;
+			
+			--color-rabbit: #F2C14E;
+			--color-rabbit-bg: #F2C14E14;
+			
+			--color-mouse: #F49E52;
+			--color-mouse-bg: #F49E5214;
+			
+			--color-squirrel: #94C160;
+			--color-squirrel-bg: #94C16014;
+			
+			--color-stag: #C686FF;
+			--color-stag-bg: #C686FF14;
+			
+			--color-bear: #ffffff;
+			--color-bear-bg: #ffffff14;
+			
+			--color-unassigned: #E0E0E0;
+			--color-unassigned-bg: #E0E0E014;
+			
+			--color-default: #7A7347;
+			--color-default-bg: #7A734714;
+			
+
+			/* --- 5. PAGE THEME --- */
+			--main-color: #7AB5E0;
+		}
+    </style>
+	
+	
+	
+	<meta name="google-site-verification" content="xNfE9mY0Df8BsQAl4g5S0I_C4MvFC8nnJVNVWJJpqAg" />
+
+	
+	<meta name="description" content="An Elo ranking system for the digital Root game. See player standings in the Root Digital League and follow individual progress over each season.">
+	
+
+	<meta property="og:type" content="website">
+	<meta property="og:url" content="https://tricholome.github.io/rootelo">
+	<meta property="og:title" content="ROOTELO">
+	<meta property="og:description" content="A Metric of Woodland Skill and Will">
+	<meta property="og:image" content="https://tricholome.github.io/rootelo/assets/meta/rootelo-preview.webp">
+	
+	<link rel="icon" type="image/png" sizes="192x192" href="https://tricholome.github.io/rootelo/assets/meta/favicon.png">
+	<!-- Chemin dynamique pour le Favicon SVG -->
+	<link rel="icon" type="image/svg+xml" href="assets/meta/favicon.svg">
+	<link rel="apple-touch-icon" href="https://tricholome.github.io/rootelo/assets/meta/favicon.png">
+
+    
+	
+</head>
+
+<body class="" data-page="index">
+    
+    <div class="container">
+	
+        <header class="app-banner window-box">
+		
+            <div class="banner-container">
+                <div class="banner-icons left">
+                    <a href="javascript:void(0)" onclick="openTierModal('stag')" class="tooltip-link js-double-tap banner-icon-stag">
+                        <img src="/rootelo/assets/icons/stag.webp" alt="Stag">
+                        <span class="tooltip-text"><strong class="tier-stag">Stag (1600+)</strong> — The Legend</span>
+                    </a>
+					<a href="javascript:void(0)" onclick="openTierModal('bird')" class="tooltip-link js-double-tap">
+                        <img src="/rootelo/assets/icons/bird.webp" alt="Bird">
+                        <span class="tooltip-text"><strong class="tier-bird">Bird (1500+)</strong> — The Grandmasters</span>
+                    </a>
+                    <a href="javascript:void(0)" onclick="openTierModal('fox')" class="tooltip-link js-double-tap">
+                        <img src="/rootelo/assets/icons/fox.webp" alt="Fox">
+                        <span class="tooltip-text"><strong class="tier-fox">Fox (1400+)</strong> — The Cunning Tacticians</span>
+                    </a>
+                </div>
+                <div class="banner-center">
+                    <h1 class="site-title">ROOTELO</h1>
+                    <p class="site-subtitle">A Metric of Woodland&nbsp;Skill&nbsp;and&nbsp;Will</p>
+                </div>
+                <div class="banner-icons right">
+                    <a href="javascript:void(0)" onclick="openTierModal('rabbit')" class="tooltip-link js-double-tap">
+                        <img src="/rootelo/assets/icons/rabbit.webp" alt="Rabbit">
+                        <span class="tooltip-text"><strong class="tier-rabbit">Rabbit (1300+)</strong> — The Agile Contenders</span>
+                    </a>
+                    <a href="javascript:void(0)" onclick="openTierModal('mouse')" class="tooltip-link js-double-tap">
+                        <img src="/rootelo/assets/icons/mouse.webp" alt="Mouse">
+                        <span class="tooltip-text"><strong class="tier-mouse">Mouse (1200+)</strong> — The Steady Foragers</span>
+                    </a>
+					<a href="javascript:void(0)" onclick="openTierModal('squirrel')" class="tooltip-link js-double-tap banner-icon-squirrel">
+                        <img src="/rootelo/assets/icons/squirrel.webp" alt="Squirrel">
+                        <span class="tooltip-text"><strong class="tier-squirrel">Squirrel (&lt; 1200)</strong> — The Hapless Stragglers</span>
+                    </a>
+                </div>
+            </div>
+            
+            <div class="nav-separator"></div>
+
+            <nav>
+				
+
+				
+					
+						
+					
+					<a href="index.html" class="active">Leaderboard</a>
+				
+					
+						
+					
+					<a href="matches.html" class="">Top Tables</a>
+				
+					
+						
+					
+					<a href="trends.html" class="">Player's Journey</a>
+				
+					
+						
+					
+					<a href="about.html" class="">Codex</a>
+				
+				<a href="cache.html" class="nav-secret ">Undergrowth</a>
+			</nav>
+			
+        </header>
+        
+        <div class="screen-deco right-deco">
+			
+				<img src="/rootelo/assets/images/leaderboard_img_right.webp" alt="Decoration Right">
+			
+		</div>
+
+        <div id="view" class="app-viewport window-box">
+            <header class="page-intro">
+				<h2>Leaderboard</h2>
+				<p>Only players with a Tier are ranked. Double-click&nbsp;to&nbsp;see&nbsp;individual&nbsp;journeys.</p>
+
+				<div class="season-selector-group">
+				
+					
+
+					<div class="season-selector">
+						<span class="season-label">Player</span>
+						<div class="search-box">
+							<input type="search" id="playerName" list="playerAutocompleteList" value="" placeholder="Search..." autocomplete="off">
+							<datalist id="playerAutocompleteList">
+								
+									
+										<option value="6requiem"></option>
+									
+										<option value="aaron_dangerman"></option>
+									
+										<option value="abbreviatedman"></option>
+									
+										<option value="aedalus"></option>
+									
+										<option value="anokaypotato-4405"></option>
+									
+										<option value="ashadeferal"></option>
+									
+										<option value="batmaster"></option>
+									
+										<option value="beans8201"></option>
+									
+										<option value="benssoon"></option>
+									
+										<option value="bunniesandcandy"></option>
+									
+										<option value="bustin"></option>
+									
+										<option value="bw"></option>
+									
+										<option value="chefboyardee8120"></option>
+									
+										<option value="chicken_x"></option>
+									
+										<option value="clinicalindication"></option>
+									
+										<option value="commanderasn"></option>
+									
+										<option value="coola101"></option>
+									
+										<option value="cosmiccant"></option>
+									
+										<option value="countthemsheep"></option>
+									
+										<option value="dark_owl"></option>
+									
+										<option value="darkwonderer"></option>
+									
+										<option value="darthpuniceus"></option>
+									
+										<option value="davee_39"></option>
+									
+										<option value="dekiru"></option>
+									
+										<option value="doe"></option>
+									
+										<option value="eletto21"></option>
+									
+										<option value="eulers_fool"></option>
+									
+										<option value="extortionator"></option>
+									
+										<option value="fajfar"></option>
+									
+										<option value="fraaab"></option>
+									
+										<option value="g7asan"></option>
+									
+										<option value="gcoyote"></option>
+									
+										<option value="gmoa"></option>
+									
+										<option value="green_flame"></option>
+									
+										<option value="gregoola"></option>
+									
+										<option value="hurple0"></option>
+									
+										<option value="iceecream"></option>
+									
+										<option value="idyll"></option>
+									
+										<option value="jakattak14"></option>
+									
+										<option value="jalapeno"></option>
+									
+										<option value="jaredjm41"></option>
+									
+										<option value="jonismiff"></option>
+									
+										<option value="jorbbb"></option>
+									
+										<option value="kethem"></option>
+									
+										<option value="kingluiginl"></option>
+									
+										<option value="kvan"></option>
+									
+										<option value="kylobot"></option>
+									
+										<option value="lazarus210"></option>
+									
+										<option value="lesslobster"></option>
+									
+										<option value="lumpyprol"></option>
+									
+										<option value="lylethebrick"></option>
+									
+										<option value="magiczamboni"></option>
+									
+										<option value="malefic7m"></option>
+									
+										<option value="mcauthor"></option>
+									
+										<option value="mentalmendel"></option>
+									
+										<option value="meryn"></option>
+									
+										<option value="militech2078"></option>
+									
+										<option value="mossfusion"></option>
+									
+										<option value="mrdrouf"></option>
+									
+										<option value="mwalt92"></option>
+									
+										<option value="nadav253_57576"></option>
+									
+										<option value="nattykash"></option>
+									
+										<option value="piechu28"></option>
+									
+										<option value="plegbot"></option>
+									
+										<option value="pokerface126_11986"></option>
+									
+										<option value="pooge"></option>
+									
+										<option value="powerful_dragon_23094"></option>
+									
+										<option value="punkstarman"></option>
+									
+										<option value="pwarren8590"></option>
+									
+										<option value="quents1493"></option>
+									
+										<option value="rabbitwarlord"></option>
+									
+										<option value="riverman"></option>
+									
+										<option value="rondamgemas"></option>
+									
+										<option value="rootvietnam"></option>
+									
+										<option value="salo_solomon"></option>
+									
+										<option value="scotchbonnet11"></option>
+									
+										<option value="sda1611"></option>
+									
+										<option value="seironed"></option>
+									
+										<option value="silver"></option>
+									
+										<option value="simber_2925"></option>
+									
+										<option value="slaith"></option>
+									
+										<option value="smeichel"></option>
+									
+										<option value="snculler"></option>
+									
+										<option value="starhardfishrinse"></option>
+									
+										<option value="stockbot"></option>
+									
+										<option value="stoneofjas"></option>
+									
+										<option value="sweenss"></option>
+									
+										<option value="talleyrand19"></option>
+									
+										<option value="thesofly"></option>
+									
+										<option value="trippingrannys"></option>
+									
+										<option value="tungsten"></option>
+									
+										<option value="turmoilbyrd"></option>
+									
+										<option value="uwtron"></option>
+									
+										<option value="victorvee"></option>
+									
+										<option value="willrevolt"></option>
+									
+										<option value="wyvernelement"></option>
+									
+										<option value="xinoehp512"></option>
+									
+										<option value="zaandaa"></option>
+									
+								
+							</datalist>
+							<a id="root-db-btn" 
+							   href="#" 
+							   target="_blank" 
+							   rel="noopener noreferrer" 
+							   class="db-btn js-double-tap disabled" 
+							   aria-label="View profile on The Root Database">
+							   <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+								 <path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"></path>
+								 <path d="M22 3h-6a4 4 0 0 1 3-3h7z"></path>
+							   </svg>
+							   <span class="tooltip-text">View profile on The Root Database</span>
+							</a>
+						</div>
+					</div>
+				</div>
+			</header>
+			
+            <main>
+                
+    <div class="unranked-toggle-container">
+        <input type="checkbox" id="tierFilterCheckbox" checked autocomplete="off">
+        <label for="tierFilterCheckbox">Show tierless players</label>
+    </div>
+
+    <table id="leaderboard" class="display nowrap" style="width:100%">
+        <thead>
+            <tr>
+                <th>Rank</th>
+                <th>Tier</th>
+                <th>Player</th>
+                <th>ELO</th>
+                <th>Games</th>
+                <th>Wins</th>
+                <th>Win Rate</th>
+                <th>Peak</th>
+                <th>Last</th>
+            </tr>
+        </thead>
+        <tbody>
+            
+            <tr data-tier="unassigned">
+                <td>-</td>
+                <td>
+                    
+                </td>
+                <td>pokerface126_11986</td>
+                <td>1458</td>
+                <td>7</td>
+                <td>6.0</td>
+                <td>85.7%</td>
+                <td>1458</td>
+                <td>+34</td>
+            </tr>
+            
+            <tr data-tier="fox">
+                <td>1</td>
+                <td>
+                    
+                        <a href="javascript:void(0)" 
+                           onclick="handleTierClick(event, 'fox')" 
+                           class="tier-anchor-link">
+                            <div class="tier-icon-container">
+                                <img src="/rootelo/assets/icons/fox.webp" alt="fox">
+                            </div>
+                        </a>
+                    
+                </td>
+                <td>uwtron</td>
+                <td>1445</td>
+                <td>11</td>
+                <td>7.0</td>
+                <td>63.6%</td>
+                <td>1470</td>
+                <td>-25</td>
+            </tr>
+            
+            <tr data-tier="unassigned">
+                <td>-</td>
+                <td>
+                    
+                </td>
+                <td>slaith</td>
+                <td>1402</td>
+                <td>8</td>
+                <td>5.0</td>
+                <td>62.5%</td>
+                <td>1446</td>
+                <td>-45</td>
+            </tr>
+            
+            <tr data-tier="unassigned">
+                <td>-</td>
+                <td>
+                    
+                </td>
+                <td>xinoehp512</td>
+                <td>1333</td>
+                <td>5</td>
+                <td>3.0</td>
+                <td>60.0%</td>
+                <td>1353</td>
+                <td>-19</td>
+            </tr>
+            
+            <tr data-tier="unassigned">
+                <td>-</td>
+                <td>
+                    
+                </td>
+                <td>chicken_x</td>
+                <td>1328</td>
+                <td>6</td>
+                <td>3.0</td>
+                <td>50.0%</td>
+                <td>1328</td>
+                <td>+55</td>
+            </tr>
+            
+            <tr data-tier="unassigned">
+                <td>-</td>
+                <td>
+                    
+                </td>
+                <td>gcoyote</td>
+                <td>1327</td>
+                <td>6</td>
+                <td>3.0</td>
+                <td>50.0%</td>
+                <td>1346</td>
+                <td>-19</td>
+            </tr>
+            
+            <tr data-tier="unassigned">
+                <td>-</td>
+                <td>
+                    
+                </td>
+                <td>sda1611</td>
+                <td>1322</td>
+                <td>5</td>
+                <td>3.0</td>
+                <td>60.0%</td>
+                <td>1344</td>
+                <td>-22</td>
+            </tr>
+            
+            <tr data-tier="unassigned">
+                <td>-</td>
+                <td>
+                    
+                </td>
+                <td>trippingrannys</td>
+                <td>1320</td>
+                <td>8</td>
+                <td>4.0</td>
+                <td>50.0%</td>
+                <td>1355</td>
+                <td>-35</td>
+            </tr>
+            
+            <tr data-tier="unassigned">
+                <td>-</td>
+                <td>
+                    
+                </td>
+                <td>lylethebrick</td>
+                <td>1314</td>
+                <td>7</td>
+                <td>4.0</td>
+                <td>57.1%</td>
+                <td>1365</td>
+                <td>-38</td>
+            </tr>
+            
+            <tr data-tier="unassigned">
+                <td>-</td>
+                <td>
+                    
+                </td>
+                <td>snculler</td>
+                <td>1311</td>
+                <td>9</td>
+                <td>4.0</td>
+                <td>44.4%</td>
+                <td>1344</td>
+                <td>-32</td>
+            </tr>
+            
+            <tr data-tier="unassigned">
+                <td>-</td>
+                <td>
+                    
+                </td>
+                <td>commanderasn</td>
+                <td>1290</td>
+                <td>4</td>
+                <td>2.0</td>
+                <td>50.0%</td>
+                <td>1290</td>
+                <td>+61</td>
+            </tr>
+            
+            <tr data-tier="unassigned">
+                <td>-</td>
+                <td>
+                    
+                </td>
+                <td>extortionator</td>
+                <td>1289</td>
+                <td>3</td>
+                <td>2.0</td>
+                <td>66.7%</td>
+                <td>1289</td>
+                <td>+55</td>
+            </tr>
+            
+            <tr data-tier="mouse">
+                <td>2</td>
+                <td>
+                    
+                        <a href="javascript:void(0)" 
+                           onclick="handleTierClick(event, 'mouse')" 
+                           class="tier-anchor-link">
+                            <div class="tier-icon-container">
+                                <img src="/rootelo/assets/icons/mouse.webp" alt="mouse">
+                            </div>
+                        </a>
+                    
+                </td>
+                <td>bw</td>
+                <td>1284</td>
+                <td>10</td>
+                <td>4.0</td>
+                <td>40.0%</td>
+                <td>1313</td>
+                <td>-30</td>
+            </tr>
+            
+            <tr data-tier="unassigned">
+                <td>-</td>
+                <td>
+                    
+                </td>
+                <td>eletto21</td>
+                <td>1280</td>
+                <td>7</td>
+                <td>3.0</td>
+                <td>42.9%</td>
+                <td>1317</td>
+                <td>-37</td>
+            </tr>
+            
+            <tr data-tier="unassigned">
+                <td>-</td>
+                <td>
+                    
+                </td>
+                <td>kethem</td>
+                <td>1279</td>
+                <td>4</td>
+                <td>2.0</td>
+                <td>50.0%</td>
+                <td>1296</td>
+                <td>-18</td>
+            </tr>
+            
+            <tr data-tier="unassigned">
+                <td>-</td>
+                <td>
+                    
+                </td>
+                <td>lazarus210</td>
+                <td>1276</td>
+                <td>4</td>
+                <td>2.0</td>
+                <td>50.0%</td>
+                <td>1298</td>
+                <td>-22</td>
+            </tr>
+            
+            <tr data-tier="unassigned">
+                <td>-</td>
+                <td>
+                    
+                </td>
+                <td>nadav253_57576</td>
+                <td>1276</td>
+                <td>8</td>
+                <td>4.0</td>
+                <td>50.0%</td>
+                <td>1362</td>
+                <td>-38</td>
+            </tr>
+            
+            <tr data-tier="unassigned">
+                <td>-</td>
+                <td>
+                    
+                </td>
+                <td>cosmiccant</td>
+                <td>1274</td>
+                <td>8</td>
+                <td>3.0</td>
+                <td>37.5%</td>
+                <td>1274</td>
+                <td>+55</td>
+            </tr>
+            
+            <tr data-tier="unassigned">
+                <td>-</td>
+                <td>
+                    
+                </td>
+                <td>rootvietnam</td>
+                <td>1266</td>
+                <td>1</td>
+                <td>1.0</td>
+                <td>100.0%</td>
+                <td>1266</td>
+                <td>+66</td>
+            </tr>
+            
+            <tr data-tier="unassigned">
+                <td>-</td>
+                <td>
+                    
+                </td>
+                <td>meryn</td>
+                <td>1256</td>
+                <td>4</td>
+                <td>2.0</td>
+                <td>50.0%</td>
+                <td>1314</td>
+                <td>-25</td>
+            </tr>
+            
+            <tr data-tier="unassigned">
+                <td>-</td>
+                <td>
+                    
+                </td>
+                <td>eulers_fool</td>
+                <td>1246</td>
+                <td>2</td>
+                <td>1.0</td>
+                <td>50.0%</td>
+                <td>1246</td>
+                <td>+62</td>
+            </tr>
+            
+            <tr data-tier="unassigned">
+                <td>-</td>
+                <td>
+                    
+                </td>
+                <td>jakattak14</td>
+                <td>1244</td>
+                <td>6</td>
+                <td>2.0</td>
+                <td>33.3%</td>
+                <td>1260</td>
+                <td>-16</td>
+            </tr>
+            
+            <tr data-tier="unassigned">
+                <td>-</td>
+                <td>
+                    
+                </td>
+                <td>aedalus</td>
+                <td>1238</td>
+                <td>3</td>
+                <td>1.0</td>
+                <td>33.3%</td>
+                <td>1238</td>
+                <td>+65</td>
+            </tr>
+            
+            <tr data-tier="unassigned">
+                <td>-</td>
+                <td>
+                    
+                </td>
+                <td>wyvernelement</td>
+                <td>1236</td>
+                <td>3</td>
+                <td>1.0</td>
+                <td>33.3%</td>
+                <td>1236</td>
+                <td>+68</td>
+            </tr>
+            
+            <tr data-tier="unassigned">
+                <td>-</td>
+                <td>
+                    
+                </td>
+                <td>tungsten</td>
+                <td>1231</td>
+                <td>3</td>
+                <td>1.0</td>
+                <td>33.3%</td>
+                <td>1250</td>
+                <td>-19</td>
+            </tr>
+            
+            <tr data-tier="unassigned">
+                <td>-</td>
+                <td>
+                    
+                </td>
+                <td>dekiru</td>
+                <td>1228</td>
+                <td>3</td>
+                <td>1.0</td>
+                <td>33.3%</td>
+                <td>1265</td>
+                <td>-21</td>
+            </tr>
+            
+            <tr data-tier="unassigned">
+                <td>-</td>
+                <td>
+                    
+                </td>
+                <td>chefboyardee8120</td>
+                <td>1225</td>
+                <td>3</td>
+                <td>1.0</td>
+                <td>33.3%</td>
+                <td>1242</td>
+                <td>-17</td>
+            </tr>
+            
+            <tr data-tier="unassigned">
+                <td>-</td>
+                <td>
+                    
+                </td>
+                <td>darthpuniceus</td>
+                <td>1224</td>
+                <td>9</td>
+                <td>3.0</td>
+                <td>33.3%</td>
+                <td>1317</td>
+                <td>-21</td>
+            </tr>
+            
+            <tr data-tier="unassigned">
+                <td>-</td>
+                <td>
+                    
+                </td>
+                <td>stockbot</td>
+                <td>1221</td>
+                <td>3</td>
+                <td>1.0</td>
+                <td>33.3%</td>
+                <td>1240</td>
+                <td>-19</td>
+            </tr>
+            
+            <tr data-tier="unassigned">
+                <td>-</td>
+                <td>
+                    
+                </td>
+                <td>abbreviatedman</td>
+                <td>1220</td>
+                <td>4</td>
+                <td>1.0</td>
+                <td>25.0%</td>
+                <td>1220</td>
+                <td>+62</td>
+            </tr>
+            
+            <tr data-tier="unassigned">
+                <td>-</td>
+                <td>
+                    
+                </td>
+                <td>countthemsheep</td>
+                <td>1218</td>
+                <td>3</td>
+                <td>1.0</td>
+                <td>33.3%</td>
+                <td>1247</td>
+                <td>-29</td>
+            </tr>
+            
+            <tr data-tier="unassigned">
+                <td>-</td>
+                <td>
+                    
+                </td>
+                <td>plegbot</td>
+                <td>1218</td>
+                <td>3</td>
+                <td>1.0</td>
+                <td>33.3%</td>
+                <td>1239</td>
+                <td>-21</td>
+            </tr>
+            
+            <tr data-tier="unassigned">
+                <td>-</td>
+                <td>
+                    
+                </td>
+                <td>darkwonderer</td>
+                <td>1218</td>
+                <td>3</td>
+                <td>1.0</td>
+                <td>33.3%</td>
+                <td>1263</td>
+                <td>-25</td>
+            </tr>
+            
+            <tr data-tier="unassigned">
+                <td>-</td>
+                <td>
+                    
+                </td>
+                <td>mcauthor</td>
+                <td>1215</td>
+                <td>3</td>
+                <td>1.0</td>
+                <td>33.3%</td>
+                <td>1258</td>
+                <td>-20</td>
+            </tr>
+            
+            <tr data-tier="unassigned">
+                <td>-</td>
+                <td>
+                    
+                </td>
+                <td>willrevolt</td>
+                <td>1215</td>
+                <td>3</td>
+                <td>1.0</td>
+                <td>33.3%</td>
+                <td>1240</td>
+                <td>-24</td>
+            </tr>
+            
+            <tr data-tier="unassigned">
+                <td>-</td>
+                <td>
+                    
+                </td>
+                <td>jaredjm41</td>
+                <td>1210</td>
+                <td>4</td>
+                <td>1.0</td>
+                <td>25.0%</td>
+                <td>1210</td>
+                <td>+66</td>
+            </tr>
+            
+            <tr data-tier="unassigned">
+                <td>-</td>
+                <td>
+                    
+                </td>
+                <td>ashadeferal</td>
+                <td>1204</td>
+                <td>4</td>
+                <td>1.0</td>
+                <td>25.0%</td>
+                <td>1224</td>
+                <td>-20</td>
+            </tr>
+            
+            <tr data-tier="unassigned">
+                <td>-</td>
+                <td>
+                    
+                </td>
+                <td>bunniesandcandy</td>
+                <td>1202</td>
+                <td>4</td>
+                <td>1.0</td>
+                <td>25.0%</td>
+                <td>1243</td>
+                <td>-18</td>
+            </tr>
+            
+            <tr data-tier="unassigned">
+                <td>-</td>
+                <td>
+                    
+                </td>
+                <td>piechu28</td>
+                <td>1200</td>
+                <td>6</td>
+                <td>1.0</td>
+                <td>16.7%</td>
+                <td>1200</td>
+                <td>+70</td>
+            </tr>
+            
+            <tr data-tier="unassigned">
+                <td>-</td>
+                <td>
+                    
+                </td>
+                <td>nattykash</td>
+                <td>1190</td>
+                <td>4</td>
+                <td>1.0</td>
+                <td>25.0%</td>
+                <td>1264</td>
+                <td>-26</td>
+            </tr>
+            
+            <tr data-tier="unassigned">
+                <td>-</td>
+                <td>
+                    
+                </td>
+                <td>jorbbb</td>
+                <td>1187</td>
+                <td>5</td>
+                <td>1.0</td>
+                <td>20.0%</td>
+                <td>1225</td>
+                <td>-21</td>
+            </tr>
+            
+            <tr data-tier="unassigned">
+                <td>-</td>
+                <td>
+                    
+                </td>
+                <td>green_flame</td>
+                <td>1186</td>
+                <td>5</td>
+                <td>1.0</td>
+                <td>20.0%</td>
+                <td>1225</td>
+                <td>-18</td>
+            </tr>
+            
+            <tr data-tier="unassigned">
+                <td>-</td>
+                <td>
+                    
+                </td>
+                <td>silver</td>
+                <td>1185</td>
+                <td>5</td>
+                <td>1.0</td>
+                <td>20.0%</td>
+                <td>1227</td>
+                <td>-21</td>
+            </tr>
+            
+            <tr data-tier="unassigned">
+                <td>-</td>
+                <td>
+                    
+                </td>
+                <td>clinicalindication</td>
+                <td>1185</td>
+                <td>5</td>
+                <td>1.0</td>
+                <td>20.0%</td>
+                <td>1224</td>
+                <td>-21</td>
+            </tr>
+            
+            <tr data-tier="unassigned">
+                <td>-</td>
+                <td>
+                    
+                </td>
+                <td>zaandaa</td>
+                <td>1185</td>
+                <td>1</td>
+                <td>0.0</td>
+                <td>0.0%</td>
+                <td>1200</td>
+                <td>-15</td>
+            </tr>
+            
+            <tr data-tier="unassigned">
+                <td>-</td>
+                <td>
+                    
+                </td>
+                <td>aaron_dangerman</td>
+                <td>1184</td>
+                <td>5</td>
+                <td>1.0</td>
+                <td>20.0%</td>
+                <td>1240</td>
+                <td>-18</td>
+            </tr>
+            
+            <tr data-tier="unassigned">
+                <td>-</td>
+                <td>
+                    
+                </td>
+                <td>davee_39</td>
+                <td>1184</td>
+                <td>5</td>
+                <td>1.0</td>
+                <td>20.0%</td>
+                <td>1223</td>
+                <td>-18</td>
+            </tr>
+            
+            <tr data-tier="unassigned">
+                <td>-</td>
+                <td>
+                    
+                </td>
+                <td>rabbitwarlord</td>
+                <td>1183</td>
+                <td>6</td>
+                <td>1.0</td>
+                <td>16.7%</td>
+                <td>1200</td>
+                <td>+69</td>
+            </tr>
+            
+            <tr data-tier="unassigned">
+                <td>-</td>
+                <td>
+                    
+                </td>
+                <td>sweenss</td>
+                <td>1183</td>
+                <td>1</td>
+                <td>0.0</td>
+                <td>0.0%</td>
+                <td>1200</td>
+                <td>-17</td>
+            </tr>
+            
+            <tr data-tier="unassigned">
+                <td>-</td>
+                <td>
+                    
+                </td>
+                <td>pwarren8590</td>
+                <td>1182</td>
+                <td>6</td>
+                <td>1.0</td>
+                <td>16.7%</td>
+                <td>1200</td>
+                <td>-17</td>
+            </tr>
+            
+            <tr data-tier="unassigned">
+                <td>-</td>
+                <td>
+                    
+                </td>
+                <td>lumpyprol</td>
+                <td>1181</td>
+                <td>6</td>
+                <td>1.0</td>
+                <td>16.7%</td>
+                <td>1200</td>
+                <td>+67</td>
+            </tr>
+            
+            <tr data-tier="unassigned">
+                <td>-</td>
+                <td>
+                    
+                </td>
+                <td>doe</td>
+                <td>1178</td>
+                <td>5</td>
+                <td>1.0</td>
+                <td>20.0%</td>
+                <td>1241</td>
+                <td>-17</td>
+            </tr>
+            
+            <tr data-tier="unassigned">
+                <td>-</td>
+                <td>
+                    
+                </td>
+                <td>bustin</td>
+                <td>1176</td>
+                <td>1</td>
+                <td>0.0</td>
+                <td>0.0%</td>
+                <td>1200</td>
+                <td>-24</td>
+            </tr>
+            
+            <tr data-tier="unassigned">
+                <td>-</td>
+                <td>
+                    
+                </td>
+                <td>gmoa</td>
+                <td>1176</td>
+                <td>6</td>
+                <td>1.0</td>
+                <td>16.7%</td>
+                <td>1200</td>
+                <td>+64</td>
+            </tr>
+            
+            <tr data-tier="unassigned">
+                <td>-</td>
+                <td>
+                    
+                </td>
+                <td>talleyrand19</td>
+                <td>1175</td>
+                <td>6</td>
+                <td>1.0</td>
+                <td>16.7%</td>
+                <td>1200</td>
+                <td>-20</td>
+            </tr>
+            
+            <tr data-tier="unassigned">
+                <td>-</td>
+                <td>
+                    
+                </td>
+                <td>scotchbonnet11</td>
+                <td>1174</td>
+                <td>5</td>
+                <td>1.0</td>
+                <td>20.0%</td>
+                <td>1260</td>
+                <td>-20</td>
+            </tr>
+            
+            <tr data-tier="unassigned">
+                <td>-</td>
+                <td>
+                    
+                </td>
+                <td>jalapeno</td>
+                <td>1166</td>
+                <td>2</td>
+                <td>0.0</td>
+                <td>0.0%</td>
+                <td>1200</td>
+                <td>-17</td>
+            </tr>
+            
+            <tr data-tier="unassigned">
+                <td>-</td>
+                <td>
+                    
+                </td>
+                <td>stoneofjas</td>
+                <td>1164</td>
+                <td>2</td>
+                <td>0.0</td>
+                <td>0.0%</td>
+                <td>1200</td>
+                <td>-17</td>
+            </tr>
+            
+            <tr data-tier="unassigned">
+                <td>-</td>
+                <td>
+                    
+                </td>
+                <td>smeichel</td>
+                <td>1163</td>
+                <td>3</td>
+                <td>0.0</td>
+                <td>0.0%</td>
+                <td>1200</td>
+                <td>-14</td>
+            </tr>
+            
+            <tr data-tier="unassigned">
+                <td>-</td>
+                <td>
+                    
+                </td>
+                <td>quents1493</td>
+                <td>1161</td>
+                <td>2</td>
+                <td>0.0</td>
+                <td>0.0%</td>
+                <td>1200</td>
+                <td>-22</td>
+            </tr>
+            
+            <tr data-tier="unassigned">
+                <td>-</td>
+                <td>
+                    
+                </td>
+                <td>batmaster</td>
+                <td>1161</td>
+                <td>2</td>
+                <td>0.0</td>
+                <td>0.0%</td>
+                <td>1200</td>
+                <td>-19</td>
+            </tr>
+            
+            <tr data-tier="unassigned">
+                <td>-</td>
+                <td>
+                    
+                </td>
+                <td>thesofly</td>
+                <td>1160</td>
+                <td>2</td>
+                <td>0.0</td>
+                <td>0.0%</td>
+                <td>1200</td>
+                <td>-19</td>
+            </tr>
+            
+            <tr data-tier="unassigned">
+                <td>-</td>
+                <td>
+                    
+                </td>
+                <td>lesslobster</td>
+                <td>1155</td>
+                <td>2</td>
+                <td>0.0</td>
+                <td>0.0%</td>
+                <td>1200</td>
+                <td>-23</td>
+            </tr>
+            
+            <tr data-tier="unassigned">
+                <td>-</td>
+                <td>
+                    
+                </td>
+                <td>6requiem</td>
+                <td>1155</td>
+                <td>3</td>
+                <td>0.0</td>
+                <td>0.0%</td>
+                <td>1200</td>
+                <td>-14</td>
+            </tr>
+            
+            <tr data-tier="unassigned">
+                <td>-</td>
+                <td>
+                    
+                </td>
+                <td>fraaab</td>
+                <td>1153</td>
+                <td>3</td>
+                <td>0.0</td>
+                <td>0.0%</td>
+                <td>1200</td>
+                <td>-16</td>
+            </tr>
+            
+            <tr data-tier="unassigned">
+                <td>-</td>
+                <td>
+                    
+                </td>
+                <td>seironed</td>
+                <td>1151</td>
+                <td>3</td>
+                <td>0.0</td>
+                <td>0.0%</td>
+                <td>1200</td>
+                <td>-16</td>
+            </tr>
+            
+            <tr data-tier="unassigned">
+                <td>-</td>
+                <td>
+                    
+                </td>
+                <td>mwalt92</td>
+                <td>1151</td>
+                <td>3</td>
+                <td>0.0</td>
+                <td>0.0%</td>
+                <td>1200</td>
+                <td>-17</td>
+            </tr>
+            
+            <tr data-tier="unassigned">
+                <td>-</td>
+                <td>
+                    
+                </td>
+                <td>mossfusion</td>
+                <td>1150</td>
+                <td>3</td>
+                <td>0.0</td>
+                <td>0.0%</td>
+                <td>1200</td>
+                <td>-20</td>
+            </tr>
+            
+            <tr data-tier="unassigned">
+                <td>-</td>
+                <td>
+                    
+                </td>
+                <td>dark_owl</td>
+                <td>1149</td>
+                <td>3</td>
+                <td>0.0</td>
+                <td>0.0%</td>
+                <td>1200</td>
+                <td>-22</td>
+            </tr>
+            
+            <tr data-tier="unassigned">
+                <td>-</td>
+                <td>
+                    
+                </td>
+                <td>magiczamboni</td>
+                <td>1149</td>
+                <td>3</td>
+                <td>0.0</td>
+                <td>0.0%</td>
+                <td>1200</td>
+                <td>-14</td>
+            </tr>
+            
+            <tr data-tier="unassigned">
+                <td>-</td>
+                <td>
+                    
+                </td>
+                <td>jonismiff</td>
+                <td>1148</td>
+                <td>3</td>
+                <td>0.0</td>
+                <td>0.0%</td>
+                <td>1200</td>
+                <td>-17</td>
+            </tr>
+            
+            <tr data-tier="unassigned">
+                <td>-</td>
+                <td>
+                    
+                </td>
+                <td>coola101</td>
+                <td>1148</td>
+                <td>3</td>
+                <td>0.0</td>
+                <td>0.0%</td>
+                <td>1200</td>
+                <td>-20</td>
+            </tr>
+            
+            <tr data-tier="unassigned">
+                <td>-</td>
+                <td>
+                    
+                </td>
+                <td>anokaypotato-4405</td>
+                <td>1147</td>
+                <td>3</td>
+                <td>0.0</td>
+                <td>0.0%</td>
+                <td>1200</td>
+                <td>-22</td>
+            </tr>
+            
+            <tr data-tier="unassigned">
+                <td>-</td>
+                <td>
+                    
+                </td>
+                <td>beans8201</td>
+                <td>1147</td>
+                <td>3</td>
+                <td>0.0</td>
+                <td>0.0%</td>
+                <td>1200</td>
+                <td>-13</td>
+            </tr>
+            
+            <tr data-tier="unassigned">
+                <td>-</td>
+                <td>
+                    
+                </td>
+                <td>iceecream</td>
+                <td>1147</td>
+                <td>3</td>
+                <td>0.0</td>
+                <td>0.0%</td>
+                <td>1200</td>
+                <td>-18</td>
+            </tr>
+            
+            <tr data-tier="unassigned">
+                <td>-</td>
+                <td>
+                    
+                </td>
+                <td>fajfar</td>
+                <td>1147</td>
+                <td>3</td>
+                <td>0.0</td>
+                <td>0.0%</td>
+                <td>1200</td>
+                <td>-18</td>
+            </tr>
+            
+            <tr data-tier="unassigned">
+                <td>-</td>
+                <td>
+                    
+                </td>
+                <td>rondamgemas</td>
+                <td>1147</td>
+                <td>3</td>
+                <td>0.0</td>
+                <td>0.0%</td>
+                <td>1200</td>
+                <td>-20</td>
+            </tr>
+            
+            <tr data-tier="unassigned">
+                <td>-</td>
+                <td>
+                    
+                </td>
+                <td>victorvee</td>
+                <td>1145</td>
+                <td>4</td>
+                <td>0.0</td>
+                <td>0.0%</td>
+                <td>1200</td>
+                <td>-8</td>
+            </tr>
+            
+            <tr data-tier="unassigned">
+                <td>-</td>
+                <td>
+                    
+                </td>
+                <td>kingluiginl</td>
+                <td>1145</td>
+                <td>3</td>
+                <td>0.0</td>
+                <td>0.0%</td>
+                <td>1200</td>
+                <td>-20</td>
+            </tr>
+            
+            <tr data-tier="unassigned">
+                <td>-</td>
+                <td>
+                    
+                </td>
+                <td>starhardfishrinse</td>
+                <td>1144</td>
+                <td>3</td>
+                <td>0.0</td>
+                <td>0.0%</td>
+                <td>1200</td>
+                <td>-17</td>
+            </tr>
+            
+            <tr data-tier="unassigned">
+                <td>-</td>
+                <td>
+                    
+                </td>
+                <td>powerful_dragon_23094</td>
+                <td>1144</td>
+                <td>3</td>
+                <td>0.0</td>
+                <td>0.0%</td>
+                <td>1200</td>
+                <td>-20</td>
+            </tr>
+            
+            <tr data-tier="unassigned">
+                <td>-</td>
+                <td>
+                    
+                </td>
+                <td>turmoilbyrd</td>
+                <td>1143</td>
+                <td>3</td>
+                <td>0.0</td>
+                <td>0.0%</td>
+                <td>1200</td>
+                <td>-17</td>
+            </tr>
+            
+            <tr data-tier="unassigned">
+                <td>-</td>
+                <td>
+                    
+                </td>
+                <td>idyll</td>
+                <td>1143</td>
+                <td>3</td>
+                <td>0.0</td>
+                <td>0.0%</td>
+                <td>1200</td>
+                <td>-16</td>
+            </tr>
+            
+            <tr data-tier="unassigned">
+                <td>-</td>
+                <td>
+                    
+                </td>
+                <td>punkstarman</td>
+                <td>1142</td>
+                <td>3</td>
+                <td>0.0</td>
+                <td>0.0%</td>
+                <td>1200</td>
+                <td>-20</td>
+            </tr>
+            
+            <tr data-tier="unassigned">
+                <td>-</td>
+                <td>
+                    
+                </td>
+                <td>g7asan</td>
+                <td>1141</td>
+                <td>3</td>
+                <td>0.0</td>
+                <td>0.0%</td>
+                <td>1200</td>
+                <td>-20</td>
+            </tr>
+            
+            <tr data-tier="unassigned">
+                <td>-</td>
+                <td>
+                    
+                </td>
+                <td>kylobot</td>
+                <td>1141</td>
+                <td>3</td>
+                <td>0.0</td>
+                <td>0.0%</td>
+                <td>1200</td>
+                <td>-21</td>
+            </tr>
+            
+            <tr data-tier="unassigned">
+                <td>-</td>
+                <td>
+                    
+                </td>
+                <td>salo_solomon</td>
+                <td>1140</td>
+                <td>3</td>
+                <td>0.0</td>
+                <td>0.0%</td>
+                <td>1200</td>
+                <td>-20</td>
+            </tr>
+            
+            <tr data-tier="unassigned">
+                <td>-</td>
+                <td>
+                    
+                </td>
+                <td>mentalmendel</td>
+                <td>1140</td>
+                <td>4</td>
+                <td>0.0</td>
+                <td>0.0%</td>
+                <td>1200</td>
+                <td>-18</td>
+            </tr>
+            
+            <tr data-tier="unassigned">
+                <td>-</td>
+                <td>
+                    
+                </td>
+                <td>benssoon</td>
+                <td>1140</td>
+                <td>3</td>
+                <td>0.0</td>
+                <td>0.0%</td>
+                <td>1200</td>
+                <td>-20</td>
+            </tr>
+            
+            <tr data-tier="unassigned">
+                <td>-</td>
+                <td>
+                    
+                </td>
+                <td>simber_2925</td>
+                <td>1135</td>
+                <td>8</td>
+                <td>1.0</td>
+                <td>12.5%</td>
+                <td>1226</td>
+                <td>-20</td>
+            </tr>
+            
+            <tr data-tier="unassigned">
+                <td>-</td>
+                <td>
+                    
+                </td>
+                <td>gregoola</td>
+                <td>1135</td>
+                <td>7</td>
+                <td>1.0</td>
+                <td>14.3%</td>
+                <td>1260</td>
+                <td>-18</td>
+            </tr>
+            
+            <tr data-tier="unassigned">
+                <td>-</td>
+                <td>
+                    
+                </td>
+                <td>malefic7m</td>
+                <td>1125</td>
+                <td>4</td>
+                <td>0.0</td>
+                <td>0.0%</td>
+                <td>1200</td>
+                <td>-14</td>
+            </tr>
+            
+            <tr data-tier="unassigned">
+                <td>-</td>
+                <td>
+                    
+                </td>
+                <td>hurple0</td>
+                <td>1118</td>
+                <td>5</td>
+                <td>0.0</td>
+                <td>0.0%</td>
+                <td>1200</td>
+                <td>-10</td>
+            </tr>
+            
+            <tr data-tier="unassigned">
+                <td>-</td>
+                <td>
+                    
+                </td>
+                <td>pooge</td>
+                <td>1117</td>
+                <td>8</td>
+                <td>1.0</td>
+                <td>12.5%</td>
+                <td>1259</td>
+                <td>-13</td>
+            </tr>
+            
+            <tr data-tier="unassigned">
+                <td>-</td>
+                <td>
+                    
+                </td>
+                <td>mrdrouf</td>
+                <td>1113</td>
+                <td>5</td>
+                <td>0.0</td>
+                <td>0.0%</td>
+                <td>1200</td>
+                <td>-13</td>
+            </tr>
+            
+            <tr data-tier="unassigned">
+                <td>-</td>
+                <td>
+                    
+                </td>
+                <td>riverman</td>
+                <td>1109</td>
+                <td>6</td>
+                <td>0.0</td>
+                <td>0.0%</td>
+                <td>1200</td>
+                <td>-14</td>
+            </tr>
+            
+            <tr data-tier="unassigned">
+                <td>-</td>
+                <td>
+                    
+                </td>
+                <td>militech2078</td>
+                <td>1104</td>
+                <td>6</td>
+                <td>0.0</td>
+                <td>0.0%</td>
+                <td>1200</td>
+                <td>-8</td>
+            </tr>
+            
+            <tr data-tier="unassigned">
+                <td>-</td>
+                <td>
+                    
+                </td>
+                <td>kvan</td>
+                <td>1104</td>
+                <td>6</td>
+                <td>0.0</td>
+                <td>0.0%</td>
+                <td>1200</td>
+                <td>-16</td>
+            </tr>
+            
+        </tbody>
+    </table>
+
+            </main>
+			
+			<div class="footer-table">
+				
+				<div class="footer-date">Includes 106 matches up to 2026-08-07</div>
+				
+			</div>
+			
+        </div>
+        
+        <div class="screen-deco left-deco">
+			
+				<img src="/rootelo/assets/images/leaderboard_img_left.webp" alt="Decoration Left">
+			
+		</div>
+
+        <footer class="app-footer window-box">
+			<div class="footer-content">
+				<div class="footer-credits">
+					<span>Powered by <strong>Tʀɪᴄʜᴏʟᴏᴍᴇ</strong></span>
+					<span>Woodland visions by
+						<a class="cl" href="cache.html">𝕩𝕝𝕦𝕖𝕧𝕚</a>
+						<a class="insta" href="https://www.instagram.com/xluevi.art/" target="_blank" aria-label="Instagram de xluevi">
+							<svg viewBox="0 0 24 24" width="16" height="16" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round">
+								<rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
+								<path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
+								<line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
+							</svg>
+						</a>
+					</span>
+				</div>
+				<div class="footer-date">Updated on 2026-08-08 14:08 UTC</div>
+			</div>
+		</footer>
+    </div>
+    
+    <div id="tierModal" class="modal-overlay">
+		<div class="modal-content window-box">
+			<button class="modal-close" aria-label="Close">&times;</button>
+			<div id="modalBody">
+				<div class="modal-image-side">
+					<img id="modalIcon" src="" alt="Tier Icon">
+					<img id="modalCrown" src="" alt="Crown">
+				</div>
+				
+				<div class="modal-text-side">
+					<div class="title-row">
+						<h2 id="modalTitle"></h2>
+						<h3 id="modalElo"></h3>
+					</div>
+					<div id="modalSubtitle"></div>
+					<div class="modal-divider"></div>
+					<div id="modalText"></div>
+					<div id="modalFinal"></div>
+				</div>
+			</div>
+		</div>
+	</div>
+	
+	<div id="mystic-gate"></div>
+
+    <script src="https://code.jquery.com/jquery-3.7.0.min.js"></script>
+    <script src="https://cdn.datatables.net/1.13.6/js/jquery.dataTables.min.js"></script>
+	<script src="https://cdn.datatables.net/responsive/2.5.0/js/dataTables.responsive.min.js"></script>
+    
+    <script>
+		window.PLAYER_PROFILE_MAP = {"mwalt92": "mwalt92", "pwarren8590": "pwarren8590", "batmaster": "batmaster", "bustin": "bustin", "darthpuniceus": "darthpuniceus", "willrevolt": "willrevolt", "pooge": "pooge", "powerful_dragon_23094": "powerful_dragon_23094", "kylobot": "kylobot", "6requiem": "6requiem", "green_flame": "green_flame", "sweenss": "sweenss", "slaith": "slaith", "coola101": "coola101", "idyll": "idyll", "mcauthor": "mcauthor", "jonismiff": "jonismiff", "malefic7m": "malefic7m", "chefboyardee8120": "chefboyardee8120", "dekiru": "dekiru", "simber_2925": "simber_2925", "rabbitwarlord": "rabbitwarlord", "nattykash": "nattykash", "lesslobster": "lesslobster", "thesofly": "thesofly", "jorbbb": "jorbbb", "cosmiccant": "cosmiccant", "rondamgemas": "rondamgemas", "wyvernelement": "wyvernelement", "eulers_fool": "eulers_fool", "g7asan": "g7asan", "nadav253_57576": "nadav253_57576", "clinicalindication": "clinicalindication", "bunniesandcandy": "bunniesandcandy", "kvan": "kvan", "kingluiginl": "kingluiginl", "aedalus": "aedalus", "bw": "bw", "lazarus210": "lazarus210", "chicken_x": "chicken_x", "mentalmendel": "mentalmendel", "gregoola": "gregoola", "commanderasn": "commanderasn", "plegbot": "plegbot", "starhardfishrinse": "starhardfishrinse", "scotchbonnet11": "scotchbonnet11", "jakattak14": "jakattak14", "fraaab": "fraaab", "aaron_dangerman": "aaron_dangerman", "gmoa": "gmoa", "turmoilbyrd": "turmoilbyrd", "smeichel": "smeichel", "mossfusion": "mossfusion", "silver": "silver", "stoneofjas": "stoneofjas", "anokaypotato-4405": "anokaypotato-4405", "zaandaa": "zaandaa", "davee_39": "davee_39", "quents1493": "quents1493", "abbreviatedman": "abbreviatedman", "jalapeno": "jalapeno", "victorvee": "victorvee", "riverman": "riverman", "pokerface126_11986": "pokerface126_11986", "iceecream": "iceecream", "tungsten": "tungsten", "militech2078": "militech2078", "hurple0": "hurple0", "doe": "doe", "lylethebrick": "lylethebrick", "gcoyote": "gcoyote", "sda1611": "sda1611", "rootvietnam": "rootvietnam", "uwtron": "uwtron", "jaredjm41": "jaredjm41", "talleyrand19": "talleyrand19", "lumpyprol": "lumpyprol", "mrdrouf": "mrdrouf", "piechu28": "piechu28", "magiczamboni": "magiczamboni", "benssoon": "benssoon", "trippingrannys": "trippingrannys", "eletto21": "eletto21", "fajfar": "fajfar", "seironed": "seironed", "snculler": "snculler", "beans8201": "beans8201", "meryn": "meryn", "xinoehp512": "xinoehp512", "countthemsheep": "countthemsheep", "punkstarman": "punkstarman", "ashadeferal": "ashadeferal", "salo_solomon": "salo_solomon", "dark_owl": "dark_owl", "extortionator": "extortionator", "stockbot": "stockbot", "darkwonderer": "darkwonderer", "kethem": "kethem"};
+		window.PROFILE_BASE_URL = "https://www.therootdatabase.com/profile";
+	
+		const CONFIG = {
+			colors: {"bear": "#ffffff", "bird": "#7AB5E0", "default": "#7A7347", "fox": "#E55555", "mouse": "#F49E52", "rabbit": "#F2C14E", "squirrel": "#94C160", "stag": "#C686FF", "unassigned": "#E0E0E0"},
+			icons: {"bear": "/rootelo/assets/icons/bear.webp", "bird": "/rootelo/assets/icons/bird.webp", "fox": "/rootelo/assets/icons/fox.webp", "mouse": "/rootelo/assets/icons/mouse.webp", "rabbit": "/rootelo/assets/icons/rabbit.webp", "squirrel": "/rootelo/assets/icons/squirrel.webp", "stag": "/rootelo/assets/icons/stag.webp"},
+			currentTier: "bird",
+			chartData: {},
+			champMatch: null
+		};
+		
+		const TIER_DATA = {
+			'bird': {
+				name: 'Bird',
+				elo: '1500+',
+				subtitle: 'The Grandmasters',
+				desc: 'These elite sovereigns sit at the absolute pinnacle of the Woodland canopy. Remaining on this prestigious throne is a dizzying battle against shifting winds and ambitious rivals. They rule the skies by maintaining flawless execution and unerring control under pressure.'
+			},
+			'fox': {
+				name: 'Fox',
+				elo: '1400+',
+				subtitle: 'The Cunning Tacticians',
+				desc: 'These keen strategists dominate the ladder by thriving on sharp wit over brute force. The hunt presses close from all sides, and a single moment of hesitation can prove fatal. They prevail by measuring every step with care and exploiting weakness with signature flair.'
+			},
+			'rabbit': {
+				name: 'Rabbit',
+				elo: '1300+',
+				subtitle: 'The Agile Contenders',
+				desc: 'These nimble wanderers gracefully weave through the crowded paths of the rankings. Routine strategies falter here, threatening to trap anyone who cannot adapt to sudden chaos. They leap ahead where others see only barriers, turning dead ends into daring escapes.'
+			},
+			'mouse': {
+				name: 'Mouse',
+				elo: '1200+',
+				subtitle: 'The Steady Foragers',
+				desc: 'These resilient souls rise above the casual fray to mark a milestone of mastery. The wild now demands pure stamina, where early momentum easily fades into exhaustion. They hold their ground through quiet consistency, proving that patience outlasts blind luck.'
+			},
+			'squirrel': {
+				name: 'Squirrel',
+				elo: '< 1200',
+				subtitle: 'The Hapless Stragglers',
+				desc: 'These frantic collectors dwell in the tangled undergrowth of the ranking system. Clumsy errors and brutal defeats often force them to fall back while fiercer beasts surge ahead. Yet, they bravely endure by turning every painful lesson into a seed for next season’s harvest.'
+			},
+			'stag': {
+				name: 'Stag',
+				elo: '1600+',
+				subtitle: 'The Legend',
+				desc: 'Has anyone truly seen this mythical beast, or is it only an echo of the wild? What happens to the predator when the woods turn hollow and every path leads back to a mirror of its own perfection? With nothing left to be claimed, is the true crown the silence that follows the chase?'
+			},
+			'bear': {
+				name: 'Bear',
+				elo: CONFIG.champMatch ? CONFIG.champMatch.champion : '',
+				subtitle: CONFIG.champMatch ? `Season ${CONFIG.champMatch.season} Champion` : '',
+				final: CONFIG.champMatch ? `An epic <a href="${CONFIG.champMatch.match_link}" target="_blank" class="cl">final battle</a> pitted the top four titans of the league against each other. On ${CONFIG.champMatch.date}, <strong>${CONFIG.champMatch.champion}</strong> secured the seasonal crown by shutting out the ambitions of <strong>${CONFIG.champMatch.player2}</strong>, <strong>${CONFIG.champMatch.player3}</strong> and <strong>${CONFIG.champMatch.player4}</strong>. Surely, the woodland floor shook from the sheer force of their clash.` : '',
+				crown: 'assets/images/crown.webp'
+			}
+		};
+	</script>
+    <!-- Chemin dynamique pour le Script JS -->
+    <script src="static/script.js"></script>
+    
+
+	<!-- Gestion intelligente de GoatCounter -->
+	<script>
+		if (
+			window.location.hostname === 'localhost' ||
+			window.location.hostname === '127.0.0.1' ||
+			window.location.href.includes('rootelo-dev') ||
+			window.location.pathname.includes('/dev/')
+		) {
+			window.goatcounter = { no_onload: true };
+		}
+	</script>
+	<script data-goatcounter="https://tricholome.goatcounter.com/count"
+            async src="//gc.zgo.at/count.js"></script>
+</body>
+</html>
