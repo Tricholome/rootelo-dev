@@ -773,10 +773,10 @@ table.dataTable.dtr-inline.collapsed > tbody > tr > td.dtr-control:before {
 }
 
 /* Leaderboard Table Specifics */
-tr.unassigned td {
-    opacity: 0.4 !important; 
-    font-style: italic !important; 
-    filter: grayscale(1) !important; 
+.unassigned { 
+    opacity: 0.4; 
+    font-style: italic; 
+    filter: grayscale(1); 
 }
 
 .dt-checkbox-label {
