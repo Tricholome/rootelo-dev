@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-08-08 15:33 UTC",
+  "updated_at": "2026-08-08 15:36 UTC",
   "players": {
     "pokerface126_11986": {
       "elo": 1458,
@@ -16,7 +16,7 @@
       "rank": 1,
       "tier": "fox",
       "bg_color": "#E55555",
-      "icon_url": "https://tricholome.github.ioassets/icons/fox.webp",
+      "icon_url": "https://tricholome.github.io/assets/icons/fox.webp",
       "games": 11,
       "wins": 7.0,
       "win_rate": "63.6%"
@@ -136,7 +136,7 @@
       "rank": 2,
       "tier": "mouse",
       "bg_color": "#F49E52",
-      "icon_url": "https://tricholome.github.ioassets/icons/mouse.webp",
+      "icon_url": "https://tricholome.github.io/assets/icons/mouse.webp",
       "games": 10,
       "wins": 4.0,
       "win_rate": "40.0%"
