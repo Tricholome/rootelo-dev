@@ -535,8 +535,6 @@ nav a.active {
     outline: none;
     cursor: pointer;
     transition: border-color 0.2s, color 0.2s, background-color 0.2s;
-	
-	color-scheme: dark;
     
     appearance: none;
     -webkit-appearance: none;
@@ -555,7 +553,7 @@ nav a.active {
 }
 
 .season-selector select option {
-    background-color: var(--dt-table-bg);
+    background-color: var(--bg-container) !important;
     color: var(--text-main);
     padding: 6px 10px;
 }
