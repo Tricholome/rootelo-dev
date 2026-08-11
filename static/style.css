@@ -552,6 +552,10 @@ nav a.active {
     border-color: var(--main-color);
 }
 
+.season-selector select option {
+    color: var(--text-dark) !important;
+}
+
 /* --- 3.5 Table Filters & Switches --- */
 .unranked-toggle-container {
     display: flex;
