@@ -519,7 +519,46 @@ nav a.active {
     transform: translateY(0);
 }
 
-/* --- 3.4 Table Filters & Switches --- */
+/* --- 3.4 League Selector --- */
+.season-selector select {
+    flex: 1;
+    min-width: 0;
+    box-sizing: border-box;
+    background-color: var(--dt-input-bg);
+    color: var(--text-muted);
+    border: 1px solid var(--border-soft);
+    border-radius: 4px;
+    padding: 6px 28px 6px 12px;
+    font-family: var(--font-ui);
+    font-size: var(--size-sm);
+    font-weight: var(--medium);
+    outline: none;
+    cursor: pointer;
+    transition: border-color 0.2s, color 0.2s, background-color 0.2s;
+    
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    
+    background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 24 24' fill='none' stroke='%23a0a0a0' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'><path d='m6 9 6 6 6-6'/></svg>");
+    background-repeat: no-repeat;
+    background-position: right 10px center;
+}
+
+.season-selector select:hover,
+.season-selector select:focus {
+    color: var(--text-main);
+    background-color: var(--bg-hover);
+    border-color: var(--main-color);
+}
+
+.season-selector select option {
+    background-color: var(--dt-table-bg);
+    color: var(--text-main);
+    padding: 6px 10px;
+}
+
+/* --- 3.5 Table Filters & Switches --- */
 .unranked-toggle-container {
     display: flex;
     align-items: center;
