@@ -552,12 +552,6 @@ nav a.active {
     border-color: var(--main-color);
 }
 
-.season-selector select option {
-    background-color: var(--bg-container) !important;
-    color: var(--text-main);
-    padding: 6px 10px;
-}
-
 /* --- 3.5 Table Filters & Switches --- */
 .unranked-toggle-container {
     display: flex;
