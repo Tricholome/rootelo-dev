@@ -508,7 +508,7 @@
     <table id="matchesTable" class="display responsive nowrap" style="width:100%">
         <thead>
             <tr>
-                <th>Match Group Header</th> <!-- Masqué par JS, sert au regroupement -->
+                <th>Match Group Header</th>
                 <th>Player</th>
                 <th>Start Elo</th>
                 <th>Expected</th>
@@ -9168,22 +9168,6 @@
         </tbody>
     </table>
 
-    <script>
-        $(document).ready(function() {
-            $('#matchesTable').DataTable({
-                pageLength: 25,
-                order: [[0, 'desc']],
-                columnDefs: [
-                    { targets: 0, visible: false } // Masque la colonne de regroupement
-                ],
-                rowGroup: {
-                    dataSrc: 0 // Regroupe par la chaîne du Match ID / Date
-                },
-                responsive: true
-            });
-        });
-    </script>
-
             </main>
 			
 			<div class="footer-table">
@@ -9215,7 +9199,7 @@
 						</a>
 					</span>
 				</div>
-				<div class="footer-date">Updated on 2026-08-12 13:33 UTC</div>
+				<div class="footer-date">Updated on 2026-08-12 13:37 UTC</div>
 			</div>
 		</footer>
     </div>
@@ -9251,7 +9235,7 @@
 	<script src="https://cdn.datatables.net/rowgroup/1.4.0/js/dataTables.rowGroup.min.js"></script>
     
     <script>
-		window.PLAYER_PROFILE_MAP = {"starhardfishrinse": "starhardfishrinse", "idyll": "idyll", "aedalus": "aedalus", "salo_solomon": "salo_solomon", "piechu28": "piechu28", "kethem": "kethem", "g7asan": "g7asan", "uwtron": "uwtron", "victorvee": "victorvee", "benssoon": "benssoon", "bw": "bw", "plegbot": "plegbot", "jalapeno": "jalapeno", "riverman": "riverman", "gcoyote": "gcoyote", "nadav253_57576": "nadav253_57576", "mrdrouf": "mrdrouf", "lazarus210": "lazarus210", "wyvernelement": "wyvernelement", "stockbot": "stockbot", "jaredjm41": "jaredjm41", "cosmiccant": "cosmiccant", "extortionator": "extortionator", "fraaab": "fraaab", "chicken_x": "chicken_x", "kingluiginl": "kingluiginl", "gregoola": "gregoola", "lumpyprol": "lumpyprol", "turmoilbyrd": "turmoilbyrd", "smeichel": "smeichel", "magiczamboni": "magiczamboni", "chefboyardee8120": "chefboyardee8120", "lylethebrick": "lylethebrick", "punkstarman": "punkstarman", "jorbbb": "jorbbb", "darthpuniceus": "darthpuniceus", "nattykash": "nattykash", "beans8201": "beans8201", "iceecream": "iceecream", "trippingrannys": "trippingrannys", "snculler": "snculler", "anokaypotato-4405": "anokaypotato-4405", "sda1611": "sda1611", "gmoa": "gmoa", "rabbitwarlord": "rabbitwarlord", "jakattak14": "jakattak14", "coola101": "coola101", "davee_39": "davee_39", "powerful_dragon_23094": "powerful_dragon_23094", "rootvietnam": "rootvietnam", "talleyrand19": "talleyrand19", "eletto21": "eletto21", "tungsten": "tungsten", "sweenss": "sweenss", "willrevolt": "willrevolt", "6requiem": "6requiem", "militech2078": "militech2078", "abbreviatedman": "abbreviatedman", "eulers_fool": "eulers_fool", "dekiru": "dekiru", "jermcurry": "jermcurry", "countthemsheep": "countthemsheep", "simber_2925": "simber_2925", "bunniesandcandy": "bunniesandcandy", "kylobot": "kylobot", "seironed": "seironed", "pokerface126_11986": "pokerface126_11986", "scotchbonnet11": "scotchbonnet11", "malefic7m": "malefic7m", "zaandaa": "zaandaa", "commanderasn": "commanderasn", "mossfusion": "mossfusion", "mwalt92": "mwalt92", "dark_owl": "dark_owl", "xinoehp512": "xinoehp512", "doe": "doe", "lesslobster": "lesslobster", "fajfar": "fajfar", "mentalmendel": "mentalmendel", "rondamgemas": "rondamgemas", "stoneofjas": "stoneofjas", "quents1493": "quents1493", "mcauthor": "mcauthor", "silver": "silver", "ashadeferal": "ashadeferal", "hurple0": "hurple0", "meryn": "meryn", "batmaster": "batmaster", "pwarren8590": "pwarren8590", "darkwonderer": "darkwonderer", "bustin": "bustin", "aaron_dangerman": "aaron_dangerman", "kvan": "kvan", "jonismiff": "jonismiff", "clinicalindication": "clinicalindication", "slaith": "slaith", "green_flame": "green_flame", "pooge": "pooge", "thesofly": "thesofly"};
+		window.PLAYER_PROFILE_MAP = {"jaredjm41": "jaredjm41", "mrdrouf": "mrdrouf", "hurple0": "hurple0", "pwarren8590": "pwarren8590", "riverman": "riverman", "jonismiff": "jonismiff", "g7asan": "g7asan", "starhardfishrinse": "starhardfishrinse", "green_flame": "green_flame", "piechu28": "piechu28", "doe": "doe", "idyll": "idyll", "gcoyote": "gcoyote", "darthpuniceus": "darthpuniceus", "jalapeno": "jalapeno", "sweenss": "sweenss", "scotchbonnet11": "scotchbonnet11", "eletto21": "eletto21", "gregoola": "gregoola", "bw": "bw", "lesslobster": "lesslobster", "anokaypotato-4405": "anokaypotato-4405", "uwtron": "uwtron", "rabbitwarlord": "rabbitwarlord", "salo_solomon": "salo_solomon", "zaandaa": "zaandaa", "trippingrannys": "trippingrannys", "extortionator": "extortionator", "davee_39": "davee_39", "lazarus210": "lazarus210", "pokerface126_11986": "pokerface126_11986", "bunniesandcandy": "bunniesandcandy", "malefic7m": "malefic7m", "commanderasn": "commanderasn", "chefboyardee8120": "chefboyardee8120", "batmaster": "batmaster", "chicken_x": "chicken_x", "cosmiccant": "cosmiccant", "pooge": "pooge", "fajfar": "fajfar", "snculler": "snculler", "aaron_dangerman": "aaron_dangerman", "clinicalindication": "clinicalindication", "jorbbb": "jorbbb", "kethem": "kethem", "jakattak14": "jakattak14", "mcauthor": "mcauthor", "dark_owl": "dark_owl", "lylethebrick": "lylethebrick", "smeichel": "smeichel", "stockbot": "stockbot", "plegbot": "plegbot", "stoneofjas": "stoneofjas", "slaith": "slaith", "talleyrand19": "talleyrand19", "6requiem": "6requiem", "kingluiginl": "kingluiginl", "wyvernelement": "wyvernelement", "tungsten": "tungsten", "benssoon": "benssoon", "powerful_dragon_23094": "powerful_dragon_23094", "mwalt92": "mwalt92", "dekiru": "dekiru", "ashadeferal": "ashadeferal", "simber_2925": "simber_2925", "xinoehp512": "xinoehp512", "turmoilbyrd": "turmoilbyrd", "nattykash": "nattykash", "iceecream": "iceecream", "quents1493": "quents1493", "jermcurry": "jermcurry", "darkwonderer": "darkwonderer", "magiczamboni": "magiczamboni", "willrevolt": "willrevolt", "lumpyprol": "lumpyprol", "eulers_fool": "eulers_fool", "kylobot": "kylobot", "mossfusion": "mossfusion", "beans8201": "beans8201", "mentalmendel": "mentalmendel", "countthemsheep": "countthemsheep", "gmoa": "gmoa", "militech2078": "militech2078", "punkstarman": "punkstarman", "aedalus": "aedalus", "nadav253_57576": "nadav253_57576", "victorvee": "victorvee", "sda1611": "sda1611", "bustin": "bustin", "abbreviatedman": "abbreviatedman", "silver": "silver", "thesofly": "thesofly", "meryn": "meryn", "kvan": "kvan", "seironed": "seironed", "rootvietnam": "rootvietnam", "fraaab": "fraaab", "coola101": "coola101", "rondamgemas": "rondamgemas"};
 		window.PROFILE_BASE_URL = "https://www.therootdatabase.com/profile";
 
 		const PATH_PREFIX = "../";
