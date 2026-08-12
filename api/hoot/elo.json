@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-08-11 19:37 UTC",
+  "updated_at": "2026-08-12 13:27 UTC",
   "players": {
     "uwtron": {
       "elo": 1372,
@@ -40,6 +40,16 @@
       "games": 11,
       "wins": 6.0,
       "win_rate": "54.5%"
+    },
+    "meryn": {
+      "elo": 1302,
+      "rank": "-",
+      "tier": "unassigned",
+      "bg_color": null,
+      "icon_url": null,
+      "games": 9,
+      "wins": 5.0,
+      "win_rate": "55.6%"
     },
     "lylethebrick": {
       "elo": 1299,
@@ -100,16 +110,6 @@
       "games": 5,
       "wins": 3.0,
       "win_rate": "60.0%"
-    },
-    "meryn": {
-      "elo": 1278,
-      "rank": "-",
-      "tier": "unassigned",
-      "bg_color": null,
-      "icon_url": null,
-      "games": 8,
-      "wins": 4.0,
-      "win_rate": "50.0%"
     },
     "gcoyote": {
       "elo": 1273,
@@ -201,16 +201,6 @@
       "wins": 2.0,
       "win_rate": "40.0%"
     },
-    "jaredjm41": {
-      "elo": 1228,
-      "rank": "-",
-      "tier": "unassigned",
-      "bg_color": null,
-      "icon_url": null,
-      "games": 6,
-      "wins": 2.0,
-      "win_rate": "33.3%"
-    },
     "jakattak14": {
       "elo": 1227,
       "rank": "-",
@@ -241,15 +231,15 @@
       "wins": 2.0,
       "win_rate": "33.3%"
     },
-    "nattykash": {
-      "elo": 1222,
+    "jaredjm41": {
+      "elo": 1219,
       "rank": "-",
       "tier": "unassigned",
       "bg_color": null,
       "icon_url": null,
-      "games": 6,
+      "games": 7,
       "wins": 2.0,
-      "win_rate": "33.3%"
+      "win_rate": "28.6%"
     },
     "talleyrand19": {
       "elo": 1215,
@@ -270,6 +260,16 @@
       "games": 3,
       "wins": 1.0,
       "win_rate": "33.3%"
+    },
+    "nattykash": {
+      "elo": 1213,
+      "rank": "-",
+      "tier": "unassigned",
+      "bg_color": null,
+      "icon_url": null,
+      "games": 7,
+      "wins": 2.0,
+      "win_rate": "28.6%"
     },
     "lesslobster": {
       "elo": 1211,
@@ -671,6 +671,16 @@
       "wins": 0.0,
       "win_rate": "0.0%"
     },
+    "mwalt92": {
+      "elo": 1167,
+      "rank": "-",
+      "tier": "unassigned",
+      "bg_color": null,
+      "icon_url": null,
+      "games": 3,
+      "wins": 0.0,
+      "win_rate": "0.0%"
+    },
     "magiczamboni": {
       "elo": 1167,
       "rank": "-",
@@ -682,16 +692,6 @@
       "win_rate": "0.0%"
     },
     "jonismiff": {
-      "elo": 1167,
-      "rank": "-",
-      "tier": "unassigned",
-      "bg_color": null,
-      "icon_url": null,
-      "games": 3,
-      "wins": 0.0,
-      "win_rate": "0.0%"
-    },
-    "mwalt92": {
       "elo": 1167,
       "rank": "-",
       "tier": "unassigned",
@@ -891,16 +891,6 @@
       "wins": 0.0,
       "win_rate": "0.0%"
     },
-    "stoneofjas": {
-      "elo": 1161,
-      "rank": "-",
-      "tier": "unassigned",
-      "bg_color": null,
-      "icon_url": null,
-      "games": 4,
-      "wins": 0.0,
-      "win_rate": "0.0%"
-    },
     "pooge": {
       "elo": 1155,
       "rank": "-",
@@ -910,6 +900,16 @@
       "games": 8,
       "wins": 1.0,
       "win_rate": "12.5%"
+    },
+    "stoneofjas": {
+      "elo": 1153,
+      "rank": "-",
+      "tier": "unassigned",
+      "bg_color": null,
+      "icon_url": null,
+      "games": 5,
+      "wins": 0.0,
+      "win_rate": "0.0%"
     },
     "malefic7m": {
       "elo": 1153,
