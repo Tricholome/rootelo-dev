@@ -249,19 +249,20 @@ $(document).ready(function() {
 	// --- 2. MATCHES ---
 	if ($('#matchesTable').length > 0) {
 		$('#matchesTable').DataTable({
-			"order": [[1, "desc"]], 
+			"order": [[0, "desc"]], 
 			"responsive": true,
 			"pageLength": 50,
 			"dom": 'rt<"bottom"p><"clear">',
 			"columnDefs": [
-				{ "className": "rank-cell", "targets": 0 },
-				{ "className": "elo-sum-cell", "targets": 1 },
-				{ "className": "date-cell", "targets": 2 },
-				{ "className": "numeric-cell", "targets": [0, 1, 2, 4] },
-				{ "responsivePriority": 1, "targets": [1, 3] },
-				{ "responsivePriority": 2, "targets": [0, 2] },
-				{ "responsivePriority": 3, "targets": 4 }
-			]
+				{ "targets": 0, "visible": false }, // Masque la colonne de texte du groupe
+				{ "className": "player-name-cell", "targets": 1 },
+				{ "className": "numeric-cell", "targets": [2, 3, 4, 5] },
+				{ "responsivePriority": 1, "targets": [1, 5] },
+				{ "responsivePriority": 2, "targets": 6 }
+			],
+			"rowGroup": {
+				"dataSrc": 0 // Active le regroupement par le Match ID / Date
+			}
 		});
 	}
 
