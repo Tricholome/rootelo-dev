@@ -1000,6 +1000,7 @@ table.dataTable.dtr-inline.collapsed > tbody > tr > td.dtr-control:before {
 /* Simulator Table Specifics */
 table.dataTable tbody tr.loser td {
     color: var(--text-muted);
+	opacity: 0.6;
     font-style: italic;
 }
 
