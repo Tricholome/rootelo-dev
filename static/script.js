@@ -264,8 +264,20 @@ $(document).ready(function() {
 			]
 		});
 	}
+	
+	// --- 3. SIMULATOR ---
+	if ($('#simTable').length > 0) {
+		$('#simTable').DataTable({
+			"paging": false,
+			"searching": false,
+			"info": false,
+			"ordering": false,
+			"responsive": true,
+			"dom": 'rt'
+		});
+	}
 
-    // --- 3. HALL OF FAME ---
+    // --- 4. HALL OF FAME ---
 	if ($('#hall_of_fame').length > 0) {
 		$('#hall_of_fame').DataTable({
 			"responsive": true,
@@ -288,7 +300,7 @@ $(document).ready(function() {
 		});
 	}
 	
-	// --- 4. VISITOR TABLE ---
+	// --- 5. VISITOR TABLE ---
 	if ($('#visitor_table').length > 0) {
 		$('#visitor_table').DataTable({
 			"responsive": true,
@@ -303,7 +315,7 @@ $(document).ready(function() {
 		});
 	}
 	
-	// --- 5. GLOBAL FIX FOR ORIENTATION & RESIZE ---
+	// --- 6. GLOBAL FIX FOR ORIENTATION & RESIZE ---
     window.addEventListener('resize', () => {
         $('.dataTable').each(function() {
             if ($.fn.dataTable.isDataTable(this)) {
@@ -710,6 +722,97 @@ $(document).ready(function() {
     } else {
         applyGlobalSearch("");
     }
+});
+
+/* =========================================================================
+   --- 9. MATCH SIMULATOR ENGINE ---
+   ========================================================================= */
+
+$(document).ready(function() {
+    if ($('#simTable').length === 0) return;
+
+    // Récupération du mapping envoyé par Python
+    const playerData = window.PLAYER_DATA_MAP || {};
+
+    // 1. Remplissage automatique des champs Elo & Games lors de la saisie d'un nom
+    $(document).on('input change', '.sim-p-name', function() {
+        const row = $(this).closest('tr');
+        const typedName = $(this).val().trim();
+        
+        const matchedKey = Object.keys(playerData).find(
+            key => key.toLowerCase() === typedName.toLowerCase()
+        );
+
+        if (matchedKey) {
+            const info = playerData[matchedKey];
+            row.find('.sim-p-elo').val(info.elo);
+            row.find('.sim-p-games').val(info.games);
+        }
+    });
+
+    // 2. Calcul du K-Factor selon le nombre de parties
+    function getKFactor(games) {
+        if (games < 10) return 60; // Joueur en placement / provisoire
+        return 32;                 // K standard
+    }
+
+    // 3. Calcul de la simulation Elo (Pairwise 4-player model)
+    function runSimulation() {
+        const rows = $('#simTable tbody tr.sim-row');
+        const players = [];
+
+        // Extraire les données des 4 lignes
+        rows.each(function(index) {
+            const name = $(this).find('.sim-p-name').val().trim() || `Player ${index + 1}`;
+            const elo = parseFloat($(this).find('.sim-p-elo').val()) || 1200;
+            const games = parseInt($(this).find('.sim-p-games').val(), 10) || 0;
+            const kFactor = getKFactor(games);
+
+            players.push({
+                row: $(this),
+                name: name,
+                elo: elo,
+                games: games,
+                kFactor: kFactor,
+                actualScore: index === 0 ? 1 : 0 // Index 0 = Joueur 1 (Vainqueur)
+            });
+        });
+
+        const n = players.length;
+
+        // Calcul de la probabilité de victoire attendue (E_i)
+        players.forEach((p, i) => {
+            let expSum = 0;
+            players.forEach((opp, j) => {
+                if (i !== j) {
+                    expSum += 1 / (1 + Math.pow(10, (opp.elo - p.elo) / 400));
+                }
+            });
+            p.expectedScore = expSum / (n - 1);
+        });
+
+        // Mise à jour de l'affichage dans le tableau
+        players.forEach((p) => {
+            const delta = Math.round(p.kFactor * (p.actualScore - p.expectedScore));
+            const newElo = Math.round(p.elo + delta);
+
+            p.row.find('.res-k-factor').text(p.kFactor);
+            p.row.find('.res-prob').text((p.expectedScore * 100).toFixed(1) + '%');
+            
+            const deltaCell = p.row.find('.res-delta');
+            const deltaText = (delta >= 0 ? '+' : '') + delta;
+            deltaCell.text(deltaText);
+            deltaCell.css('color', delta >= 0 ? '#4E9F3D' : '#D9534F');
+
+            p.row.find('.res-new-elo').text(newElo);
+        });
+    }
+
+    // Déclenchement au clic sur le bouton
+    $('#btnRunSimulation').on('click', runSimulation);
+
+    // Calcul initial automatique au chargement
+    runSimulation();
 });
 
 
