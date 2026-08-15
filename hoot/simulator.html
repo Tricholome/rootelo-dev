@@ -266,78 +266,80 @@
         <p>Select four league players to simulate a match. <strong>Player 1</strong> is designated as the table winner. Adjust any values to test theoretical Elo shifts.</p>
     </div>
 
-    <div class="sim-table-wrapper window-box">
-        <table class="sim-table">
-            <thead>
-                <tr>
-                    <th>Role</th>
-                    <th>Player Name</th>
-                    <th>Initial Elo</th>
-                    <th>Games ($N$)</th>
-                    <th>K-Factor</th>
-                    <th>Win Prob. ($E_i$)</th>
-                    <th>Change ($\Delta R$)</th>
-                    <th>New Elo</th>
-                </tr>
-            </thead>
-            <tbody>
-                <!-- Player 1: Winner -->
-                <tr class="sim-row winner-row" data-slot="1">
-                    <td class="role-cell"><span class="badge winner-badge">🏆 Winner</span></td>
-                    <td>
-                        <input type="text" class="sim-p-name" list="playerAutocompleteList" placeholder="Search player..." autocomplete="off">
-                    </td>
-                    <td><input type="number" class="sim-p-elo" value="1200" step="1"></td>
-                    <td><input type="number" class="sim-p-games" value="0" min="0" step="1"></td>
-                    <td class="res-k-factor">-</td>
-                    <td class="res-prob">-</td>
-                    <td class="res-delta">-</td>
-                    <td class="res-new-elo">-</td>
-                </tr>
+    <div class="sim-table-container window-box">
+        <div class="table-responsive">
+            <table id="simTable" class="display styled-table" style="width:100%">
+                <thead>
+                    <tr>
+                        <th>Role</th>
+                        <th>Player Name</th>
+                        <th>Initial Elo</th>
+                        <th>Games ($N$)</th>
+                        <th>K-Factor</th>
+                        <th>Win Prob. ($E_i$)</th>
+                        <th>Change ($\Delta R$)</th>
+                        <th>New Elo</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <!-- Player 1: Winner -->
+                    <tr class="sim-row winner-row" data-slot="1">
+                        <td class="role-cell"><span class="badge winner-badge">🏆 Winner</span></td>
+                        <td>
+                            <input type="text" class="sim-p-name" list="playerAutocompleteList" placeholder="Search player..." autocomplete="off">
+                        </td>
+                        <td><input type="number" class="sim-p-elo" value="1200" step="1"></td>
+                        <td><input type="number" class="sim-p-games" value="0" min="0" step="1"></td>
+                        <td class="res-k-factor">-</td>
+                        <td class="res-prob">-</td>
+                        <td class="res-delta">-</td>
+                        <td class="res-new-elo">-</td>
+                    </tr>
 
-                <!-- Players 2 to 4: Losers -->
-                
-                <tr class="sim-row loser-row" data-slot="2">
-                    <td class="role-cell"><span class="badge loser-badge">❌ Player 2</span></td>
-                    <td>
-                        <input type="text" class="sim-p-name" list="playerAutocompleteList" placeholder="Search player..." autocomplete="off">
-                    </td>
-                    <td><input type="number" class="sim-p-elo" value="1200" step="1"></td>
-                    <td><input type="number" class="sim-p-games" value="0" min="0" step="1"></td>
-                    <td class="res-k-factor">-</td>
-                    <td class="res-prob">-</td>
-                    <td class="res-delta">-</td>
-                    <td class="res-new-elo">-</td>
-                </tr>
-                
-                <tr class="sim-row loser-row" data-slot="3">
-                    <td class="role-cell"><span class="badge loser-badge">❌ Player 3</span></td>
-                    <td>
-                        <input type="text" class="sim-p-name" list="playerAutocompleteList" placeholder="Search player..." autocomplete="off">
-                    </td>
-                    <td><input type="number" class="sim-p-elo" value="1200" step="1"></td>
-                    <td><input type="number" class="sim-p-games" value="0" min="0" step="1"></td>
-                    <td class="res-k-factor">-</td>
-                    <td class="res-prob">-</td>
-                    <td class="res-delta">-</td>
-                    <td class="res-new-elo">-</td>
-                </tr>
-                
-                <tr class="sim-row loser-row" data-slot="4">
-                    <td class="role-cell"><span class="badge loser-badge">❌ Player 4</span></td>
-                    <td>
-                        <input type="text" class="sim-p-name" list="playerAutocompleteList" placeholder="Search player..." autocomplete="off">
-                    </td>
-                    <td><input type="number" class="sim-p-elo" value="1200" step="1"></td>
-                    <td><input type="number" class="sim-p-games" value="0" min="0" step="1"></td>
-                    <td class="res-k-factor">-</td>
-                    <td class="res-prob">-</td>
-                    <td class="res-delta">-</td>
-                    <td class="res-new-elo">-</td>
-                </tr>
-                
-            </tbody>
-        </table>
+                    <!-- Players 2 to 4: Losers -->
+                    
+                    <tr class="sim-row loser-row" data-slot="2">
+                        <td class="role-cell"><span class="badge loser-badge">❌ Player 2</span></td>
+                        <td>
+                            <input type="text" class="sim-p-name" list="playerAutocompleteList" placeholder="Search player..." autocomplete="off">
+                        </td>
+                        <td><input type="number" class="sim-p-elo" value="1200" step="1"></td>
+                        <td><input type="number" class="sim-p-games" value="0" min="0" step="1"></td>
+                        <td class="res-k-factor">-</td>
+                        <td class="res-prob">-</td>
+                        <td class="res-delta">-</td>
+                        <td class="res-new-elo">-</td>
+                    </tr>
+                    
+                    <tr class="sim-row loser-row" data-slot="3">
+                        <td class="role-cell"><span class="badge loser-badge">❌ Player 3</span></td>
+                        <td>
+                            <input type="text" class="sim-p-name" list="playerAutocompleteList" placeholder="Search player..." autocomplete="off">
+                        </td>
+                        <td><input type="number" class="sim-p-elo" value="1200" step="1"></td>
+                        <td><input type="number" class="sim-p-games" value="0" min="0" step="1"></td>
+                        <td class="res-k-factor">-</td>
+                        <td class="res-prob">-</td>
+                        <td class="res-delta">-</td>
+                        <td class="res-new-elo">-</td>
+                    </tr>
+                    
+                    <tr class="sim-row loser-row" data-slot="4">
+                        <td class="role-cell"><span class="badge loser-badge">❌ Player 4</span></td>
+                        <td>
+                            <input type="text" class="sim-p-name" list="playerAutocompleteList" placeholder="Search player..." autocomplete="off">
+                        </td>
+                        <td><input type="number" class="sim-p-elo" value="1200" step="1"></td>
+                        <td><input type="number" class="sim-p-games" value="0" min="0" step="1"></td>
+                        <td class="res-k-factor">-</td>
+                        <td class="res-prob">-</td>
+                        <td class="res-delta">-</td>
+                        <td class="res-new-elo">-</td>
+                    </tr>
+                    
+                </tbody>
+            </table>
+        </div>
 
         <div class="sim-actions">
             <button id="btnRunSimulation" class="sim-submit-btn">Simulate Match</button>
@@ -374,7 +376,7 @@
 						</a>
 					</span>
 				</div>
-				<div class="footer-date">Updated on 2026-08-15 10:26 UTC</div>
+				<div class="footer-date">Updated on 2026-08-15 10:32 UTC</div>
 			</div>
 		</footer>
     </div>
@@ -409,7 +411,7 @@
 	<script src="https://cdn.datatables.net/responsive/2.5.0/js/dataTables.responsive.min.js"></script>
     
     <script>
-		window.PLAYER_PROFILE_MAP = {"gregoola": "gregoola", "clinicalindication": "clinicalindication", "xinoehp512": "xinoehp512", "ashadeferal": "ashadeferal", "starhardfishrinse": "starhardfishrinse", "nadav253_57576": "nadav253_57576", "victorvee": "victorvee", "coola101": "coola101", "slaith": "slaith", "mentalmendel": "mentalmendel", "mrdrouf": "mrdrouf", "wyvernelement": "wyvernelement", "cosmiccant": "cosmiccant", "green_flame": "green_flame", "pooge": "pooge", "aeliott": "aeliott", "plegbot": "plegbot", "dekiru": "dekiru", "nattykash": "nattykash", "stoneofjas": "stoneofjas", "kylobot": "kylobot", "abbreviatedman": "abbreviatedman", "mwalt92": "mwalt92", "tungsten": "tungsten", "bunniesandcandy": "bunniesandcandy", "simber_2925": "simber_2925", "zaandaa": "zaandaa", "doe": "doe", "snculler": "snculler", "chicken_x": "chicken_x", "darthpuniceus": "darthpuniceus", "kvan": "kvan", "rabbitwarlord": "rabbitwarlord", "lesslobster": "lesslobster", "countthemsheep": "countthemsheep", "jermcurry": "jermcurry", "commanderasn": "commanderasn", "jalapeno": "jalapeno", "bw": "bw", "chefboyardee8120": "chefboyardee8120", "benssoon": "benssoon", "militech2078": "militech2078", "nvt2508_78037": "nvt2508_78037", "smeichel": "smeichel", "turmoilbyrd": "turmoilbyrd", "magiczamboni": "magiczamboni", "dark_owl": "dark_owl", "rho_sternjaeger": "rho_sternjaeger", "pwarren8590": "pwarren8590", "mossfusion": "mossfusion", "aaron_dangerman": "aaron_dangerman", "6requiem": "6requiem", "fajfar": "fajfar", "sweenss": "sweenss", "bustin": "bustin", "rondamgemas": "rondamgemas", "meryn": "meryn", "trippingrannys": "trippingrannys", "riverman": "riverman", "jorbbb": "jorbbb", "jakattak14": "jakattak14", "quents1493": "quents1493", "eletto21": "eletto21", "salo_solomon": "salo_solomon", "darkwonderer": "darkwonderer", "thesofly": "thesofly", "lumpyprol": "lumpyprol", "lylethebrick": "lylethebrick", "mcauthor": "mcauthor", "hurple0": "hurple0", "uwtron": "uwtron", "fraaab": "fraaab", "silver": "silver", "kingluiginl": "kingluiginl", "piechu28": "piechu28", "gmoa": "gmoa", "idyll": "idyll", "iceecream": "iceecream", "extortionator": "extortionator", "kethem": "kethem", "malefic7m": "malefic7m", "batmaster": "batmaster", "lazarus210": "lazarus210", "beans8201": "beans8201", "talleyrand19": "talleyrand19", "gcoyote": "gcoyote", "sda1611": "sda1611", "scotchbonnet11": "scotchbonnet11", "eulers_fool": "eulers_fool", "seironed": "seironed", "jaredjm41": "jaredjm41", "rootvietnam": "rootvietnam", "g7asan": "g7asan", "anokaypotato-4405": "anokaypotato-4405", "jonismiff": "jonismiff", "powerful_dragon_23094": "powerful_dragon_23094", "willrevolt": "willrevolt", "pokerface126_11986": "pokerface126_11986", "aedalus": "aedalus", "stockbot": "stockbot", "davee_39": "davee_39", "punkstarman": "punkstarman"};
+		window.PLAYER_PROFILE_MAP = {"aaron_dangerman": "aaron_dangerman", "hurple0": "hurple0", "jalapeno": "jalapeno", "bunniesandcandy": "bunniesandcandy", "benssoon": "benssoon", "lazarus210": "lazarus210", "kvan": "kvan", "mossfusion": "mossfusion", "doe": "doe", "stockbot": "stockbot", "victorvee": "victorvee", "extortionator": "extortionator", "chefboyardee8120": "chefboyardee8120", "magiczamboni": "magiczamboni", "talleyrand19": "talleyrand19", "rho_sternjaeger": "rho_sternjaeger", "nadav253_57576": "nadav253_57576", "darthpuniceus": "darthpuniceus", "aedalus": "aedalus", "trippingrannys": "trippingrannys", "jaredjm41": "jaredjm41", "commanderasn": "commanderasn", "dekiru": "dekiru", "nvt2508_78037": "nvt2508_78037", "anokaypotato-4405": "anokaypotato-4405", "scotchbonnet11": "scotchbonnet11", "eletto21": "eletto21", "jorbbb": "jorbbb", "wyvernelement": "wyvernelement", "salo_solomon": "salo_solomon", "pokerface126_11986": "pokerface126_11986", "bustin": "bustin", "kylobot": "kylobot", "powerful_dragon_23094": "powerful_dragon_23094", "gcoyote": "gcoyote", "cosmiccant": "cosmiccant", "mentalmendel": "mentalmendel", "smeichel": "smeichel", "slaith": "slaith", "g7asan": "g7asan", "lesslobster": "lesslobster", "rabbitwarlord": "rabbitwarlord", "darkwonderer": "darkwonderer", "gmoa": "gmoa", "nattykash": "nattykash", "dark_owl": "dark_owl", "jonismiff": "jonismiff", "countthemsheep": "countthemsheep", "mcauthor": "mcauthor", "coola101": "coola101", "pwarren8590": "pwarren8590", "silver": "silver", "malefic7m": "malefic7m", "thesofly": "thesofly", "zaandaa": "zaandaa", "rondamgemas": "rondamgemas", "clinicalindication": "clinicalindication", "snculler": "snculler", "jermcurry": "jermcurry", "tungsten": "tungsten", "willrevolt": "willrevolt", "pooge": "pooge", "punkstarman": "punkstarman", "lylethebrick": "lylethebrick", "aeliott": "aeliott", "kingluiginl": "kingluiginl", "sda1611": "sda1611", "abbreviatedman": "abbreviatedman", "sweenss": "sweenss", "simber_2925": "simber_2925", "chicken_x": "chicken_x", "piechu28": "piechu28", "ashadeferal": "ashadeferal", "mwalt92": "mwalt92", "batmaster": "batmaster", "rootvietnam": "rootvietnam", "idyll": "idyll", "meryn": "meryn", "quents1493": "quents1493", "eulers_fool": "eulers_fool", "kethem": "kethem", "fajfar": "fajfar", "militech2078": "militech2078", "davee_39": "davee_39", "xinoehp512": "xinoehp512", "starhardfishrinse": "starhardfishrinse", "mrdrouf": "mrdrouf", "seironed": "seironed", "6requiem": "6requiem", "beans8201": "beans8201", "bw": "bw", "riverman": "riverman", "uwtron": "uwtron", "stoneofjas": "stoneofjas", "jakattak14": "jakattak14", "iceecream": "iceecream", "plegbot": "plegbot", "lumpyprol": "lumpyprol", "fraaab": "fraaab", "green_flame": "green_flame", "gregoola": "gregoola", "turmoilbyrd": "turmoilbyrd"};
 		window.PROFILE_BASE_URL = "https://www.therootdatabase.com/profile";
 
 		const PATH_PREFIX = "../";
