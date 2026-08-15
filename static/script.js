@@ -720,6 +720,20 @@ $(document).ready(function() {
 $(document).ready(function() {
     if ($('#simTable').length === 0 || $('#simResultTable').length === 0) return;
 
+    // 1. Validation stricte de la configuration K-Factor
+    const REQUIRED_K_KEYS = ['k_floor', 'k_start', 'exp_decay', 'k_cap_ranked', 'k_cap_new'];
+    const kConfig = window.K_CONFIG || {};
+
+    const isConfigValid = REQUIRED_K_KEYS.every(
+        key => key in kConfig && kConfig[key] !== null && kConfig[key] !== undefined && kConfig[key] !== ''
+    );
+
+    if (!isConfigValid) {
+        console.warn("Simulateur désactivé : Clés K_CONFIG manquantes dans league.json", kConfig);
+        $('#simTable, #simResultTable, #btnRunSimulation').hide();
+        return; // Interrompt complètement le script
+    }
+
     const playerData = window.PLAYER_DATA_MAP || {};
 
     const simResultTable = $('#simResultTable').DataTable({
@@ -734,7 +748,18 @@ $(document).ready(function() {
         ]
     });
 
-    // 1. Auto-complétion des informations du joueur
+    // 2. Calcul du K-Factor (Garantie sans aucune valeur par défaut hard-codée)
+    function calculateKFactor(gamesCount, isRanked) {
+        const kFloor = parseFloat(kConfig.k_floor);
+        const kStart = parseFloat(kConfig.k_start);
+        const expDecay = parseFloat(kConfig.exp_decay);
+        const kCap = parseFloat(kConfig[isRanked ? 'k_cap_ranked' : 'k_cap_new']);
+
+        const kBase = kFloor + (kStart - kFloor) * Math.exp(-gamesCount / expDecay);
+        return Math.min(kCap, kBase);
+    }
+
+    // 3. Auto-complétion des joueurs
     $(document).on('input change', '.sim-p-name', function() {
         const row = $(this).closest('tr');
         const typedName = $(this).val().trim();
@@ -754,22 +779,7 @@ $(document).ready(function() {
         runSimulation();
     });
 
-    // 2. Calcul du K-Factor dynamique selon la configuration de la ligue
-    function calculateKFactor(gamesCount, isRanked) {
-        const kConfig = window.K_CONFIG || (window.LEAGUE_CONFIG && window.LEAGUE_CONFIG.k_factor) || {};
-
-        const kFloor = parseFloat(kConfig.k_floor ?? 20.0);
-        const kStart = parseFloat(kConfig.k_start ?? 50.0);
-        const expDecay = parseFloat(kConfig.exp_decay ?? 10.0);
-        
-        const kCapKey = isRanked ? 'k_cap_ranked' : 'k_cap_new';
-        const kCap = parseFloat(kConfig[kCapKey] ?? 50.0);
-
-        const kBase = kFloor + (kStart - kFloor) * Math.exp(-gamesCount / expDecay);
-        return Math.min(kCap, kBase);
-    }
-
-    // 3. Moteur de simulation
+    // 4. Moteur de simulation
     function runSimulation() {
         const rows = $('#simTable tbody tr');
         const players = [];
@@ -786,17 +796,15 @@ $(document).ready(function() {
                 elo: elo,
                 games: games,
                 isRanked: isRanked,
-                actualScore: (index === 0) ? 1.0 : 0.0 // Index 0 = Vainqueur
+                actualScore: (index === 0) ? 1.0 : 0.0
             });
         });
 
         if (players.length === 0) return;
 
-        // Calcul q_scores & total_q (Score attendu)
         const qScores = players.map(p => Math.pow(10, p.elo / 400));
         const totalQ = qScores.reduce((sum, q) => sum + q, 0);
 
-        // Construction du rendu pour DataTables
         const formattedData = players.map((p, i) => {
             const expected = totalQ > 0 ? (qScores[i] / totalQ) : (1 / players.length);
             const k = calculateKFactor(p.games, p.isRanked);
