@@ -955,6 +955,11 @@ table.dataTable.dtr-inline.collapsed > tbody > tr > td.dtr-control:before {
     white-space: nowrap !important; 
 }
 
+/* Simulator Table Specifics */
+table.dataTable tbody tr.loser td {
+    color: var(--text-muted) !important;
+}
+
 /* Responsive Table Adjustments */
 .hide-mobile { display: inline; }
 
