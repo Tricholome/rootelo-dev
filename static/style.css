@@ -706,10 +706,7 @@ nav a.active {
    ------------------------------------------------------------------------- */
 
 /* --- A. Generic Inputs & Textareas --- */
-.input,
-.search-box input,
-#visitor-name,
-.season-selector select {
+.input {
     background: var(--dt-input-bg) !important;
     color: var(--text-main) !important;
     border: 1px solid var(--border-soft) !important;
@@ -722,27 +719,20 @@ nav a.active {
     box-sizing: border-box;
 }
 
-.input:focus,
-.search-box input:focus,
-#visitor-name:focus,
-.season-selector select:focus {
+.input:focus {
     border-color: var(--main-color) !important;
     background: var(--dt-row-hover) !important;
 }
 
 /* --- B. Generic Checkboxes --- */
-.checkbox,
-.unranked-toggle-container input[type="checkbox"],
-.dt-checkbox-label input[type="checkbox"] {
+.checkbox {
     cursor: pointer;
     margin: 0 6px 0 0;
     accent-color: var(--main-color);
     vertical-align: middle;
 }
 
-.checkbox-label,
-.dt-checkbox-label,
-.unranked-toggle-container label {
+.checkbox-label {
     cursor: pointer;
     user-select: none;
     font-size: var(--size-sm);
@@ -753,16 +743,12 @@ nav a.active {
     transition: color 0.2s;
 }
 
-.checkbox-label:hover,
-.dt-checkbox-label:hover,
-.unranked-toggle-container label:hover {
+.checkbox-label:hover {
     color: var(--text-main);
 }
 
 /* --- C. Generic Buttons --- */
-.btn,
-.season-btn,
-.secret-btn {
+.btn {
     display: inline-flex;
     align-items: center;
     justify-content: center;
@@ -781,16 +767,13 @@ nav a.active {
     text-align: center;
 }
 
-.btn:hover,
-.season-btn:hover,
-.secret-btn:hover {
+.btn:hover {
     color: var(--text-main);
     background: var(--bg-hover);
     border-color: var(--main-color);
 }
 
-.btn.active,
-.season-btn.active {
+.btn.active {
     background: transparent !important;
     color: var(--main-color) !important;
     border-color: var(--main-color) !important;
