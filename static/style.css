@@ -728,12 +728,15 @@ input[type="number"]::-webkit-inner-spin-button,
 input[type="number"]::-webkit-outer-spin-button {
     -webkit-appearance: none;
     appearance: none;
-    width: 14px;
-    height: 22px;
-    background: url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxMCIgaGVpZ2h0PSIxNCIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIiBzdHJva2U9IiNhMGEwYTAiIHN0cm9rZS13aWR0aD0iMi41IiBzdHJva2UtbGluZWNhcD0icm91bmQiIHN0cm9rZS1saW5lam9pbj0icm91bmQiPjxwYXRoIGQ9Im03IDkgNS01IDUgNSIvPjxwYXRoIGQ9Im03IDE1IDUgNSA1LTUiLz48L3N2Zz4=') no-repeat center center;
-    opacity: 0.5;
+    width: 20px;
+    height: 100%;
+    background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="24" viewBox="0 0 16 24" fill="none" stroke="%23c3bbb0" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9.5l5-5 5 5"/><path d="M3 14.5l5 5 5-5"/></svg>');
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: 14px 22px;
+    opacity: 0.75;
     cursor: pointer;
-    margin-left: 4px;
+    margin-left: 6px;
     transition: opacity 0.2s ease;
 }
 
