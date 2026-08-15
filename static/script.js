@@ -720,7 +720,7 @@ $(document).ready(function() {
 $(document).ready(function() {
     if ($('#simTable').length === 0 || $('#simResultTable').length === 0) return;
 
-    // 1. Validation stricte de la configuration K-Factor
+    // 1. Validation de la configuration K-Factor
     const REQUIRED_K_KEYS = ['k_floor', 'k_start', 'exp_decay', 'k_cap_ranked', 'k_cap_new'];
     const kConfig = window.K_CONFIG || {};
 
@@ -759,7 +759,19 @@ $(document).ready(function() {
         return Math.min(kCap, kBase);
     }
 
-    // 3. Auto-remplissage des champs à la saisie / sélection d'un joueur
+    // 3. Gestion des Toggles Gagnants (Limite max à 2)
+    $(document).on('change', '.sim-winner-toggle', function() {
+        const checkedToggles = $('.sim-winner-toggle:checked');
+        
+        if (checkedToggles.length > 2) {
+            $(this).prop('checked', false); // Annule le 3ème coché
+            return;
+        }
+        
+        runSimulation();
+    });
+
+    // 4. Auto-remplissage des stats du joueur
     $(document).on('input change', '.sim-p-name', function() {
         const row = $(this).closest('tr');
         const typedName = $(this).val().trim();
@@ -779,13 +791,18 @@ $(document).ready(function() {
         runSimulation();
     });
 
-    // 4. Moteur de calcul
+    // 5. Moteur de simulation
     function runSimulation() {
         const rows = $('#simTable tbody tr');
         const players = [];
 
+        // Compte des vainqueurs pour calculer la part de victoire (1.0 solo, 0.5 coalition)
+        const winnerCount = $('.sim-winner-toggle:checked').length;
+        const scorePerWinner = winnerCount > 0 ? (1.0 / winnerCount) : 0.0;
+
         rows.each(function(index) {
             const row = $(this);
+            const isWinner = row.find('.sim-winner-toggle').is(':checked');
             const name = row.find('.sim-p-name').val().trim() || `Player ${index + 1}`;
             const elo = parseFloat(row.find('.sim-p-elo').val()) || 1200;
             const games = parseInt(row.find('.sim-p-games').val(), 10) || 0;
@@ -796,7 +813,7 @@ $(document).ready(function() {
                 elo: elo,
                 games: games,
                 isRanked: isRanked,
-                actualScore: (index === 0) ? 1.0 : 0.0
+                actualScore: isWinner ? scorePerWinner : 0.0
             });
         });
 
