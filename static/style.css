@@ -724,17 +724,16 @@ nav a.active {
     background: var(--dt-row-hover) !important;
 }
 
+input[type="number"] {
+    color-scheme: dark;
+}
+
 input[type="number"]::-webkit-inner-spin-button,
 input[type="number"]::-webkit-outer-spin-button {
-    -webkit-appearance: none;
-    margin: 0;
-    width: 16px;
-    height: 100%;
-    opacity: 0.5;
+    filter: invert(0.85);
+    opacity: 0.6;
     cursor: pointer;
-    background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='10' height='14' viewBox='0 0 24 24' fill='none' stroke='%23a0a0a0' stroke-width='2.5' stroke-linecap='round' stroke-linejoin='round'><path d='m7 9 5-5 5 5'/><path d='m7 15 5 5 5-5'/></svg>");
-    background-repeat: no-repeat;
-    background-position: center;
+    margin-left: 4px;
     transition: opacity 0.2s;
 }
 
@@ -1000,8 +999,7 @@ table.dataTable.dtr-inline.collapsed > tbody > tr > td.dtr-control:before {
 /* Simulator Table Specifics */
 table.dataTable tbody tr.loser td {
     color: var(--text-muted);
-	opacity: 0.6;
-    font-style: italic;
+	opacity: 0.8;
 }
 
 .sim-tier-cell {
