@@ -731,10 +731,9 @@ $(document).ready(function() {
 $(document).ready(function() {
     if ($('#simTable').length === 0) return;
 
-    // Récupération du mapping envoyé par Python
     const playerData = window.PLAYER_DATA_MAP || {};
 
-    // 1. Remplissage automatique des champs Elo & Games lors de la saisie d'un nom
+    // 1. Remplissage automatique lors de la saisie d'un nom
     $(document).on('input change', '.sim-p-name', function() {
         const row = $(this).closest('tr');
         const typedName = $(this).val().trim();
@@ -750,37 +749,52 @@ $(document).ready(function() {
         }
     });
 
-    // 2. Calcul du K-Factor selon le nombre de parties
+    // 2. Calcul du K-Factor
     function getKFactor(games) {
-        if (games < 10) return 60; // Joueur en placement / provisoire
-        return 32;                 // K standard
+        if (games < 10) return 60;
+        return 32;
     }
 
-    // 3. Calcul de la simulation Elo (Pairwise 4-player model)
+    // 3. Moteur de simulation
     function runSimulation() {
-        const rows = $('#simTable tbody tr.sim-row');
+        const rows = $('#simTable tbody tr');
         const players = [];
 
-        // Extraire les données des 4 lignes
         rows.each(function(index) {
-            const name = $(this).find('.sim-p-name').val().trim() || `Player ${index + 1}`;
-            const elo = parseFloat($(this).find('.sim-p-elo').val()) || 1200;
-            const games = parseInt($(this).find('.sim-p-games').val(), 10) || 0;
+            const row = $(this);
+            
+            // Extraction robuste (compatible <input> ou texte <td>)
+            const nameEl = row.find('.sim-p-name');
+            const name = (nameEl.is('input, select') ? nameEl.val() : nameEl.text()).trim();
+
+            const eloEl = row.find('.sim-p-elo');
+            const eloVal = eloEl.is('input, select') ? eloEl.val() : eloEl.text();
+            const elo = parseFloat(eloVal) || 1200;
+
+            const gamesEl = row.find('.sim-p-games');
+            const gamesVal = gamesEl.is('input, select') ? gamesEl.val() : gamesEl.text();
+            const games = parseInt(gamesVal, 10) || 0;
+
             const kFactor = getKFactor(games);
 
+            // Vérification si un bouton radio / checkbox désigne le vainqueur, sinon Joueur 1 par défaut
+            const winnerInput = row.find('.sim-p-winner');
+            const isWinner = winnerInput.length > 0 ? winnerInput.is(':checked') : index === 0;
+
             players.push({
-                row: $(this),
-                name: name,
+                row: row,
+                name: name || `Player ${index + 1}`,
                 elo: elo,
                 games: games,
                 kFactor: kFactor,
-                actualScore: index === 0 ? 1 : 0 // Index 0 = Joueur 1 (Vainqueur)
+                actualScore: isWinner ? 1 : 0
             });
         });
 
         const n = players.length;
+        if (n === 0) return;
 
-        // Calcul de la probabilité de victoire attendue (E_i)
+        // Calcul des probabilités de victoire (Pairwise model)
         players.forEach((p, i) => {
             let expSum = 0;
             players.forEach((opp, j) => {
@@ -791,7 +805,7 @@ $(document).ready(function() {
             p.expectedScore = expSum / (n - 1);
         });
 
-        // Mise à jour de l'affichage dans le tableau
+        // Mise à jour de l'affichage
         players.forEach((p) => {
             const delta = Math.round(p.kFactor * (p.actualScore - p.expectedScore));
             const newElo = Math.round(p.elo + delta);
@@ -808,10 +822,16 @@ $(document).ready(function() {
         });
     }
 
-    // Déclenchement au clic sur le bouton
-    $('#btnRunSimulation').on('click', runSimulation);
+    // 4. Écouteur d'événement sur le bouton avec annulation de la soumission de formulaire
+    $(document).on('click', '#btnRunSimulation', function(e) {
+        e.preventDefault();
+        runSimulation();
+    });
 
-    // Calcul initial automatique au chargement
+    // Recalcul au changement direct dans les champs
+    $(document).on('input change', '.sim-p-elo, .sim-p-games, .sim-p-winner', runSimulation);
+
+    // Calcul initial
     runSimulation();
 });
 
