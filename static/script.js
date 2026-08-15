@@ -790,6 +790,35 @@ $(document).ready(function() {
         }
         runSimulation();
     });
+	
+	
+	function getTierFromElo(elo, gamesCount) {
+		if (gamesCount < 10) return 'unassigned';
+		if (elo >= 1600) return 'stag';
+		if (elo >= 1500) return 'bird';
+		if (elo >= 1400) return 'fox';
+		if (elo >= 1300) return 'rabbit';
+		if (elo >= 1200) return 'mouse';
+		return 'squirrel';
+	}
+
+	function renderTierCell(elo, gamesCount) {
+		const tier = getTierFromElo(elo, gamesCount);
+		
+		// Si pas de tier ou icône absente, on renvoie juste le chiffre
+		if (tier === 'unassigned' || typeof CONFIG === 'undefined' || !CONFIG.icons || !CONFIG.icons[tier]) {
+			return elo.toString();
+		}
+
+		// On récupère le HTML écrit dans le fichier .html
+		const template = document.getElementById('simTierTemplate').innerHTML;
+
+		// On injecte simplement les paramètres
+		return template
+			.replaceAll('{TIER}', tier)
+			.replace('{ICON_URL}', CONFIG.icons[tier])
+			.replace('{ELO}', elo);
+	}
 
     // 5. Moteur de simulation
     function runSimulation() {
@@ -836,13 +865,13 @@ $(document).ready(function() {
             const deltaHtml = `<span style="color: ${deltaColor}; font-weight: 600;">${deltaSign}${roundDelta}</span>`;
 
             return [
-                p.name,
-                Math.round(p.elo),
-                Math.round(k * 10) / 10,
-                winProbStr,
-                deltaHtml,
-                newElo
-            ];
+				p.name,
+				renderTierCell(currentEloRounded, p.games),
+				Math.round(k * 10) / 10,
+				winProbStr,
+				deltaHtml,
+				renderTierCell(newEloRounded, p.games + 1)
+			];
         });
 
         simResultTable.clear();
