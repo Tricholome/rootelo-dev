@@ -264,20 +264,8 @@ $(document).ready(function() {
 			]
 		});
 	}
-	
-	// --- 3. SIMULATOR ---
-	if ($('#simTable').length > 0) {
-		$('#simTable').DataTable({
-			"paging": false,
-			"searching": false,
-			"info": false,
-			"ordering": false,
-			"responsive": true,
-			"dom": 'rt'
-		});
-	}
 
-    // --- 4. HALL OF FAME ---
+    // --- 3. HALL OF FAME ---
 	if ($('#hall_of_fame').length > 0) {
 		$('#hall_of_fame').DataTable({
 			"responsive": true,
@@ -300,7 +288,7 @@ $(document).ready(function() {
 		});
 	}
 	
-	// --- 5. VISITOR TABLE ---
+	// --- 4. VISITOR TABLE ---
 	if ($('#visitor_table').length > 0) {
 		$('#visitor_table').DataTable({
 			"responsive": true,
@@ -315,7 +303,7 @@ $(document).ready(function() {
 		});
 	}
 	
-	// --- 6. GLOBAL FIX FOR ORIENTATION & RESIZE ---
+	// --- 5. GLOBAL FIX FOR ORIENTATION & RESIZE ---
     window.addEventListener('resize', () => {
         $('.dataTable').each(function() {
             if ($.fn.dataTable.isDataTable(this)) {
@@ -733,7 +721,7 @@ $(document).ready(function() {
 
     const playerData = window.PLAYER_DATA_MAP || {};
 
-    // 1. Remplissage automatique lors de la saisie d'un nom
+    // 1. Auto-remplissage Elo & Games à la saisie du nom
     $(document).on('input change', '.sim-p-name', function() {
         const row = $(this).closest('tr');
         const typedName = $(this).val().trim();
@@ -749,52 +737,39 @@ $(document).ready(function() {
         }
     });
 
-    // 2. Calcul du K-Factor
+    // 2. K-Factor
     function getKFactor(games) {
-        if (games < 10) return 60;
-        return 32;
+        return games < 10 ? 60 : 32;
     }
 
-    // 3. Moteur de simulation
+    // 3. Simulation
     function runSimulation() {
         const rows = $('#simTable tbody tr');
         const players = [];
 
         rows.each(function(index) {
             const row = $(this);
-            
-            // Extraction robuste (compatible <input> ou texte <td>)
-            const nameEl = row.find('.sim-p-name');
-            const name = (nameEl.is('input, select') ? nameEl.val() : nameEl.text()).trim();
-
-            const eloEl = row.find('.sim-p-elo');
-            const eloVal = eloEl.is('input, select') ? eloEl.val() : eloEl.text();
-            const elo = parseFloat(eloVal) || 1200;
-
-            const gamesEl = row.find('.sim-p-games');
-            const gamesVal = gamesEl.is('input, select') ? gamesEl.val() : gamesEl.text();
-            const games = parseInt(gamesVal, 10) || 0;
-
+            const name = row.find('.sim-p-name').val() || `Player ${index + 1}`;
+            const elo = parseFloat(row.find('.sim-p-elo').val()) || 1200;
+            const games = parseInt(row.find('.sim-p-games').val(), 10) || 0;
             const kFactor = getKFactor(games);
 
-            // Vérification si un bouton radio / checkbox désigne le vainqueur, sinon Joueur 1 par défaut
-            const winnerInput = row.find('.sim-p-winner');
-            const isWinner = winnerInput.length > 0 ? winnerInput.is(':checked') : index === 0;
+            // Joueur 1 = Vainqueur (index 0)
+            const actualScore = (index === 0) ? 1 : 0;
 
             players.push({
                 row: row,
-                name: name || `Player ${index + 1}`,
+                name: name,
                 elo: elo,
                 games: games,
                 kFactor: kFactor,
-                actualScore: isWinner ? 1 : 0
+                actualScore: actualScore
             });
         });
 
         const n = players.length;
-        if (n === 0) return;
 
-        // Calcul des probabilités de victoire (Pairwise model)
+        // Probabilités de victoire (Pairwise model)
         players.forEach((p, i) => {
             let expSum = 0;
             players.forEach((opp, j) => {
@@ -805,7 +780,7 @@ $(document).ready(function() {
             p.expectedScore = expSum / (n - 1);
         });
 
-        // Mise à jour de l'affichage
+        // Mise à jour du tableau HTML
         players.forEach((p) => {
             const delta = Math.round(p.kFactor * (p.actualScore - p.expectedScore));
             const newElo = Math.round(p.elo + delta);
@@ -814,24 +789,23 @@ $(document).ready(function() {
             p.row.find('.res-prob').text((p.expectedScore * 100).toFixed(1) + '%');
             
             const deltaCell = p.row.find('.res-delta');
-            const deltaText = (delta >= 0 ? '+' : '') + delta;
-            deltaCell.text(deltaText);
+            deltaCell.text((delta >= 0 ? '+' : '') + delta);
             deltaCell.css('color', delta >= 0 ? '#4E9F3D' : '#D9534F');
 
             p.row.find('.res-new-elo').text(newElo);
         });
     }
 
-    // 4. Écouteur d'événement sur le bouton avec annulation de la soumission de formulaire
+    // Clic sur le bouton Simuler
     $(document).on('click', '#btnRunSimulation', function(e) {
         e.preventDefault();
         runSimulation();
     });
 
-    // Recalcul au changement direct dans les champs
-    $(document).on('input change', '.sim-p-elo, .sim-p-games, .sim-p-winner', runSimulation);
+    // Recalcul automatique lors des modifications
+    $(document).on('input change', '.sim-p-elo, .sim-p-games', runSimulation);
 
-    // Calcul initial
+    // Lancement au chargement
     runSimulation();
 });
 
