@@ -999,8 +999,7 @@ table.dataTable.dtr-inline.collapsed > tbody > tr > td.dtr-control:before {
 table.dataTable tbody tr.loser td {
     color: var(--text-muted);
 	opacity: 0.4; 
-    font-style: italic; 
-    filter: grayscale(1); 
+    font-style: italic;
 }
 
 .sim-tier-cell {
