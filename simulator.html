@@ -2,14 +2,12 @@
 
 
 
-
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <title>Rootelo • Undergrowth</title>
+    <title>Match Simulator</title>
     
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -140,7 +138,7 @@
 			
 
 			/* --- 5. PAGE THEME --- */
-			--main-color: #94C160;
+			--main-color: #7A7347;
 		}
     </style>
 	
@@ -151,7 +149,7 @@
 	<meta name="google-site-verification" content="xNfE9mY0Df8BsQAl4g5S0I_C4MvFC8nnJVNVWJJpqAg" />
 
 	
-	<meta name="description" content="A sanctuary for the critters who&nbsp;never&nbsp;sought&nbsp;a&nbsp;<span class='cipher' data-word='crown'>crown</span>.">
+	<meta name="description" content="Simulate outcomes and Elo rating shifts for upcoming matches.">
 	
 
 	<meta property="og:type" content="website">
@@ -168,7 +166,7 @@
 	
 </head>
 
-<body class="" data-page="cache">
+<body class="" data-page="simulator">
     
     <div class="container">
 	
@@ -235,21 +233,19 @@
 					
 					<a href="about.html" class="">Codex</a>
 				
-				<a href="cache.html" class="nav-secret active">Undergrowth</a>
+				<a href="cache.html" class="nav-secret ">Undergrowth</a>
 			</nav>
 			
         </header>
         
         <div class="screen-deco right-deco">
 			
-				<img src="assets/images/cache_img_right.webp" alt="Decoration Right">
-			
 		</div>
 
         <div id="view" class="app-viewport window-box">
             <header class="page-intro">
-				<h2>Undergrowth</h2>
-				<p>A sanctuary for the critters who&nbsp;never&nbsp;sought&nbsp;a&nbsp;<span class='cipher' data-word='crown'>crown</span>.</p>
+				<h2>Match Simulator</h2>
+				<p>Simulate outcomes and Elo rating shifts for upcoming matches.</p>
 
 				<div class="season-selector-group">
 				
@@ -263,430 +259,122 @@
 			
             <main>
                 
-
-<div class="codex-section">
-
-	<div class="entry-door">
-		<a href="javascript:void(0)" id="hof-access" class="secret-btn">
-			Reveal what is hidden
-			<span class="tooltip-text">This is not all... keep looking around.</span>
-		</a>
-	</div>
-	
-	<div class="hof-section">
-		
-		<table id="hall_of_fame" class="display nowrap responsive">
-			<thead>
-				<tr>
-					<th>Rank</th>
-					<th>Player</th>
-					<th>Longest Run</th>
-					<th>Peak Elo</th>
-					<th>Active Timeframe</th>
-				</tr>
-			</thead>
-			<tbody>
-				
-					
-						<tr class="tier-header-row">
-							<td>
-								<div class="tier-icon-container">
-									<img src="assets/icons/stag.webp" alt="stag">
-								</div>
-							</td>
-							<td>
-								
-								<span class="hide-mobile">Sacred</span> Stags
-							</td>
-							<td><span class="hide-mobile">Longest</span> Run</td>
-							<td>Peak <span class="hide-mobile">Elo</span></td>
-							<td>Active Timeframe</td>
-						</tr>
-					
-				
-					
-						<tr data-tier="stag">				
-							<td>I</td>
-							<td>Led_Slash</td>
-							<td>1</td>
-							<td>1614</td>
-							<td>Jul 23, 2026</td>
-						</tr>
-					
-				
-					
-						<tr data-tier="stag">				
-							<td>II</td>
-							<td>Bapgo</td>
-							<td>1</td>
-							<td>1609</td>
-							<td>Aug 14, 2026</td>
-						</tr>
-					
-				
-					
-						<tr class="tier-header-row">
-							<td>
-								<div class="tier-icon-container">
-									<img src="assets/icons/bird.webp" alt="bird">
-								</div>
-							</td>
-							<td>
-								
-								<span class="hide-mobile">Brilliant</span> Birds
-							</td>
-							<td><span class="hide-mobile">Longest</span> Run</td>
-							<td>Peak <span class="hide-mobile">Elo</span></td>
-							<td>Active Timeframe</td>
-						</tr>
-					
-				
-					
-						<tr data-tier="bird">				
-							<td>I</td>
-							<td>Led_Slash</td>
-							<td>32</td>
-							<td>1551</td>
-							<td>Mar 01 — Mar 19, 2026</td>
-						</tr>
-					
-				
-					
-						<tr data-tier="bird">				
-							<td>II</td>
-							<td>tofuwater</td>
-							<td>13</td>
-							<td>1581</td>
-							<td>Apr 27 — Jun 05, 2026</td>
-						</tr>
-					
-				
-					
-						<tr data-tier="bird">				
-							<td>III</td>
-							<td>Jack432</td>
-							<td>11</td>
-							<td>1569</td>
-							<td>Jul 28 — Aug 11, 2026</td>
-						</tr>
-					
-				
-					
-						<tr data-tier="bird">				
-							<td>IV</td>
-							<td>kaiser</td>
-							<td>6</td>
-							<td>1561</td>
-							<td>Apr 19 — Jun 04, 2026</td>
-						</tr>
-					
-				
-					
-						<tr data-tier="bird">				
-							<td>V</td>
-							<td>Killerstorm17</td>
-							<td>6</td>
-							<td>1554</td>
-							<td>Jan 18 — Feb 06, 2026</td>
-						</tr>
-					
-				
-					
-						<tr class="tier-header-row">
-							<td>
-								<div class="tier-icon-container">
-									<img src="assets/icons/fox.webp" alt="fox">
-								</div>
-							</td>
-							<td>
-								
-								<span class="hide-mobile">Fearless</span> Foxes
-							</td>
-							<td><span class="hide-mobile">Longest</span> Run</td>
-							<td>Peak <span class="hide-mobile">Elo</span></td>
-							<td>Active Timeframe</td>
-						</tr>
-					
-				
-					
-						<tr data-tier="fox">				
-							<td>I</td>
-							<td>LucianTheFak</td>
-							<td>27</td>
-							<td>1461</td>
-							<td>May 23 — Jun 17, 2026</td>
-						</tr>
-					
-				
-					
-						<tr data-tier="fox">				
-							<td>II</td>
-							<td>Led_Slash</td>
-							<td>26</td>
-							<td>1495</td>
-							<td>Feb 10 — Feb 18, 2026</td>
-						</tr>
-					
-				
-					
-						<tr data-tier="fox">				
-							<td>III</td>
-							<td>kayajam</td>
-							<td>22</td>
-							<td>1489</td>
-							<td>Jan 17 — Mar 15, 2026</td>
-						</tr>
-					
-				
-					
-						<tr data-tier="fox">				
-							<td>IV</td>
-							<td>Scipio</td>
-							<td>22</td>
-							<td>1472</td>
-							<td>Jul 09 — Aug 11, 2026</td>
-						</tr>
-					
-				
-					
-						<tr data-tier="fox">				
-							<td>V</td>
-							<td>cringelordirl</td>
-							<td>18</td>
-							<td>1485</td>
-							<td>Jul 23 — Aug 13, 2026</td>
-						</tr>
-					
-				
-					
-						<tr class="tier-header-row">
-							<td>
-								<div class="tier-icon-container">
-									<img src="assets/icons/rabbit.webp" alt="rabbit">
-								</div>
-							</td>
-							<td>
-								
-								<span class="hide-mobile">Radiant</span> Rabbits
-							</td>
-							<td><span class="hide-mobile">Longest</span> Run</td>
-							<td>Peak <span class="hide-mobile">Elo</span></td>
-							<td>Active Timeframe</td>
-						</tr>
-					
-				
-					
-						<tr data-tier="rabbit">				
-							<td>I</td>
-							<td>DemaRogue</td>
-							<td>39</td>
-							<td>1389</td>
-							<td>Apr 22 — Jun 22, 2026</td>
-						</tr>
-					
-				
-					
-						<tr data-tier="rabbit">				
-							<td>II</td>
-							<td>Dumbledore</td>
-							<td>33</td>
-							<td>1380</td>
-							<td>Jul 17 — Aug 14, 2026</td>
-						</tr>
-					
-				
-					
-						<tr data-tier="rabbit">				
-							<td>III</td>
-							<td>Tolfan</td>
-							<td>32</td>
-							<td>1396</td>
-							<td>Feb 01 — Mar 11, 2026</td>
-						</tr>
-					
-				
-					
-						<tr data-tier="rabbit">				
-							<td>IV</td>
-							<td>Tricholome</td>
-							<td>32</td>
-							<td>1369</td>
-							<td>Feb 24 — Mar 29, 2026</td>
-						</tr>
-					
-				
-					
-						<tr data-tier="rabbit">				
-							<td>V</td>
-							<td>Nefkano</td>
-							<td>26</td>
-							<td>1391</td>
-							<td>Feb 15 — Mar 10, 2026</td>
-						</tr>
-					
-				
-					
-						<tr class="tier-header-row">
-							<td>
-								<div class="tier-icon-container">
-									<img src="assets/icons/mouse.webp" alt="mouse">
-								</div>
-							</td>
-							<td>
-								
-								<span class="hide-mobile">Mighty</span> Mice
-							</td>
-							<td><span class="hide-mobile">Longest</span> Run</td>
-							<td>Peak <span class="hide-mobile">Elo</span></td>
-							<td>Active Timeframe</td>
-						</tr>
-					
-				
-					
-						<tr data-tier="mouse">				
-							<td>I</td>
-							<td>Schkitz</td>
-							<td>89</td>
-							<td>1293</td>
-							<td>Jan 28 — Mar 30, 2026</td>
-						</tr>
-					
-				
-					
-						<tr data-tier="mouse">				
-							<td>II</td>
-							<td>NadtyLite</td>
-							<td>84</td>
-							<td>1295</td>
-							<td>Apr 14 — Jun 13, 2026</td>
-						</tr>
-					
-				
-					
-						<tr data-tier="mouse">				
-							<td>III</td>
-							<td>Tolfan</td>
-							<td>84</td>
-							<td>1289</td>
-							<td>May 04 — Jun 29, 2026</td>
-						</tr>
-					
-				
-					
-						<tr data-tier="mouse">				
-							<td>IV</td>
-							<td>Pandapapst</td>
-							<td>50</td>
-							<td>1294</td>
-							<td>Jan 30 — Mar 29, 2026</td>
-						</tr>
-					
-				
-					
-						<tr data-tier="mouse">				
-							<td>V</td>
-							<td>AERotters</td>
-							<td>42</td>
-							<td>1281</td>
-							<td>Jun 02 — Jun 30, 2026</td>
-						</tr>
-					
-				
-			</tbody>
-		</table>
-
-		<table id="visitor_table" class="display">
-			<thead>
-				<tr>
-					<th>
-						<div class="tier-icon-container">
-							<img src="assets/icons/squirrel.webp" alt="squirrel">
-						</div>
-					</th>
-					<th>
-						
-						<span class="hide-mobile">Scattered</span> Squirrels
-					</th>
-				</tr>
-			</thead>
-			<tbody>
-				<tr data-tier="squirrel">
-					<td></td>
-					<td class="visitor-cell">
-						<span class="visitor-name"></span> reached this place and uncovered its secrets on <span class="visitor-date"></span>.
-					</td>
-				</tr>
-			</tbody>
-		</table>
-		
-		<div id="visitor-recognition">
-			<button id="btn-engrave" class="secret-btn">Engrave your presence here?</button>
-			
-			<div id="input-zone"> <input type="text" id="visitor-name" placeholder="Your name..." maxlength="20">
-				<button id="btn-confirm" class="secret-btn">Confirm</button>
-			</div>
-		</div>
-		
-	</div>
-	
-	<p class="enigma enigma-green">
-		<span>What is this place?</span>
-		<span>Step into the shade.</span>
-		<span>Look beneath the leaves.</span>
-		<a class="cl" href="javascript:void(0)" id="watcher-secret">Seek the silent watcher.</a>
-	</p>
-	
-    <div class="artist-story-green">
-        <h2>The <span class="cipher" data-word="silent">Silent</span> Chronicler</h2>
-        <p>Here, where <span class="cipher" data-word="roots">roots</span> run deep and the wild grows dense, <a class="cl" href="https://www.instagram.com/xluevi.art/">𝕩𝕝𝕦𝕖𝕧𝕚</a> sits hidden in the green. He captures <span class="cipher" data-word="every">every</span> fluttering wing and <span class="cipher" data-word="every">every</span> twitching whisker. He breathes life into the Woodland’s teeming diversity with <span class="cipher" data-word="every">every</span> stroke. It is a quiet call to <span class="cipher" data-word="remember">remember</span>: beyond the League’s grand stakes, nothing small goes unseen.</p>
+<div class="simulator-section">
+    <div class="sim-intro window-box">
+        <p>Select four league players to simulate a match. <strong>Player 1</strong> is designated as the table winner, while Players 2, 3, and 4 are the losers. You can adjust Elo ratings or game counts ($N$) to test theoretical scenarios.</p>
     </div>
-	
-	<div class="fruit-container">
-		<div id="berry-section">
-			<h2>The Mystic Berry</h2>
-			<p>Some secrets are juicier than others.<br>Can you feel the pulse?</p>
-			<div class="fruit-interaction-wrapper">
-				<a href="javascript:void(0)" id="berry-secret" onclick="openTierModal('stag')" class="fruit-trigger js-double-tap">
-					<span class="tooltip-text fruit-tooltip">Squish it!</span>
-					<img src="assets/images/berry.webp" alt="Berry" class="fruit-sprite">
-				</a>
-			</div>
-		</div>
-	
-		<div id="nut-section">
-			<h2>The Special Nut</h2>
-			<p>No rank? No stress. Take it easy.<br>We haven't forgotten you!</p>
-			<div class="fruit-interaction-wrapper">
-				<a href="javascript:void(0)" id="nut-secret" onclick="openTierModal('squirrel')" class="fruit-trigger js-double-tap">
-					<span class="tooltip-text fruit-tooltip">Crack it!</span>
-					<img src="assets/images/nut.webp" alt="Nut" class="fruit-sprite">
-				</a>
-			</div>
-		</div>
-	</div>
-	
-	<p class="enigma enigma-purple">
-		<span>What is this place?</span>
-		<span>Walk into the dusk.</span>
-		<span>Tread upon the heath.</span>
-		<a class="cl" href="javascript:void(0)" id="warden-secret">Meet the faithful warden.</a>
-	</p>
-	
-	<div class="artist-story-purple">
-        <h2>The Faithful Archivist</h2>
-        <p>Here, where the mist hangs thin and light turns to velvet, <strong>Tʀɪᴄʜᴏʟᴏᴍᴇ</strong> lingers beneath the purple bloom. Every feat, every triumph, every half-remembered tale is carefully preserved. It is a lasting vow to celebrate: beyond the League’s vain stir, nothing great is ever truly lost.</p>
+
+    <div class="sim-players-grid">
+        <!-- Player 1: Implicit Winner -->
+        <div class="sim-player-card winner-slot window-box" data-slot="1">
+            <div class="card-badge winner-badge">🏆 Winner (Player 1)</div>
+            
+            <div class="sim-field">
+                <label>Player Name:</label>
+                <input type="text" class="sim-p-name" list="playerAutocompleteList" placeholder="Search player..." autocomplete="off">
+            </div>
+
+            <div class="sim-field-row">
+                <div class="sim-field">
+                    <label>Initial Elo:</label>
+                    <input type="number" class="sim-p-elo" value="1200" step="1">
+                </div>
+                <div class="sim-field">
+                    <label>Games ($N$):</label>
+                    <input type="number" class="sim-p-games" value="0" min="0" step="1">
+                </div>
+            </div>
+        </div>
+
+        <!-- Players 2 to 4: Losers -->
+        
+        <div class="sim-player-card window-box" data-slot="2">
+            <div class="card-badge loser-badge">❌ Player 2</div>
+
+            <div class="sim-field">
+                <label>Player Name:</label>
+                <input type="text" class="sim-p-name" list="playerAutocompleteList" placeholder="Search player..." autocomplete="off">
+            </div>
+
+            <div class="sim-field-row">
+                <div class="sim-field">
+                    <label>Initial Elo:</label>
+                    <input type="number" class="sim-p-elo" value="1200" step="1">
+                </div>
+                <div class="sim-field">
+                    <label>Games ($N$):</label>
+                    <input type="number" class="sim-p-games" value="0" min="0" step="1">
+                </div>
+            </div>
+        </div>
+        
+        <div class="sim-player-card window-box" data-slot="3">
+            <div class="card-badge loser-badge">❌ Player 3</div>
+
+            <div class="sim-field">
+                <label>Player Name:</label>
+                <input type="text" class="sim-p-name" list="playerAutocompleteList" placeholder="Search player..." autocomplete="off">
+            </div>
+
+            <div class="sim-field-row">
+                <div class="sim-field">
+                    <label>Initial Elo:</label>
+                    <input type="number" class="sim-p-elo" value="1200" step="1">
+                </div>
+                <div class="sim-field">
+                    <label>Games ($N$):</label>
+                    <input type="number" class="sim-p-games" value="0" min="0" step="1">
+                </div>
+            </div>
+        </div>
+        
+        <div class="sim-player-card window-box" data-slot="4">
+            <div class="card-badge loser-badge">❌ Player 4</div>
+
+            <div class="sim-field">
+                <label>Player Name:</label>
+                <input type="text" class="sim-p-name" list="playerAutocompleteList" placeholder="Search player..." autocomplete="off">
+            </div>
+
+            <div class="sim-field-row">
+                <div class="sim-field">
+                    <label>Initial Elo:</label>
+                    <input type="number" class="sim-p-elo" value="1200" step="1">
+                </div>
+                <div class="sim-field">
+                    <label>Games ($N$):</label>
+                    <input type="number" class="sim-p-games" value="0" min="0" step="1">
+                </div>
+            </div>
+        </div>
+        
     </div>
-		
-	<div class="exit-door">	
-		<a href="javascript:void(0)" id="leave-secrets" class="secret-btn js-double-tap">
-			Leave and forget this place
-			<span class="tooltip-text">Return to the simple order of the Woodland.</span>
-		</a>
-	</div>
-	
-	
+
+    <div class="sim-actions">
+        <button id="btnRunSimulation" class="sim-submit-btn">Simulate Match</button>
+    </div>
+
+    <!-- Results Table (hidden by default) -->
+    <div id="simResultsWrapper" class="sim-results-wrapper window-box" style="display: none;">
+        <h3>Simulation Results</h3>
+        <table class="sim-results-table">
+            <thead>
+                <tr>
+                    <th>Role / Player</th>
+                    <th>Initial Elo</th>
+                    <th>Games ($N$)</th>
+                    <th>K-Factor</th>
+                    <th>Win Prob. ($E_i$)</th>
+                    <th>Change ($\Delta R$)</th>
+                    <th>New Elo</th>
+                </tr>
+            </thead>
+            <tbody id="simResultsBody">
+                <!-- Dynamically populated via JS -->
+            </tbody>
+        </table>
+    </div>
 </div>
-
 
             </main>
 			
@@ -697,8 +385,6 @@
         </div>
         
         <div class="screen-deco left-deco">
-			
-				<img src="assets/images/cache_img_left.webp" alt="Decoration Left">
 			
 		</div>
 
@@ -776,7 +462,7 @@
 					"bear": "" + "assets/icons/bear.webp",
 				
 			},
-			currentTier: "squirrel",
+			currentTier: "default",
 			chartData: {},
 			champMatch: null
 		};
