@@ -720,7 +720,6 @@ $(document).ready(function() {
 $(document).ready(function() {
     if ($('#simTable').length === 0 || $('#simResultTable').length === 0) return;
 
-    // 1. Validation de la configuration K-Factor
     const REQUIRED_K_KEYS = ['k_floor', 'k_start', 'exp_decay', 'k_cap_ranked', 'k_cap_new'];
     const kConfig = window.K_CONFIG || {};
 
@@ -729,14 +728,13 @@ $(document).ready(function() {
     );
 
     if (!isConfigValid) {
-        console.warn("Simulateur désactivé : Clés K_CONFIG manquantes dans league.json", kConfig);
+        console.warn("Simulator disabled: Missing K_CONFIG keys in league.json", kConfig);
         $('#simTable, #simResultTable').hide();
         return;
     }
 
     const playerData = window.PLAYER_DATA_MAP || {};
 
-    // 2. DataTables Setup
     const simResultTable = $('#simResultTable').DataTable({
         "paging": false,
         "searching": false,
@@ -759,19 +757,43 @@ $(document).ready(function() {
         return Math.min(kCap, kBase);
     }
 
-    // 3. Gestion des Toggles Gagnants (Limite max à 2)
+    function getTierFromElo(elo, gamesCount) {
+        if (gamesCount < 10) return 'unassigned';
+        if (elo >= 1600) return 'stag';
+        if (elo >= 1500) return 'bird';
+        if (elo >= 1400) return 'fox';
+        if (elo >= 1300) return 'rabbit';
+        if (elo >= 1200) return 'mouse';
+        return 'squirrel';
+    }
+
+    function renderTierCell(elo, gamesCount) {
+        const tier = getTierFromElo(elo, gamesCount);
+        
+        if (tier === 'unassigned' || typeof CONFIG === 'undefined' || !CONFIG.icons || !CONFIG.icons[tier]) {
+            return elo.toString();
+        }
+
+        const templateEl = document.getElementById('simTierTemplate');
+        if (!templateEl) return elo.toString();
+
+        return templateEl.innerHTML
+            .replaceAll('{TIER}', tier)
+            .replace('{ICON_URL}', CONFIG.icons[tier])
+            .replace('{ELO}', elo);
+    }
+
     $(document).on('change', '.sim-winner-toggle', function() {
         const checkedToggles = $('.sim-winner-toggle:checked');
         
         if (checkedToggles.length > 2) {
-            $(this).prop('checked', false); // Annule le 3ème coché
+            $(this).prop('checked', false);
             return;
         }
         
         runSimulation();
     });
 
-    // 4. Auto-remplissage des stats du joueur
     $(document).on('input change', '.sim-p-name', function() {
         const row = $(this).closest('tr');
         const typedName = $(this).val().trim();
@@ -790,42 +812,11 @@ $(document).ready(function() {
         }
         runSimulation();
     });
-	
-	
-	function getTierFromElo(elo, gamesCount) {
-		if (gamesCount < 10) return 'unassigned';
-		if (elo >= 1600) return 'stag';
-		if (elo >= 1500) return 'bird';
-		if (elo >= 1400) return 'fox';
-		if (elo >= 1300) return 'rabbit';
-		if (elo >= 1200) return 'mouse';
-		return 'squirrel';
-	}
 
-	function renderTierCell(elo, gamesCount) {
-		const tier = getTierFromElo(elo, gamesCount);
-		
-		// Si pas de tier ou icône absente, on renvoie juste le chiffre
-		if (tier === 'unassigned' || typeof CONFIG === 'undefined' || !CONFIG.icons || !CONFIG.icons[tier]) {
-			return elo.toString();
-		}
-
-		// On récupère le HTML écrit dans le fichier .html
-		const template = document.getElementById('simTierTemplate').innerHTML;
-
-		// On injecte simplement les paramètres
-		return template
-			.replaceAll('{TIER}', tier)
-			.replace('{ICON_URL}', CONFIG.icons[tier])
-			.replace('{ELO}', elo);
-	}
-
-    // 5. Moteur de simulation
     function runSimulation() {
         const rows = $('#simTable tbody tr');
         const players = [];
 
-        // Compte des vainqueurs pour calculer la part de victoire (1.0 solo, 0.5 coalition)
         const winnerCount = $('.sim-winner-toggle:checked').length;
         const scorePerWinner = winnerCount > 0 ? (1.0 / winnerCount) : 0.0;
 
