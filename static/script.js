@@ -730,12 +730,13 @@ $(document).ready(function() {
 
     if (!isConfigValid) {
         console.warn("Simulateur désactivé : Clés K_CONFIG manquantes dans league.json", kConfig);
-        $('#simTable, #simResultTable, #btnRunSimulation').hide();
-        return; // Interrompt complètement le script
+        $('#simTable, #simResultTable').hide();
+        return;
     }
 
     const playerData = window.PLAYER_DATA_MAP || {};
 
+    // 2. DataTables Setup
     const simResultTable = $('#simResultTable').DataTable({
         "paging": false,
         "searching": false,
@@ -748,7 +749,6 @@ $(document).ready(function() {
         ]
     });
 
-    // 2. Calcul du K-Factor (Garantie sans aucune valeur par défaut hard-codée)
     function calculateKFactor(gamesCount, isRanked) {
         const kFloor = parseFloat(kConfig.k_floor);
         const kStart = parseFloat(kConfig.k_start);
@@ -759,7 +759,7 @@ $(document).ready(function() {
         return Math.min(kCap, kBase);
     }
 
-    // 3. Auto-complétion des joueurs
+    // 3. Auto-remplissage des champs à la saisie / sélection d'un joueur
     $(document).on('input change', '.sim-p-name', function() {
         const row = $(this).closest('tr');
         const typedName = $(this).val().trim();
@@ -779,7 +779,7 @@ $(document).ready(function() {
         runSimulation();
     });
 
-    // 4. Moteur de simulation
+    // 4. Moteur de calcul
     function runSimulation() {
         const rows = $('#simTable tbody tr');
         const players = [];
