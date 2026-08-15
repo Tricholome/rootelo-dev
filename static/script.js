@@ -267,24 +267,29 @@ $(document).ready(function() {
 	}
 	
 	// --- 3. SIMULATOR RESULT TABLE ---
-	if ($('#simResultTable').length > 0) {
-		$('#simResultTable').DataTable({
-			"paging": false,
-			"searching": false,
-			"info": false,
-			"ordering": false,
-			"responsive": true,
-			"dom": 'rt',
-			"columnDefs": [
-				{ "targets": 0, "className": "player-name-cell" },
-				{ "targets": [1, 5], "className": "elo-cell" },
-				{ "className": "numeric-cell", "targets": [1, 2, 3, 4, 5] },
-				{ "responsivePriority": 1, "targets": [0, 5] },
-				{ "responsivePriority": 2, "targets": [1, 4] },
-				{ "responsivePriority": 3, "targets": [2, 3] }
-			]
-		});
-	}
+if ($('#simResultTable').length > 0) {
+    $('#simResultTable').DataTable({
+        "paging": false,
+        "searching": false,
+        "info": false,
+        "ordering": false,
+        "responsive": true,
+        "dom": 'rt',
+        "createdRow": function(row, data) {
+            if (data[4].includes('-')) {
+                $(row).addClass('text-muted');
+            }
+        },
+        "columnDefs": [
+            { "targets": 0, "className": "player-name-cell" },
+            { "targets": [1, 5], "className": "elo-cell" },
+            { "className": "numeric-cell", "targets": [1, 2, 3, 4, 5] },
+            { "responsivePriority": 1, "targets": [0, 5] },
+            { "responsivePriority": 2, "targets": [1, 4] },
+            { "responsivePriority": 3, "targets": [2, 3] }
+        ]
+    });
+}
 
     // --- 4. HALL OF FAME ---
 	if ($('#hall_of_fame').length > 0) {
