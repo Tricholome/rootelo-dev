@@ -1000,6 +1000,18 @@ table.dataTable tbody tr.loser td {
     color: var(--text-muted) !important;
 }
 
+.sim-tier-cell {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    white-space: nowrap;
+}
+
+.sim-tier-cell .tier-icon-container {
+    margin: 0;
+}
+
 /* Responsive Table Adjustments */
 .hide-mobile { display: inline; }
 
