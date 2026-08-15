@@ -717,11 +717,24 @@ $(document).ready(function() {
    ========================================================================= */
 
 $(document).ready(function() {
-    if ($('#simTable').length === 0) return;
+    if ($('#simTable').length === 0 || $('#simResultTable').length === 0) return;
 
     const playerData = window.PLAYER_DATA_MAP || {};
 
-    // 1. Auto-remplissage Elo & Games à la saisie du nom
+    // Initialisation de DataTables sur le tableau de résultats
+    const simResultTable = $('#simResultTable').DataTable({
+        "paging": false,
+        "searching": false,
+        "info": false,
+        "ordering": false,
+        "responsive": true,
+        "dom": 'rt',
+        "columnDefs": [
+            { "className": "numeric-cell", "targets": [1, 2, 3, 4, 5] }
+        ]
+    });
+
+    // 1. Auto-complétion lors de la saisie d'un nom
     $(document).on('input change', '.sim-p-name', function() {
         const row = $(this).closest('tr');
         const typedName = $(this).val().trim();
@@ -737,39 +750,35 @@ $(document).ready(function() {
         }
     });
 
-    // 2. K-Factor
     function getKFactor(games) {
         return games < 10 ? 60 : 32;
     }
 
-    // 3. Simulation
+    // 2. Calcul et mise à jour de DataTables
     function runSimulation() {
         const rows = $('#simTable tbody tr');
         const players = [];
 
         rows.each(function(index) {
             const row = $(this);
-            const name = row.find('.sim-p-name').val() || `Player ${index + 1}`;
+            const name = row.find('.sim-p-name').val().trim() || `Player ${index + 1}`;
             const elo = parseFloat(row.find('.sim-p-elo').val()) || 1200;
             const games = parseInt(row.find('.sim-p-games').val(), 10) || 0;
             const kFactor = getKFactor(games);
 
-            // Joueur 1 = Vainqueur (index 0)
-            const actualScore = (index === 0) ? 1 : 0;
-
             players.push({
-                row: row,
                 name: name,
                 elo: elo,
                 games: games,
                 kFactor: kFactor,
-                actualScore: actualScore
+                actualScore: (index === 0) ? 1 : 0 // Index 0 = Vainqueur
             });
         });
 
         const n = players.length;
+        if (n === 0) return;
 
-        // Probabilités de victoire (Pairwise model)
+        // Calcul des probabilités (Pairwise)
         players.forEach((p, i) => {
             let expSum = 0;
             players.forEach((opp, j) => {
@@ -780,32 +789,41 @@ $(document).ready(function() {
             p.expectedScore = expSum / (n - 1);
         });
 
-        // Mise à jour du tableau HTML
-        players.forEach((p) => {
+        // Construction du jeu de données pour DataTables
+        const formattedData = players.map((p) => {
             const delta = Math.round(p.kFactor * (p.actualScore - p.expectedScore));
             const newElo = Math.round(p.elo + delta);
-
-            p.row.find('.res-k-factor').text(p.kFactor);
-            p.row.find('.res-prob').text((p.expectedScore * 100).toFixed(1) + '%');
+            const probStr = (p.expectedScore * 100).toFixed(1) + '%';
             
-            const deltaCell = p.row.find('.res-delta');
-            deltaCell.text((delta >= 0 ? '+' : '') + delta);
-            deltaCell.css('color', delta >= 0 ? '#4E9F3D' : '#D9534F');
+            const deltaSign = delta >= 0 ? '+' : '';
+            const deltaColor = delta >= 0 ? '#4E9F3D' : '#D9534F';
+            const deltaHtml = `<span style="color: ${deltaColor}; font-weight: 600;">${deltaSign}${delta}</span>`;
 
-            p.row.find('.res-new-elo').text(newElo);
+            return [
+                p.name,
+                p.elo,
+                p.kFactor,
+                probStr,
+                deltaHtml,
+                newElo
+            ];
         });
+
+        // Injection et rendu via l'API DataTables
+        simResultTable.clear();
+        simResultTable.rows.add(formattedData);
+        simResultTable.draw();
     }
 
-    // Clic sur le bouton Simuler
+    // Événements
     $(document).on('click', '#btnRunSimulation', function(e) {
         e.preventDefault();
         runSimulation();
     });
 
-    // Recalcul automatique lors des modifications
     $(document).on('input change', '.sim-p-elo, .sim-p-games', runSimulation);
 
-    // Lancement au chargement
+    // Premier calcul au chargement
     runSimulation();
 });
 
