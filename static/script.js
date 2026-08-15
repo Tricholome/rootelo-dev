@@ -265,8 +265,28 @@ $(document).ready(function() {
 			]
 		});
 	}
+	
+	// --- 3. SIMULATOR RESULT TABLE ---
+	if ($('#simResultTable').length > 0) {
+		$('#simResultTable').DataTable({
+			"paging": false,
+			"searching": false,
+			"info": false,
+			"ordering": false,
+			"responsive": true,
+			"dom": 'rt',
+			"columnDefs": [
+				{ "targets": 0, "className": "player-name-cell" },
+				{ "targets": [1, 5], "className": "elo-cell" },
+				{ "className": "numeric-cell", "targets": [1, 2, 3, 4, 5] },
+				{ "responsivePriority": 1, "targets": [0, 5] },
+				{ "responsivePriority": 2, "targets": [1, 4] },
+				{ "responsivePriority": 3, "targets": [2, 3] }
+			]
+		});
+	}
 
-    // --- 3. HALL OF FAME ---
+    // --- 4. HALL OF FAME ---
 	if ($('#hall_of_fame').length > 0) {
 		$('#hall_of_fame').DataTable({
 			"responsive": true,
@@ -289,7 +309,7 @@ $(document).ready(function() {
 		});
 	}
 	
-	// --- 4. VISITOR TABLE ---
+	// --- 5. VISITOR TABLE ---
 	if ($('#visitor_table').length > 0) {
 		$('#visitor_table').DataTable({
 			"responsive": true,
@@ -304,7 +324,7 @@ $(document).ready(function() {
 		});
 	}
 	
-	// --- 5. GLOBAL FIX FOR ORIENTATION & RESIZE ---
+	// --- 6. GLOBAL FIX FOR ORIENTATION & RESIZE ---
     window.addEventListener('resize', () => {
         $('.dataTable').each(function() {
             if ($.fn.dataTable.isDataTable(this)) {
@@ -735,18 +755,6 @@ $(document).ready(function() {
 
     const playerData = window.PLAYER_DATA_MAP || {};
 
-    const simResultTable = $('#simResultTable').DataTable({
-        "paging": false,
-        "searching": false,
-        "info": false,
-        "ordering": false,
-        "responsive": true,
-        "dom": 'rt',
-        "columnDefs": [
-            { "className": "numeric-cell", "targets": [1, 2, 3, 4, 5] }
-        ]
-    });
-
     function calculateKFactor(gamesCount, isRanked) {
         const kFloor = parseFloat(kConfig.k_floor);
         const kStart = parseFloat(kConfig.k_start);
@@ -867,6 +875,7 @@ $(document).ready(function() {
             ];
         });
 
+        const simResultTable = $('#simResultTable').DataTable();
         simResultTable.clear();
         simResultTable.rows.add(formattedData);
         simResultTable.draw();
