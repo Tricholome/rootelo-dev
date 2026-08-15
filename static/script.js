@@ -857,30 +857,30 @@ $(document).ready(function() {
         const qScores = players.map(p => Math.pow(10, p.elo / 400));
         const totalQ = qScores.reduce((sum, q) => sum + q, 0);
 
-        const formattedData = players.map((p, i) => {
-            const expected = totalQ > 0 ? (qScores[i] / totalQ) : (1 / players.length);
-            const k = calculateKFactor(p.games, p.isRanked);
-            const change = k * (p.actualScore - expected);
-            
-            const roundDelta = Math.round(change);
-            const currentEloRounded = Math.round(p.elo);
-            const newEloRounded = Math.round(p.elo + change);
-            
-            const winProbStr = (expected * 100).toFixed(1) + '%';
+		const formattedData = players.map((p, i) => {
+			const expected = totalQ > 0 ? (qScores[i] / totalQ) : (1 / players.length);
+			const k = calculateKFactor(p.games, p.isRanked);
+			const change = k * (p.actualScore - expected);
+			
+			const roundDelta = Math.round(change);
+			const currentEloRounded = Math.round(p.elo);
+			const newEloRounded = Math.round(p.elo + change);
+			
+			const winProbStr = (expected * 100).toFixed(1) + '%';
 
-            const deltaSign = roundDelta >= 0 ? '+' : '';
-            const deltaColor = roundDelta >= 0 ? '#4E9F3D' : '#D9534F';
-            const deltaHtml = `<span style="color: ${deltaColor}; font-weight: 600;">${deltaSign}${roundDelta}</span>`;
+			const deltaSign = roundDelta >= 0 ? '+' : '';
+			const deltaClass = roundDelta > 0 ? 'text-bright text-bold' : '';
+			const deltaHtml = `<span class="${deltaClass}">${deltaSign}${roundDelta}</span>`;
 
-            return [
-                p.name,
-                renderTierCell(currentEloRounded, p.games),
-                Math.round(k * 10) / 10,
-                winProbStr,
-                deltaHtml,
-                renderTierCell(newEloRounded, p.games + 1)
-            ];
-        });
+			return [
+				p.name,
+				renderTierCell(currentEloRounded, p.games),
+				Math.round(k * 10) / 10,
+				winProbStr,
+				deltaHtml,
+				renderTierCell(newEloRounded, p.games + 1)
+			];
+		});
 
         const simResultTable = $('#simResultTable').DataTable();
         simResultTable.clear();
