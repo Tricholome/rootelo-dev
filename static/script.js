@@ -9,6 +9,7 @@
    6. Dynamic Trends
    7. Narrative Journey
    8. Global Player Search
+   9. Match Simulator Engine
    
    --- EASTER EGGS ---
    11. Secrets Engine
@@ -721,7 +722,6 @@ $(document).ready(function() {
 
     const playerData = window.PLAYER_DATA_MAP || {};
 
-    // Initialisation de DataTables sur le tableau de résultats
     const simResultTable = $('#simResultTable').DataTable({
         "paging": false,
         "searching": false,
@@ -734,7 +734,7 @@ $(document).ready(function() {
         ]
     });
 
-    // 1. Auto-complétion lors de la saisie d'un nom
+    // 1. Auto-complétion des informations du joueur
     $(document).on('input change', '.sim-p-name', function() {
         const row = $(this).closest('tr');
         const typedName = $(this).val().trim();
@@ -747,14 +747,29 @@ $(document).ready(function() {
             const info = playerData[matchedKey];
             row.find('.sim-p-elo').val(info.elo);
             row.find('.sim-p-games').val(info.games);
+            row.data('is_ranked', info.is_ranked || false);
+        } else {
+            row.data('is_ranked', false);
         }
+        runSimulation();
     });
 
-    function getKFactor(games) {
-        return games < 10 ? 60 : 32;
+    // 2. Calcul du K-Factor dynamique selon la configuration de la ligue
+    function calculateKFactor(gamesCount, isRanked) {
+        const kConfig = window.K_CONFIG || (window.LEAGUE_CONFIG && window.LEAGUE_CONFIG.k_factor) || {};
+
+        const kFloor = parseFloat(kConfig.k_floor ?? 20.0);
+        const kStart = parseFloat(kConfig.k_start ?? 50.0);
+        const expDecay = parseFloat(kConfig.exp_decay ?? 10.0);
+        
+        const kCapKey = isRanked ? 'k_cap_ranked' : 'k_cap_new';
+        const kCap = parseFloat(kConfig[kCapKey] ?? 50.0);
+
+        const kBase = kFloor + (kStart - kFloor) * Math.exp(-gamesCount / expDecay);
+        return Math.min(kCap, kBase);
     }
 
-    // 2. Calcul et mise à jour de DataTables
+    // 3. Moteur de simulation
     function runSimulation() {
         const rows = $('#simTable tbody tr');
         const players = [];
@@ -764,69 +779,56 @@ $(document).ready(function() {
             const name = row.find('.sim-p-name').val().trim() || `Player ${index + 1}`;
             const elo = parseFloat(row.find('.sim-p-elo').val()) || 1200;
             const games = parseInt(row.find('.sim-p-games').val(), 10) || 0;
-            const kFactor = getKFactor(games);
+            const isRanked = row.data('is_ranked') || false;
 
             players.push({
                 name: name,
                 elo: elo,
                 games: games,
-                kFactor: kFactor,
-                actualScore: (index === 0) ? 1 : 0 // Index 0 = Vainqueur
+                isRanked: isRanked,
+                actualScore: (index === 0) ? 1.0 : 0.0 // Index 0 = Vainqueur
             });
         });
 
-        const n = players.length;
-        if (n === 0) return;
+        if (players.length === 0) return;
 
-        // Calcul des probabilités (Pairwise)
-        players.forEach((p, i) => {
-            let expSum = 0;
-            players.forEach((opp, j) => {
-                if (i !== j) {
-                    expSum += 1 / (1 + Math.pow(10, (opp.elo - p.elo) / 400));
-                }
-            });
-            p.expectedScore = expSum / (n - 1);
-        });
+        // Calcul q_scores & total_q (Score attendu)
+        const qScores = players.map(p => Math.pow(10, p.elo / 400));
+        const totalQ = qScores.reduce((sum, q) => sum + q, 0);
 
-        // Construction du jeu de données pour DataTables
-        const formattedData = players.map((p) => {
-            const delta = Math.round(p.kFactor * (p.actualScore - p.expectedScore));
-            const newElo = Math.round(p.elo + delta);
-            const probStr = (p.expectedScore * 100).toFixed(1) + '%';
+        // Construction du rendu pour DataTables
+        const formattedData = players.map((p, i) => {
+            const expected = totalQ > 0 ? (qScores[i] / totalQ) : (1 / players.length);
+            const k = calculateKFactor(p.games, p.isRanked);
+            const change = k * (p.actualScore - expected);
             
-            const deltaSign = delta >= 0 ? '+' : '';
-            const deltaColor = delta >= 0 ? '#4E9F3D' : '#D9534F';
-            const deltaHtml = `<span style="color: ${deltaColor}; font-weight: 600;">${deltaSign}${delta}</span>`;
+            const roundDelta = Math.round(change);
+            const newElo = Math.round(p.elo + change);
+            const winProbStr = (expected * 100).toFixed(1) + '%';
+
+            const deltaSign = roundDelta >= 0 ? '+' : '';
+            const deltaColor = roundDelta >= 0 ? '#4E9F3D' : '#D9534F';
+            const deltaHtml = `<span style="color: ${deltaColor}; font-weight: 600;">${deltaSign}${roundDelta}</span>`;
 
             return [
                 p.name,
-                p.elo,
-                p.kFactor,
-                probStr,
+                Math.round(p.elo),
+                Math.round(k * 10) / 10,
+                winProbStr,
                 deltaHtml,
                 newElo
             ];
         });
 
-        // Injection et rendu via l'API DataTables
         simResultTable.clear();
         simResultTable.rows.add(formattedData);
         simResultTable.draw();
     }
 
-    // Événements
-    $(document).on('click', '#btnRunSimulation', function(e) {
-        e.preventDefault();
-        runSimulation();
-    });
-
     $(document).on('input change', '.sim-p-elo, .sim-p-games', runSimulation);
 
-    // Premier calcul au chargement
     runSimulation();
 });
-
 
 /* =========================================================================
    --- 11. SECRETS ENGINE ---
