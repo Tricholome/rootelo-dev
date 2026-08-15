@@ -276,10 +276,12 @@ $(document).ready(function() {
 			"responsive": true,
 			"dom": 'rt',
 			"createdRow": function(row, data) {
-				if (data[4].includes('-')) {
-					$(row).addClass('loser');
-				}
-			},
+            var val = parseFloat($('<div>' + data[4] + '</div>').text());
+            
+            if (!isNaN(val) && val < 0) {
+                $(row).addClass('loser');
+            }
+        },
 			"columnDefs": [
 				{ "targets": 0, "className": "player-name-cell" },
 				{ "targets": [1, 5], "className": "elo-cell" },
