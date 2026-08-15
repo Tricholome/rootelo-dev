@@ -857,7 +857,9 @@ $(document).ready(function() {
             const change = k * (p.actualScore - expected);
             
             const roundDelta = Math.round(change);
-            const newElo = Math.round(p.elo + change);
+            const currentEloRounded = Math.round(p.elo);
+            const newEloRounded = Math.round(p.elo + change);
+            
             const winProbStr = (expected * 100).toFixed(1) + '%';
 
             const deltaSign = roundDelta >= 0 ? '+' : '';
@@ -865,13 +867,13 @@ $(document).ready(function() {
             const deltaHtml = `<span style="color: ${deltaColor}; font-weight: 600;">${deltaSign}${roundDelta}</span>`;
 
             return [
-				p.name,
-				renderTierCell(currentEloRounded, p.games),
-				Math.round(k * 10) / 10,
-				winProbStr,
-				deltaHtml,
-				renderTierCell(newEloRounded, p.games + 1)
-			];
+                p.name,
+                renderTierCell(currentEloRounded, p.games),
+                Math.round(k * 10) / 10,
+                winProbStr,
+                deltaHtml,
+                renderTierCell(newEloRounded, p.games + 1)
+            ];
         });
 
         simResultTable.clear();
