@@ -869,8 +869,7 @@ $(document).ready(function() {
 			const winProbStr = (expected * 100).toFixed(1) + '%';
 
 			const deltaSign = roundDelta >= 0 ? '+' : '';
-			const deltaClass = roundDelta > 0 ? 'text-bright text-bold' : '';
-			const deltaHtml = `<span class="${deltaClass}">${deltaSign}${roundDelta}</span>`;
+			const deltaHtml = `${deltaSign}${roundDelta}`;
 
 			return [
 				p.name,
