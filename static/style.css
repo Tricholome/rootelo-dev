@@ -2159,42 +2159,58 @@ body.hof-unlocked .hof-section {
         background: transparent !important;
     }
 
-    /* LIGNE 1 : Checkbox + Label Gagnant + Nom du Joueur */
+    /* --- LIGNE 1 --- */
+    /* Checkbox avec icône Trophée ultra-compacte */
     #simTable td:nth-child(1) {
-        flex: 0 0 75px; /* Espace réservé pour la checkbox + le texte */
-        gap: 6px;
+        flex: 0 0 40px; /* Seulement 40px au lieu de 75px */
+        gap: 4px;
+        justify-content: flex-start;
     }
 
-    /* Indication visuelle pour la checkbox */
     #simTable td:nth-child(1)::after {
-        content: "Winner";
-        font-size: var(--size-xs, 11px);
-        color: var(--text-muted);
+        content: "🏆";
+        font-size: 13px;
     }
 
+    /* Champ Nom du Joueur (prend 100% moins les 40px du trophée et le gap) */
     #simTable td:nth-child(2) {
-        flex: 1 1 calc(100% - 85px); /* Remplit le reste de la ligne 1 */
+        flex: 1 1 calc(100% - 50px);
     }
 
     #simTable td:nth-child(2) input {
         width: 100% !important;
     }
 
-    /* LIGNE 2 : Elo et Games (S'étirent pour faire exactement la largeur de Player) */
+    /* --- LIGNE 2 --- */
+    /* Elo (50% de la largeur du champ Nom) */
     #simTable td:nth-child(3) {
         flex: 1 1 0;
-        margin-left: 85px; /* Alignement exact sous le champ Nom */
+        margin-left: 50px; /* Décale pour s'aligner sous le champ Nom */
+        gap: 6px;
     }
 
+    #simTable td:nth-child(3)::before {
+        content: "Elo:";
+        white-space: nowrap;
+    }
+
+    /* Games (les 50% restants) */
     #simTable td:nth-child(4) {
         flex: 1 1 0;
+        gap: 6px;
     }
 
-    /* Les deux inputs prennent 100% de leur cellule (50% chacune de la zone Player) */
+    #simTable td:nth-child(4)::before {
+        content: "Games:";
+        white-space: nowrap;
+    }
+
+    /* Les deux champs s'adaptent à l'espace restant dans leurs 50% respectifs */
     .sim-p-elo, 
     .sim-p-games {
+        flex: 1;
         width: 100% !important;
-        max-width: 100% !important;
+        min-width: 0;
         text-align: center;
         padding: 5px 4px !important;
         box-sizing: border-box;
