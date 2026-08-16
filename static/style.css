@@ -2118,10 +2118,10 @@ body.hof-unlocked .hof-section {
 }
 
 
-/* --- 2. Style Mobile / Petits Écrans (Épuré & Plat) --- */
+/* --- 2. Style Mobile / Petits Écrans --- */
 @media (max-width: 600px) {
 
-    /* Masquer l'en-tête classique du tableau */
+    /* Masquer l'en-tête classique */
     #simTable thead {
         display: none !important;
     }
@@ -2134,13 +2134,13 @@ body.hof-unlocked .hof-section {
         background: transparent !important;
     }
 
-    /* Séparation simple par ligne (pas de fond sombre, pas de carte) */
+    /* Séparation simple par ligne */
     #simTable tr.sim-row {
         display: flex !important;
         flex-wrap: wrap !important;
         align-items: center;
         padding: 12px 0;
-        border-bottom: 1px solid var(--border-soft) !important;
+        border-bottom: 1px solid var(--main-color) !important;
         background: transparent !important;
         box-shadow: none !important;
         border-radius: 0 !important;
@@ -2151,7 +2151,6 @@ body.hof-unlocked .hof-section {
         border-bottom: none !important;
     }
 
-    /* Suppression des fonds/bordures des cellules */
     #simTable td {
         display: flex !important;
         align-items: center;
@@ -2160,57 +2159,46 @@ body.hof-unlocked .hof-section {
         background: transparent !important;
     }
 
-    /* LIGNE 1 : Checkbox Winner + Nom du Joueur */
+    /* LIGNE 1 : Checkbox + Label Gagnant + Nom du Joueur */
     #simTable td:nth-child(1) {
-        flex: 0 0 28px;
-        justify-content: center;
+        flex: 0 0 75px; /* Espace réservé pour la checkbox + le texte */
+        gap: 6px;
+    }
+
+    /* Indication visuelle pour la checkbox */
+    #simTable td:nth-child(1)::after {
+        content: "Winner";
+        font-size: var(--size-xs, 11px);
+        color: var(--text-muted);
     }
 
     #simTable td:nth-child(2) {
-        flex: 1 1 calc(100% - 38px);
+        flex: 1 1 calc(100% - 85px); /* Remplit le reste de la ligne 1 */
     }
 
     #simTable td:nth-child(2) input {
         width: 100% !important;
     }
 
-    /* LIGNE 2 : Elo et Games côte à côte (Alignés sous le Nom) */
+    /* LIGNE 2 : Elo et Games (S'étirent pour faire exactement la largeur de Player) */
     #simTable td:nth-child(3) {
-        flex: 0 1 auto;
-        margin-left: 38px; /* Décale pour aligner parfaitement sous le champ Nom */
-        gap: 6px;
-    }
-
-    #simTable td:nth-child(3)::before {
-        content: "Elo:";
-        font-size: var(--size-xs);
-        color: var(--text-muted);
-        font-weight: var(--medium);
-        white-space: nowrap;
+        flex: 1 1 0;
+        margin-left: 85px; /* Alignement exact sous le champ Nom */
     }
 
     #simTable td:nth-child(4) {
-        flex: 0 1 auto;
-        gap: 6px;
+        flex: 1 1 0;
     }
 
-    #simTable td:nth-child(4)::before {
-        content: "Games:";
-        font-size: var(--size-xs);
-        color: var(--text-muted);
-        font-weight: var(--medium);
-        white-space: nowrap;
-    }
-
-    /* Champs numériques compacts */
+    /* Les deux inputs prennent 100% de leur cellule (50% chacune de la zone Player) */
     .sim-p-elo, 
     .sim-p-games {
-        width: 65px !important;
-        max-width: 75px;
+        width: 100% !important;
+        max-width: 100% !important;
         text-align: center;
         padding: 5px 4px !important;
+        box-sizing: border-box;
     }
-
 }
 
 {% block extra_css %}{% endblock %}
