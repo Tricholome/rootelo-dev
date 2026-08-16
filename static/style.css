@@ -1507,6 +1507,143 @@ table.dataTable tbody tr.loser td {
     #modalText, #modalFinal { font-size: var(--size-sm); line-height: 1.4; margin-top: 20px; text-align: left; }
 }
 
+/* -------------------------------------------------------------------------
+   [COMPONENTS] 7. SIMULATOR INTERFACE
+   ------------------------------------------------------------------------- */
+
+/* Desktop Layout */
+.simulator-section {
+    margin: 40px auto;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+#simTable {
+    width: 100% !important;
+    margin: 0 auto 40px auto !important;
+}
+
+#simTable th:nth-child(1),
+#simTable th:nth-child(3),
+#simTable th:nth-child(4) {
+    text-align: center !important;
+}
+
+.sim-p-elo {
+    width: 100px !important;
+    text-align: center;
+}
+
+.sim-p-games {
+    width: 100px !important;
+    text-align: center;
+}
+
+.sim-p-name {
+    width: 100% !important;
+    box-sizing: border-box;
+}
+
+/* Mobile & Small Screen Layout */
+@media (max-width: 600px) {
+
+    #simTable thead {
+        display: none !important;
+    }
+
+    #simTable, 
+    #simTable tbody {
+        display: block;
+        width: 100% !important;
+        border: none !important;
+        background: transparent !important;
+    }
+
+    #simTable tr.sim-row {
+        display: flex !important;
+        flex-wrap: wrap !important;
+        align-items: center;
+        padding: 12px 0;
+        background: transparent !important;
+        box-shadow: none !important;
+        border-radius: 0 !important;
+        gap: 10px 12px;
+    }
+
+    #simTable tr.sim-row:last-child {
+        border-bottom: none !important;
+    }
+
+    #simTable td {
+        display: flex !important;
+        align-items: center;
+        border: none !important;
+        padding: 0 !important;
+        background: transparent !important;
+        box-sizing: border-box;
+    }
+
+    #simTable td:nth-child(2) {
+        order: 1;
+        flex: 1 1 100% !important;
+    }
+
+    #simTable td:nth-child(2) input {
+        width: 100% !important;
+    }
+
+    #simTable td:nth-child(1) {
+        order: 2;
+        flex: 0 0 auto;
+        gap: 6px;
+    }
+
+    #simTable td:nth-child(1)::before {
+        content: "Wins";
+        font-size: var(--size-sm);
+        color: var(--text-muted);
+        font-weight: var(--medium);
+    }
+
+    #simTable td:nth-child(3) {
+        order: 3;
+        flex: 1 1 0;
+        gap: 6px;
+    }
+
+    #simTable td:nth-child(3)::before {
+        content: "Elo";
+        font-size: var(--size-sm);
+        color: var(--text-muted);
+        font-weight: var(--medium);
+        white-space: nowrap;
+    }
+
+    #simTable td:nth-child(4) {
+        order: 4;
+        flex: 1 1 0;
+        gap: 6px;
+    }
+
+    #simTable td:nth-child(4)::before {
+        content: "Games";
+        font-size: var(--size-sm);
+        color: var(--text-muted);
+        font-weight: var(--medium);
+        white-space: nowrap;
+    }
+
+    .sim-p-elo, 
+    .sim-p-games {
+        flex: 1;
+        width: 100% !important;
+        min-width: 0;
+        text-align: center;
+        padding: 5px 4px !important;
+        box-sizing: border-box;
+    }
+}
+
 /* =========================================================================
    --- V. SPECIAL EFFECTS & SECRET CONTENT ---
    ========================================================================= */
@@ -2079,153 +2216,5 @@ body.hof-unlocked .hof-section {
 }
 
 .visitor-date { white-space: nowrap; }
-
-
-/* =========================================================================
-   SIMULATOR SECTION - FLAT & CLEAN RESPONSIVE LAYOUT
-   ========================================================================= */
-
-/* --- 1. Style Desktop --- */
-.simulator-section {
-    margin: 40px auto;
-    width: 100%;
-    box-sizing: border-box;
-}
-
-#simTable {
-    width: 100% !important;
-    margin: 0 auto 40px auto !important;
-}
-
-#simTable th:nth-child(1),
-#simTable th:nth-child(3),
-#simTable th:nth-child(4) {
-    text-align: center !important;
-}
-
-.sim-p-elo {
-    width: 100px !important;
-    text-align: center;
-}
-
-.sim-p-games {
-    width: 100px !important;
-    text-align: center;
-}
-
-.sim-p-name {
-    width: 100% !important;
-    box-sizing: border-box;
-}
-
-
-/* --- 2. Style Mobile / Petits Écrans --- */
-@media (max-width: 600px) {
-
-    /* Masquer l'en-tête classique */
-    #simTable thead {
-        display: none !important;
-    }
-
-    #simTable, 
-    #simTable tbody {
-        display: block;
-        width: 100% !important;
-        border: none !important;
-        background: transparent !important;
-    }
-
-    /* Ligne joueur épurée */
-    #simTable tr.sim-row {
-        display: flex !important;
-        flex-wrap: wrap !important;
-        align-items: center;
-        padding: 12px 0;
-        background: transparent !important;
-        box-shadow: none !important;
-        border-radius: 0 !important;
-        gap: 10px 12px;
-    }
-
-    #simTable tr.sim-row:last-child {
-        border-bottom: none !important;
-    }
-
-    #simTable td {
-        display: flex !important;
-        align-items: center;
-        border: none !important;
-        padding: 0 !important;
-        background: transparent !important;
-        box-sizing: border-box;
-    }
-
-    /* --- LIGNE 1 : Nom du joueur sur toute la largeur (100%) --- */
-    #simTable td:nth-child(2) {
-        order: 1;
-        flex: 1 1 100% !important;
-    }
-
-    #simTable td:nth-child(2) input {
-        width: 100% !important;
-    }
-
-    /* --- LIGNE 2 : Contrôles alignés côte à côte --- */
-    
-    /* 1. Checkbox "wins" */
-    #simTable td:nth-child(1) {
-        order: 2;
-        flex: 0 0 auto;
-        gap: 6px;
-    }
-
-    #simTable td:nth-child(1)::before {
-        content: "Wins";
-        font-size: var(--size-sm);
-        color: var(--text-muted);
-        font-weight: var(--medium);
-    }
-
-    /* 2. Elo */
-    #simTable td:nth-child(3) {
-        order: 3;
-        flex: 1 1 0;
-        gap: 6px;
-    }
-
-    #simTable td:nth-child(3)::before {
-        content: "Elo";
-        font-size: var(--size-sm);
-        color: var(--text-muted);
-        font-weight: var(--medium);
-        white-space: nowrap;
-    }
-
-    /* 3. Games */
-    #simTable td:nth-child(4) {
-        order: 4;
-        flex: 1 1 0;
-        gap: 6px;
-    }
-
-    #simTable td:nth-child(4)::before {
-        content: "Games";
-        font-size: var(--size-sm);
-        color: var(--text-muted);
-        font-weight: var(--medium);
-        white-space: nowrap;
-    }
-
-    /* Inputs numériques ajustables */
-    .sim-p-elo, 
-    .sim-p-games {
-        flex: 1;
-        width: 100% !important;
-        min-width: 0;
-        text-align: center;
-        padding: 5px 4px !important;
-        box-sizing: border-box;
-    }
-}
 
 {% block extra_css %}{% endblock %}
