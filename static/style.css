@@ -2134,17 +2134,16 @@ body.hof-unlocked .hof-section {
         background: transparent !important;
     }
 
-    /* Séparation simple par ligne */
+    /* Ligne joueur épurée */
     #simTable tr.sim-row {
         display: flex !important;
         flex-wrap: wrap !important;
         align-items: center;
         padding: 12px 0;
-        border-bottom: 1px solid var(--main-color) !important;
         background: transparent !important;
         box-shadow: none !important;
         border-radius: 0 !important;
-        gap: 8px 10px;
+        gap: 10px 12px;
     }
 
     #simTable tr.sim-row:last-child {
@@ -2157,55 +2156,66 @@ body.hof-unlocked .hof-section {
         border: none !important;
         padding: 0 !important;
         background: transparent !important;
+        box-sizing: border-box;
     }
 
-    /* --- LIGNE 1 --- */
-    /* Checkbox avec icône Trophée ultra-compacte */
-    #simTable td:nth-child(1) {
-        flex: 0 0 40px; /* Seulement 40px au lieu de 75px */
-        gap: 4px;
-        justify-content: flex-start;
-    }
-
-    #simTable td:nth-child(1)::after {
-        content: "🏆";
-        font-size: 13px;
-    }
-
-    /* Champ Nom du Joueur (prend 100% moins les 40px du trophée et le gap) */
+    /* --- LIGNE 1 : Nom du joueur sur toute la largeur (100%) --- */
     #simTable td:nth-child(2) {
-        flex: 1 1 calc(100% - 50px);
+        order: 1;
+        flex: 1 1 100% !important;
     }
 
     #simTable td:nth-child(2) input {
         width: 100% !important;
     }
 
-    /* --- LIGNE 2 --- */
-    /* Elo (50% de la largeur du champ Nom) */
+    /* --- LIGNE 2 : Contrôles alignés côte à côte --- */
+    
+    /* 1. Checkbox "wins" */
+    #simTable td:nth-child(1) {
+        order: 2;
+        flex: 0 0 auto;
+        gap: 6px;
+    }
+
+    #simTable td:nth-child(1)::after {
+        content: "wins";
+        font-size: var(--size-xs);
+        color: var(--text-muted);
+        font-weight: var(--medium);
+    }
+
+    /* 2. Elo */
     #simTable td:nth-child(3) {
+        order: 3;
         flex: 1 1 0;
-        margin-left: 50px; /* Décale pour s'aligner sous le champ Nom */
         gap: 6px;
     }
 
     #simTable td:nth-child(3)::before {
         content: "Elo:";
+        font-size: var(--size-xs);
+        color: var(--text-muted);
+        font-weight: var(--medium);
         white-space: nowrap;
     }
 
-    /* Games (les 50% restants) */
+    /* 3. Games */
     #simTable td:nth-child(4) {
+        order: 4;
         flex: 1 1 0;
         gap: 6px;
     }
 
     #simTable td:nth-child(4)::before {
         content: "Games:";
+        font-size: var(--size-xs);
+        color: var(--text-muted);
+        font-weight: var(--medium);
         white-space: nowrap;
     }
 
-    /* Les deux champs s'adaptent à l'espace restant dans leurs 50% respectifs */
+    /* Inputs numériques ajustables */
     .sim-p-elo, 
     .sim-p-games {
         flex: 1;
