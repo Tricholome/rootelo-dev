@@ -2086,7 +2086,6 @@ body.hof-unlocked .hof-section {
 
 /* --- 1. Style Desktop --- */
 .simulator-section {
-    max-width: 680px;
     margin: 0 auto;
     width: 100%;
     box-sizing: border-box;
@@ -2104,12 +2103,12 @@ body.hof-unlocked .hof-section {
 }
 
 .sim-p-elo {
-    width: 80px !important;
+    width: 100px !important;
     text-align: center;
 }
 
 .sim-p-games {
-    width: 65px !important;
+    width: 100px !important;
     text-align: center;
 }
 
@@ -2210,17 +2209,6 @@ body.hof-unlocked .hof-section {
         max-width: 75px;
         text-align: center;
         padding: 5px 4px !important;
-    }
-
-    /* Traitement visuel unifié pour les inputs (évite l'effet boîte sur boîte) */
-    #simTable .input {
-        background: rgba(0, 0, 0, 0.2) !important;
-        border: 1px solid var(--border-soft) !important;
-    }
-
-    #simTable .input:focus {
-        border-color: var(--main-color) !important;
-        background: rgba(0, 0, 0, 0.4) !important;
     }
 
 }
