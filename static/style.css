@@ -2081,12 +2081,12 @@ body.hof-unlocked .hof-section {
 
 
 /* =========================================================================
-   SIMULATOR SECTION - CENTERED & RESPONSIVE STACKED LAYOUT
+   SIMULATOR SECTION - FLAT & CLEAN RESPONSIVE LAYOUT
    ========================================================================= */
 
-/* --- 1. Style Desktop / Ordinateur --- */
+/* --- 1. Style Desktop --- */
 .simulator-section {
-    max-width: 720px;
+    max-width: 680px;
     margin: 0 auto;
     width: 100%;
     box-sizing: border-box;
@@ -2103,14 +2103,13 @@ body.hof-unlocked .hof-section {
     text-align: center !important;
 }
 
-/* Largeurs raccourcies sur grand écran */
 .sim-p-elo {
-    width: 85px !important;
+    width: 80px !important;
     text-align: center;
 }
 
 .sim-p-games {
-    width: 70px !important;
+    width: 65px !important;
     text-align: center;
 }
 
@@ -2120,10 +2119,10 @@ body.hof-unlocked .hof-section {
 }
 
 
-/* --- 2. Style Mobile / Petits Écrans (Cartes Empilées) --- */
+/* --- 2. Style Mobile / Petits Écrans (Épuré & Plat) --- */
 @media (max-width: 600px) {
 
-    /* Masquer les en-têtes du tableau classique */
+    /* Masquer l'en-tête classique du tableau */
     #simTable thead {
         display: none !important;
     }
@@ -2136,91 +2135,94 @@ body.hof-unlocked .hof-section {
         background: transparent !important;
     }
 
-    /* Transformer chaque ligne (tr) en une "Carte Joueur" empilée */
+    /* Séparation simple par ligne (pas de fond sombre, pas de carte) */
     #simTable tr.sim-row {
         display: flex !important;
         flex-wrap: wrap !important;
-        background: var(--dt-table-bg) !important;
-        border: 1px solid var(--glass-border) !important;
-        border-radius: 10px;
-        padding: 12px;
-        margin-bottom: 14px;
-        gap: 10px;
-        box-sizing: border-box;
+        align-items: center;
+        padding: 12px 0;
+        border-bottom: 1px solid var(--border-soft) !important;
+        background: transparent !important;
+        box-shadow: none !important;
+        border-radius: 0 !important;
+        gap: 8px 10px;
     }
 
-    /* Réinitialiser les cellules td */
+    #simTable tr.sim-row:last-child {
+        border-bottom: none !important;
+    }
+
+    /* Suppression des fonds/bordures des cellules */
     #simTable td {
         display: flex !important;
-        flex-direction: column;
+        align-items: center;
         border: none !important;
         padding: 0 !important;
         background: transparent !important;
     }
 
-    /* 1. Case à cocher "Winner" */
+    /* LIGNE 1 : Checkbox Winner + Nom du Joueur */
     #simTable td:nth-child(1) {
-        width: auto !important;
+        flex: 0 0 28px;
         justify-content: center;
-        align-items: center;
     }
 
-    /* 2. Nom du Joueur (Prend la majorité de la première ligne) */
     #simTable td:nth-child(2) {
-        flex: 1 1 70% !important;
-        min-width: 140px;
+        flex: 1 1 calc(100% - 38px);
     }
 
     #simTable td:nth-child(2) input {
         width: 100% !important;
     }
 
-    /* 3 & 4. Current Elo et Games Played (Deuxième ligne de la carte) */
-    #simTable td:nth-child(3),
-    #simTable td:nth-child(4) {
-        flex: 1 1 calc(50% - 5px) !important; /* Mêmes largeurs 50/50 */
-        min-width: 110px;
-        gap: 4px;
+    /* LIGNE 2 : Elo et Games côte à côte (Alignés sous le Nom) */
+    #simTable td:nth-child(3) {
+        flex: 0 1 auto;
+        margin-left: 38px; /* Décale pour aligner parfaitement sous le champ Nom */
+        gap: 6px;
     }
 
-    /* Ajout automatique des labels explicatifs au-dessus des champs */
     #simTable td:nth-child(3)::before {
-        content: "Current Elo";
+        content: "Elo:";
         font-size: var(--size-xs);
         color: var(--text-muted);
-        text-transform: uppercase;
-        letter-spacing: var(--track-wide);
         font-weight: var(--medium);
-        text-align: left;
+        white-space: nowrap;
+    }
+
+    #simTable td:nth-child(4) {
+        flex: 0 1 auto;
+        gap: 6px;
     }
 
     #simTable td:nth-child(4)::before {
-        content: "Games Played";
+        content: "Games:";
         font-size: var(--size-xs);
         color: var(--text-muted);
-        text-transform: uppercase;
-        letter-spacing: var(--track-wide);
         font-weight: var(--medium);
-        text-align: left;
+        white-space: nowrap;
     }
 
-    /* Champs numériques en largeur 100% à l'intérieur de leur bloc */
+    /* Champs numériques compacts */
     .sim-p-elo, 
     .sim-p-games {
-        width: 100% !important;
-        padding: 6px !important;
-        box-sizing: border-box;
+        width: 65px !important;
+        max-width: 75px;
+        text-align: center;
+        padding: 5px 4px !important;
     }
 
-    /* Masquer les petites flèches d'incrément sur mobile pour gagner de la place */
-    .sim-p-elo::-webkit-inner-spin-button,
-    .sim-p-games::-webkit-inner-spin-button,
-    .sim-p-elo::-webkit-outer-spin-button,
-    .sim-p-games::-webkit-outer-spin-button {
-        display: none;
-        -webkit-appearance: none;
-        margin: 0;
+    /* Traitement visuel unifié pour les inputs (évite l'effet boîte sur boîte) */
+    #simTable .input {
+        background: rgba(0, 0, 0, 0.2) !important;
+        border: 1px solid var(--border-soft) !important;
     }
+
+    #simTable .input:focus {
+        border-color: var(--main-color) !important;
+        background: rgba(0, 0, 0, 0.4) !important;
+    }
+
 }
 
 {% block extra_css %}{% endblock %}
