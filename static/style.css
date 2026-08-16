@@ -2178,9 +2178,9 @@ body.hof-unlocked .hof-section {
         gap: 6px;
     }
 
-    #simTable td:nth-child(1)::after {
-        content: "wins";
-        font-size: var(--size-xs);
+    #simTable td:nth-child(1)::before {
+        content: "Wins";
+        font-size: var(--size-sm);
         color: var(--text-muted);
         font-weight: var(--medium);
     }
@@ -2193,8 +2193,8 @@ body.hof-unlocked .hof-section {
     }
 
     #simTable td:nth-child(3)::before {
-        content: "Elo:";
-        font-size: var(--size-xs);
+        content: "Elo";
+        font-size: var(--size-sm);
         color: var(--text-muted);
         font-weight: var(--medium);
         white-space: nowrap;
@@ -2208,8 +2208,8 @@ body.hof-unlocked .hof-section {
     }
 
     #simTable td:nth-child(4)::before {
-        content: "Games:";
-        font-size: var(--size-xs);
+        content: "Games";
+        font-size: var(--size-sm);
         color: var(--text-muted);
         font-weight: var(--medium);
         white-space: nowrap;
