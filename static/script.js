@@ -287,8 +287,9 @@ $(document).ready(function() {
 				{ "targets": [1, 5], "className": "elo-cell" },
 				{ "className": "numeric-cell", "targets": [1, 2, 3, 4, 5] },
 				{ "responsivePriority": 1, "targets": [0, 5] },
-				{ "responsivePriority": 2, "targets": [1, 4] },
-				{ "responsivePriority": 3, "targets": [2, 3] }
+				{ "responsivePriority": 2, "targets": [4] },
+				{ "responsivePriority": 3, "targets": [3] },
+				{ "responsivePriority": 4, "targets": [1, 2] }
 			]
 		});
 	}
