@@ -284,7 +284,6 @@ $(document).ready(function() {
         },
 			"columnDefs": [
 				{ "targets": 0, "className": "player-name-cell" },
-				{ "targets": [1, 5], "className": "elo-cell" },
 				{ "className": "numeric-cell", "targets": [1, 2, 3, 4, 5] },
 				{ "responsivePriority": 1, "targets": [0, 5] },
 				{ "responsivePriority": 2, "targets": [4] },
