@@ -965,22 +965,32 @@ table.dataTable.dtr-inline.collapsed > tbody > tr > td.dtr-control:before {
 }
 
 /* Matches Table Specifics */
-.lineup-cell { text-align: left !important; }
+.lineup-cell { 
+    text-align: left !important; 
+    max-width: clamp(160px, 20vw, 250px);
+}
+
+.player-item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 8px;
+}
 
 .player-item .player-name {
     color: var(--text-muted);
-    display: inline-block;
-    max-width: clamp(110px, 14vw, 220px);
+    flex: 1;
+    min-width: 0;
     overflow: hidden; 
     text-overflow: ellipsis; 
     white-space: nowrap; 
 }
 
 .player-delta {
-    float: right;
     font-size: var(--size-sm);
-    margin-left: 10px;
     color: var(--text-muted);
+    white-space: nowrap;
+    flex-shrink: 0;
 }
 
 .player-item.winner .player-name,
