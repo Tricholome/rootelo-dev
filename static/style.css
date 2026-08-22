@@ -909,10 +909,19 @@ table.dataTable.dtr-inline.collapsed > tbody > tr > td.dtr-control:before {
 /* Shared Cell Formatting */
 .numeric-cell { font-variant-numeric: tabular-nums; }
 .rank-cell { box-sizing: border-box !important; font-weight: var(--medium); color: var(--text-muted) !important; }
-.player-name-cell { cursor: pointer; text-align: left; font-weight: var(--medium); }
 .elo-cell { font-size: var(--size-lg); font-weight: var(--bold); }
 .elo-sum-cell { color: var(--main-color) !important; font-weight: var(--bold); }
 .date-cell { color: var(--text-muted) !important; font-size: var(--size-sm) !important; }
+
+.player-name-cell { 
+    cursor: pointer; 
+    text-align: left; 
+    font-weight: var(--medium);
+    max-width: clamp(110px, 14vw, 220px); 
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
 
 .tier-icon-container { 
     width: 36px; 
@@ -1023,12 +1032,6 @@ table.dataTable tbody tr.loser td {
     table.dataTable tbody td { 
         font-size: var(--size-sm); 
         padding: 8px 4px !important; 
-    }
-    .player-name-cell { 
-        max-width: 110px; 
-        overflow: hidden; 
-        text-overflow: ellipsis; 
-        white-space: nowrap; 
     }
     table.dataTable td:nth-child(4) { 
         padding-right: 10px !important; 
