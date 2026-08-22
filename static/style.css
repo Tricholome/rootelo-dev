@@ -967,7 +967,7 @@ table.dataTable.dtr-inline.collapsed > tbody > tr > td.dtr-control:before {
 /* Matches Table Specifics */
 .lineup-cell { 
     text-align: left !important; 
-    max-width: clamp(160px, 20vw, 250px);
+    width: 1%;
 }
 
 .player-item {
@@ -979,7 +979,7 @@ table.dataTable.dtr-inline.collapsed > tbody > tr > td.dtr-control:before {
 
 .player-item .player-name {
     color: var(--text-muted);
-    flex: 1;
+    max-width: clamp(110px, 14vw, 220px); 
     min-width: 0;
     overflow: hidden; 
     text-overflow: ellipsis; 
