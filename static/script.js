@@ -691,7 +691,7 @@ $(document).ready(function() {
         if (dbBtn) {
             if (slug) {
                 const baseUrl = (window.PROFILE_BASE_URL || '').replace(/\/+$/, '');
-                dbBtn.href = `${baseUrl}/${slug}/#stats`;
+                dbBtn.href = `${baseUrl}/${slug}`;
                 dbBtn.classList.remove('disabled');
                 dbBtn.style.opacity = '1';
                 dbBtn.style.pointerEvents = 'auto';
