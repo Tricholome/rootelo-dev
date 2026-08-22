@@ -970,7 +970,7 @@ table.dataTable.dtr-inline.collapsed > tbody > tr > td.dtr-control:before {
 .player-item .player-name {
     color: var(--text-muted);
     display: inline-block;
-    max-width: clamp(110px, 60%, 300px); 
+    max-width: clamp(110px, 14vw, 220px);
     overflow: hidden; 
     text-overflow: ellipsis; 
     white-space: nowrap; 
