@@ -1309,7 +1309,7 @@ table.dataTable tbody tr.loser td {
    ------------------------------------------------------------------------- */
 .codex-section {
     display: block; 
-    margin: -30px auto; 
+    margin: -20px auto; 
     width: 100%; 
     max-width: var(--window-max-width); 
     line-height: 1.6;
