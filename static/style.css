@@ -2073,6 +2073,7 @@ body[data-page="cache"].ciphers-found {
 #hof-access {
     display: none;
     cursor: help;
+	margin: -20px auto 60px;
 }
 
 body.watcher-found #hof-access {
