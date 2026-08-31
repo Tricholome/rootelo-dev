@@ -1309,7 +1309,7 @@ table.dataTable tbody tr.loser td {
    ------------------------------------------------------------------------- */
 .codex-section {
     display: block; 
-    margin: auto; 
+    margin: -30px auto; 
     width: 100%; 
     max-width: var(--window-max-width); 
     line-height: 1.6;
@@ -1326,10 +1326,6 @@ table.dataTable tbody tr.loser td {
     text-align: left;
 }
 
-.codex-section > :first-child h2,
-.codex-section > h2:first-of-type { 
-    margin-top: -20px; 
-}
 .codex-section p { margin-bottom: 20px; color: var(--text-muted); text-align: left; font-size: var(--size-base); }
 .codex-section strong { color: var(--text-main); font-weight: var(--medium); letter-spacing: var(--track-slight); }
 
@@ -2076,7 +2072,6 @@ body[data-page="cache"].ciphers-found {
 #hof-access {
     display: none;
     cursor: help;
-	margin-top: -20px;
 }
 
 body.watcher-found #hof-access {
