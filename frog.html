@@ -1,0 +1,591 @@
+
+
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title></title>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400..900;1,9..144,400..900&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.13.6/css/jquery.dataTables.min.css">
+    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/responsive/2.5.0/css/responsive.dataTables.min.css">
+
+    <link rel="stylesheet" href="static/style.css">
+    
+    <style>
+        :root {
+			/* --- 1. LAYOUT CONFIG (Automatic loop) --- */
+			
+			--window-max-width: clamp(600px, 60vw, 1600px);
+			
+			--window-padding: clamp(20px, 2.5vw, 40px);
+			
+			--window-gap: 20px;
+			
+
+			/* --- 2. TYPOGRAPHY (Automatic loop) --- */
+			
+			--font-title: 'Fraunces', serif;
+			
+			--font-ui: 'Inter', sans-serif;
+			
+			--font-mono: 'JetBrains Mono', monospace;
+			
+			--font-hand: 'Segoe Print', 'Bradley Hand', 'Apple Chancery', 'Comic Sans MS', cursive;
+			
+			--bold: 900;
+			
+			--medium: 600;
+			
+			--normal: 400;
+			
+			--size-xs: 0.75rem;
+			
+			--size-sm: 0.85rem;
+			
+			--size-modal: 0.90rem;
+			
+			--size-base: 0.95rem;
+			
+			--size-md: 1.2rem;
+			
+			--size-lg: 2.0rem;
+			
+			--size-xl: 2.5rem;
+			
+			--size-display: 2.8rem;
+			
+			--track-slight: 0.5px;
+			
+			--track-wide: 1px;
+			
+			--track-display: 4px;
+			
+
+			/* --- 3. GLOBAL UI (Automatic loop) --- */
+			
+			--bg-overlay-top: rgba(0, 0, 0, 0.1);
+			
+			--bg-overlay-bottom: rgba(0, 0, 0, 0.8);
+			
+			--bg-container: #1c1c1c;
+			
+			--bg-surface: rgba(255, 255, 255, 0.03);
+			
+			--bg-hover: rgba(255, 255, 255, 0.08);
+			
+			--border-soft: #333333;
+			
+			--border-dark: rgba(0, 0, 0, 0.4);
+			
+			--border-light: rgba(255, 255, 255, 0.05);
+			
+			--glass-bg: #1c1c1cd9;
+			
+			--glass-border: rgba(255, 255, 255, 0.08);
+			
+			--glass-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+			
+			--text-bright: #ffffff;
+			
+			--text-main: #E0E0E0;
+			
+			--text-muted: #A0A0A0;
+			
+			--text-dark: #111111;
+			
+			--dt-table-bg: rgba(0, 0, 0, 0.15);
+			
+			--dt-header-bg: rgba(0, 0, 0, 0.25);
+			
+			--dt-row-border: rgba(255, 255, 255, 0.03);
+			
+			--dt-row-hover: rgba(255, 255, 255, 0.07);
+			
+			--dt-input-bg: rgba(0, 0, 0, 0.2);
+			
+
+			/* --- 4. TIER DYNAMICS (Loop with logic) --- */
+			
+			--color-bird: #7AB5E0;
+			--color-bird-bg: #7AB5E014;
+			
+			--color-fox: #E55555;
+			--color-fox-bg: #E5555514;
+			
+			--color-rabbit: #F2C14E;
+			--color-rabbit-bg: #F2C14E14;
+			
+			--color-mouse: #F49E52;
+			--color-mouse-bg: #F49E5214;
+			
+			--color-squirrel: #94C160;
+			--color-squirrel-bg: #94C16014;
+			
+			--color-stag: #C686FF;
+			--color-stag-bg: #C686FF14;
+			
+			--color-bear: #ffffff;
+			--color-bear-bg: #ffffff14;
+			
+			--color-default: #7A7347;
+			--color-default-bg: #7A734714;
+			
+
+			/* --- 5. PAGE THEME --- */
+			--main-color: #7A7347;
+		}
+    </style>
+	
+	
+	<meta name="robots" content="noindex, follow">
+	
+	
+	<meta name="google-site-verification" content="xNfE9mY0Df8BsQAl4g5S0I_C4MvFC8nnJVNVWJJpqAg" />
+
+	
+
+	<meta property="og:type" content="website">
+	<meta property="og:url" content="https://tricholome.github.io/rootelo">
+	<meta property="og:title" content="ROOTELO">
+	<meta property="og:description" content="A Metric of Woodland Skill and Will">
+	<meta property="og:image" content="https://tricholome.github.io/rootelo/assets/meta/rootelo-preview.webp">
+	
+	<link rel="icon" type="image/png" sizes="192x192" href="https://tricholome.github.io/rootelo/assets/meta/favicon.png">
+	<link rel="icon" type="image/svg+xml" href="assets/meta/favicon.svg">
+	<link rel="apple-touch-icon" href="https://tricholome.github.io/rootelo/assets/meta/favicon.png">
+
+    
+	
+</head>
+
+<body class="" data-page="" data-section="">
+    
+    <div class="container">
+	
+        <header class="app-banner window-box">
+		
+            <div class="banner-container">
+                <div class="banner-icons left">
+                    <a href="javascript:void(0)" onclick="openTierModal('stag')" class="tooltip-link js-double-tap banner-icon-stag">
+                        <img src="assets/icons/stag.webp" alt="Stag">
+                        <span class="tooltip-text"><strong class="tier-stag">Stag (1600+)</strong> — The Legend</span>
+                    </a>
+					<a href="javascript:void(0)" onclick="openTierModal('bird')" class="tooltip-link js-double-tap">
+                        <img src="assets/icons/bird.webp" alt="Bird">
+                        <span class="tooltip-text"><strong class="tier-bird">Bird (1500+)</strong> — The Grandmasters</span>
+                    </a>
+                    <a href="javascript:void(0)" onclick="openTierModal('fox')" class="tooltip-link js-double-tap">
+                        <img src="assets/icons/fox.webp" alt="Fox">
+                        <span class="tooltip-text"><strong class="tier-fox">Fox (1400+)</strong> — The Cunning Tacticians</span>
+                    </a>
+                </div>
+                <div class="banner-center">
+                    <h1 class="site-title">ROOTELO</h1>
+                    <p class="site-subtitle">A Metric of Woodland&nbsp;Skill&nbsp;and&nbsp;Will</p>
+                </div>
+                <div class="banner-icons right">
+                    <a href="javascript:void(0)" onclick="openTierModal('rabbit')" class="tooltip-link js-double-tap">
+                        <img src="assets/icons/rabbit.webp" alt="Rabbit">
+                        <span class="tooltip-text"><strong class="tier-rabbit">Rabbit (1300+)</strong> — The Agile Contenders</span>
+                    </a>
+                    <a href="javascript:void(0)" onclick="openTierModal('mouse')" class="tooltip-link js-double-tap">
+                        <img src="assets/icons/mouse.webp" alt="Mouse">
+                        <span class="tooltip-text"><strong class="tier-mouse">Mouse (1200+)</strong> — The Steady Foragers</span>
+                    </a>
+					<a href="javascript:void(0)" onclick="openTierModal('squirrel')" class="tooltip-link js-double-tap banner-icon-squirrel">
+                        <img src="assets/icons/squirrel.webp" alt="Squirrel">
+                        <span class="tooltip-text"><strong class="tier-squirrel">Squirrel (&lt; 1200)</strong> — The Hapless Stragglers</span>
+                    </a>
+                </div>
+            </div>
+            
+            <div class="nav-separator"></div>
+
+            <nav>
+				
+
+				
+					
+						
+					
+					
+					<a href="index.html" class="">Leaderboard</a>
+				
+					
+						
+					
+					
+					<a href="matches.html" class="">Top Tables</a>
+				
+					
+						
+					
+					
+					<a href="trends.html" class="">Player's Journey</a>
+				
+					
+						
+					
+					
+					<a href="about.html" class="">Codex</a>
+				
+				<a href="cache.html" class="nav-secret ">Undergrowth</a>
+			</nav>
+			
+        </header>
+        
+        <div class="screen-deco right-deco">
+			
+		</div>
+
+        <div id="view" class="app-viewport window-box">
+            <header class="page-intro">
+				<h2></h2>
+				
+
+				
+
+				<div class="season-selector-group">
+				
+					
+				
+					
+
+					
+					<div class="season-selector">
+						<span class="season-label">Player</span>
+						<div class="search-box">
+							<input type="search" id="playerName" list="playerAutocompleteList" value="" placeholder="Search..." autocomplete="off">
+							<datalist id="playerAutocompleteList">
+								
+							</datalist>
+							<a id="root-db-btn" 
+							   href="#" 
+							   target="_blank" 
+							   rel="noopener noreferrer" 
+							   class="db-btn js-double-tap disabled" 
+							   aria-label="View profile on The Root Database">
+							   <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+								 <path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"></path>
+								 <path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"></path>
+							   </svg>
+							   <span class="tooltip-text">View profile on The Root Database</span>
+							</a>
+						</div>
+					</div>
+					
+				</div>
+			</header>
+			
+            <main>
+                
+<div class="codex-section">	
+    <h2>Welcome, Frogs!</h2>
+
+    <!-- Date selector controls -->
+    <div class="date-controls" style="display: flex; align-items: center; justify-content: center; gap: 10px; margin: 20px 0;">
+        <button id="prevDateBtn" class="btn">&laquo; Previous Day</button>
+        <input type="date" id="datePicker" style="padding: 6px 12px; font-size: 1rem;">
+        <button id="nextDateBtn" class="btn">Next Day &raquo;</button>
+        <button id="latestDateBtn" class="btn">Latest Date</button>
+    </div>
+
+    <!-- Dynamic tribe counters -->
+    <div id="tribeSummary" style="display: flex; flex-wrap: wrap; justify-content: center; gap: 10px; margin: 15px 0 25px 0;">
+        <!-- Generated dynamically in JS -->
+    </div>
+
+    <table id="frogTable" class="display nowrap" style="width:100%">
+        <thead>
+            <tr>
+                <th>Player</th>
+                <th>Games</th>
+                <th>Main Tribe</th>
+                <th>Tribe A</th>
+                <th>Tribe B</th>
+                <th>Tribe C</th>
+            </tr>
+        </thead>
+        <tbody>
+            <!-- Table body populated dynamically by JS -->
+        </tbody>
+    </table>
+</div>
+
+            </main>
+			
+			<div class="footer-table">
+				
+			</div>
+			
+        </div>
+        
+        <div class="screen-deco left-deco">
+			
+		</div>
+
+        <footer class="app-footer window-box">
+			<div class="footer-content">
+				<div class="footer-credits">
+					<span>Powered by <strong>Tʀɪᴄʜᴏʟᴏᴍᴇ</strong></span>
+					<span>Woodland visions by
+						<a class="cl" href="cache.html">𝕩𝕝𝕦𝕖𝕧𝕚</a>
+						<a class="insta" href="https://www.instagram.com/xluevi.art/" target="_blank" aria-label="Instagram de xluevi">
+							<svg viewBox="0 0 24 24" width="16" height="16" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round">
+								<rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
+								<path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
+								<line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
+							</svg>
+						</a>
+					</span>
+				</div>
+				<div class="footer-date">Updated on </div>
+			</div>
+		</footer>
+    </div>
+    
+    <div id="tierModal" class="modal-overlay">
+		<div class="modal-content window-box">
+			<button class="modal-close" aria-label="Close">&times;</button>
+			<div id="modalBody">
+				<div class="modal-image-side">
+					<img id="modalIcon" src="" alt="Tier Icon">
+					<img id="modalCrown" src="" alt="Crown">
+				</div>
+				
+				<div class="modal-text-side">
+					<div class="title-row">
+						<h2 id="modalTitle"></h2>
+						<h3 id="modalElo"></h3>
+					</div>
+					<div id="modalSubtitle"></div>
+					<div class="modal-divider"></div>
+					<div id="modalText"></div>
+					<div id="modalFinal"></div>
+				</div>
+			</div>
+		</div>
+	</div>
+	
+	<div id="mystic-gate"></div>
+
+    <script src="https://code.jquery.com/jquery-3.7.0.min.js"></script>
+    <script src="https://cdn.datatables.net/1.13.6/js/jquery.dataTables.min.js"></script>
+	<script src="https://cdn.datatables.net/responsive/2.5.0/js/dataTables.responsive.min.js"></script>
+    
+    <script>
+		window.PLAYER_PROFILE_MAP = {};
+		window.PLAYER_DATA_MAP = {};
+		window.PROFILE_BASE_URL = null;
+		window.K_CONFIG = {};
+
+		const PATH_PREFIX = "";
+
+		const CONFIG = {
+			colors: {"bear": "#ffffff", "bird": "#7AB5E0", "default": "#7A7347", "fox": "#E55555", "mouse": "#F49E52", "rabbit": "#F2C14E", "squirrel": "#94C160", "stag": "#C686FF"},
+			icons: {
+				
+					"bird": "" + "assets/icons/bird.webp",
+				
+					"fox": "" + "assets/icons/fox.webp",
+				
+					"rabbit": "" + "assets/icons/rabbit.webp",
+				
+					"mouse": "" + "assets/icons/mouse.webp",
+				
+					"squirrel": "" + "assets/icons/squirrel.webp",
+				
+					"stag": "" + "assets/icons/stag.webp",
+				
+					"bear": "" + "assets/icons/bear.webp",
+				
+			},
+			currentTier: "default",
+			chartData: {},
+			champMatch: null
+		};
+		
+		const TIER_DATA = {
+			'bird': {
+				name: 'Bird',
+				elo: '1500+',
+				subtitle: 'The Grandmasters',
+				desc: 'These elite sovereigns sit at the absolute pinnacle of the Woodland canopy. Remaining on this prestigious throne is a dizzying battle against shifting winds and ambitious rivals. They rule the skies by maintaining flawless execution and unerring control under pressure.'
+			},
+			'fox': {
+				name: 'Fox',
+				elo: '1400+',
+				subtitle: 'The Cunning Tacticians',
+				desc: 'These keen strategists dominate the ladder by thriving on sharp wit over brute force. The hunt presses close from all sides, and a single moment of hesitation can prove fatal. They prevail by measuring every step with care and exploiting weakness with signature flair.'
+			},
+			'rabbit': {
+				name: 'Rabbit',
+				elo: '1300+',
+				subtitle: 'The Agile Contenders',
+				desc: 'These nimble wanderers gracefully weave through the crowded paths of the rankings. Routine strategies falter here, threatening to trap anyone who cannot adapt to sudden chaos. They leap ahead where others see only barriers, turning dead ends into daring escapes.'
+			},
+			'mouse': {
+				name: 'Mouse',
+				elo: '1200+',
+				subtitle: 'The Steady Foragers',
+				desc: 'These resilient souls rise above the casual fray to mark a milestone of mastery. The wild now demands pure stamina, where early momentum easily fades into exhaustion. They hold their ground through quiet consistency, proving that patience outlasts blind luck.'
+			},
+			'squirrel': {
+				name: 'Squirrel',
+				elo: '< 1200',
+				subtitle: 'The Hapless Stragglers',
+				desc: 'These frantic collectors dwell in the tangled undergrowth of the ranking system. Clumsy errors and brutal defeats often force them to fall back while fiercer beasts surge ahead. Yet, they bravely endure by turning every painful lesson into a seed for next season’s harvest.'
+			},
+			'stag': {
+				name: 'Stag',
+				elo: '1600+',
+				subtitle: 'The Legend',
+				desc: 'Has anyone truly seen this mythical beast, or is it only an echo of the wild? What happens to the predator when the woods turn hollow and every path leads back to a mirror of its own perfection? With nothing left to be claimed, is the true crown the silence that follows the chase?'
+			},
+			'bear': {
+				name: 'Bear',
+				elo: CONFIG.champMatch ? CONFIG.champMatch.champion : '',
+				subtitle: CONFIG.champMatch ? `Season ${CONFIG.champMatch.season} Champion` : '',
+				final: CONFIG.champMatch ? `An epic <a href="${CONFIG.champMatch.match_link}" target="_blank" class="cl">final battle</a> pitted the top four titans of the league against each other. On ${CONFIG.champMatch.date}, <strong>${CONFIG.champMatch.champion}</strong> secured the seasonal crown by shutting out the ambitions of <strong>${CONFIG.champMatch.player2}</strong>, <strong>${CONFIG.champMatch.player3}</strong> and <strong>${CONFIG.champMatch.player4}</strong>. Surely, the woodland floor shook from the sheer force of their clash.` : '',
+				crown: 'assets/images/crown.webp'
+			}
+		};
+	</script>
+	
+    <script src="static/script.js"></script>
+    
+<script>
+    const snapshots = {};
+    const availableDates = [];
+    const TARGET_TRIBES = ["Tribe A", "Tribe B", "Tribe C"];
+    const UNALIGNED_LABEL = "-";
+
+    $(document).ready(function () {
+        if (!availableDates || availableDates.length === 0) return;
+
+        const table = $('#frogTable').DataTable({
+            "order": [[1, "desc"]],
+            "responsive": true,
+            "pageLength": 25,
+            "dom": 'rt<"bottom"p><"clear">'
+        });
+
+        const $datePicker =$('#datePicker');
+        const $prevBtn =$('#prevDateBtn');
+        const $nextBtn =$('#nextDateBtn');
+        const $latestBtn =$('#latestDateBtn');
+
+        $datePicker.attr('min', availableDates[0]);$datePicker.attr('max', availableDates[availableDates.length - 1]);
+
+        let currentIndex = availableDates.length - 1;
+
+        function renderTribeCell(scoreData) {
+            if (!scoreData || scoreData.pct < 10) {
+                return `<span style="color:#a0aec0;">-</span>`;
+            }
+            
+            const pctStr = `<span style="font-weight:600; margin-right:4px;">${scoreData.pct} %</span>`;
+            
+            if (!scoreData.status) {
+                return pctStr;
+            }
+
+            let bgColor = "#4a5568";
+            let tooltip = "";
+
+            if (scoreData.status === "Core") {
+                bgColor = "#2e7d32"; // Dark Green
+            } else if (scoreData.status === "Loyalist") {
+                bgColor = "#1565c0"; // Blue
+            } else if (scoreData.status === "Affiliate") {
+                bgColor = "#d97706"; // Amber / Orange
+            } else if (scoreData.status === "Wavering") {
+                bgColor = "#c62828";  // Red
+                tooltip = 'title="Maintained in tribe by historical inertia while leaning elsewhere"';
+            }
+
+            return `${pctStr} <span style="background:${bgColor}; color:#fff; padding:2px 6px; border-radius:10px; font-size:0.75rem; font-weight:600;" ${tooltip}>${scoreData.status}</span>`;
+        }
+
+        function updateTableForDate(selectedDate) {
+            $datePicker.val(selectedDate);
+            const snapshot = snapshots[selectedDate];
+            if (!snapshot) return;
+
+            const tribeOrder = ["Tribe A", "Tribe B", "Tribe C", UNALIGNED_LABEL];
+            let summaryHtml = "";
+
+            tribeOrder.forEach(tribe => {
+                const count = snapshot.summary[tribe] || 0;
+                if (count > 0 || tribe === UNALIGNED_LABEL) {
+                    const bgColor = tribe === UNALIGNED_LABEL ? '#4a5568' : '#2e7d32';
+                    summaryHtml += `
+                        <span style="background-color: ${bgColor}; color: #ffffff; padding: 6px 14px; border-radius: 20px; font-weight: 600; font-size: 0.88rem; display: inline-flex; align-items: center; gap: 6px; box-shadow: 0 2px 4px rgba(0,0,0,0.15);">
+                            <span>${tribe}</span>
+                            <span style="background: rgba(255,255,255,0.25); border-radius: 10px; padding: 1px 7px; font-size: 0.82rem;">${count}</span>
+                        </span>`;
+                }
+            });
+            $('#tribeSummary').html(summaryHtml);
+
+            const newRows = snapshot.players.map(p => {
+                return [
+                    p.name,
+                    p.games,
+                    p.main_tribe,
+                    renderTribeCell(p.scores["Tribe A"]),
+                    renderTribeCell(p.scores["Tribe B"]),
+                    renderTribeCell(p.scores["Tribe C"])
+                ];
+            });
+
+            table.clear();
+            table.rows.add(newRows);
+            table.draw();
+
+            $prevBtn.prop('disabled', currentIndex <= 0);$nextBtn.prop('disabled', currentIndex >= availableDates.length - 1);
+        }
+
+        function setDateByIndex(index) {
+            if (index >= 0 && index < availableDates.length) {
+                currentIndex = index;
+                updateTableForDate(availableDates[currentIndex]);
+            }
+        }
+
+        $prevBtn.on('click', () => setDateByIndex(currentIndex - 1));
+        $nextBtn.on('click', () => setDateByIndex(currentIndex + 1));$latestBtn.on('click', () => setDateByIndex(availableDates.length - 1));
+
+        $datePicker.on('change', function () {
+            const val = $(this).val();
+            let matchIdx = availableDates.findIndex(d => d >= val);
+            currentIndex = matchIdx !== -1 ? matchIdx : availableDates.length - 1;
+            updateTableForDate(availableDates[currentIndex]);
+        });
+
+        setDateByIndex(currentIndex);
+    });
+</script>
+
+
+	<script>
+		if (
+			window.location.hostname === 'localhost' ||
+			window.location.hostname === '127.0.0.1' ||
+			window.location.href.includes('rootelo-dev') ||
+			window.location.pathname.includes('/dev/')
+		) {
+			window.goatcounter = { no_onload: true };
+		}
+	</script>
+	<script data-goatcounter="https://tricholome.goatcounter.com/count"
+            async src="//gc.zgo.at/count.js"></script>
+</body>
+</html>
