@@ -1,0 +1,1186 @@
+
+
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Rootelo • Homelands</title>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400..900;1,9..144,400..900&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.13.6/css/jquery.dataTables.min.css">
+    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/responsive/2.5.0/css/responsive.dataTables.min.css">
+
+    <link rel="stylesheet" href="../static/style.css">
+    
+    <style>
+        :root {
+			/* --- 1. LAYOUT CONFIG (Automatic loop) --- */
+			
+			--window-max-width: clamp(600px, 60vw, 1600px);
+			
+			--window-padding: clamp(20px, 2.5vw, 40px);
+			
+			--window-gap: 20px;
+			
+
+			/* --- 2. TYPOGRAPHY (Automatic loop) --- */
+			
+			--font-title: 'Fraunces', serif;
+			
+			--font-ui: 'Inter', sans-serif;
+			
+			--font-mono: 'JetBrains Mono', monospace;
+			
+			--font-hand: 'Segoe Print', 'Bradley Hand', 'Apple Chancery', 'Comic Sans MS', cursive;
+			
+			--bold: 900;
+			
+			--medium: 600;
+			
+			--normal: 400;
+			
+			--size-xs: 0.75rem;
+			
+			--size-sm: 0.85rem;
+			
+			--size-modal: 0.90rem;
+			
+			--size-base: 0.95rem;
+			
+			--size-md: 1.2rem;
+			
+			--size-lg: 2.0rem;
+			
+			--size-xl: 2.5rem;
+			
+			--size-display: 2.8rem;
+			
+			--track-slight: 0.5px;
+			
+			--track-wide: 1px;
+			
+			--track-display: 4px;
+			
+
+			/* --- 3. GLOBAL UI (Automatic loop) --- */
+			
+			--bg-overlay-top: rgba(0, 0, 0, 0.1);
+			
+			--bg-overlay-bottom: rgba(0, 0, 0, 0.8);
+			
+			--bg-container: #1c1c1c;
+			
+			--bg-surface: rgba(255, 255, 255, 0.03);
+			
+			--bg-hover: rgba(255, 255, 255, 0.08);
+			
+			--border-soft: #333333;
+			
+			--border-dark: rgba(0, 0, 0, 0.4);
+			
+			--border-light: rgba(255, 255, 255, 0.05);
+			
+			--glass-bg: #1c1c1cd9;
+			
+			--glass-border: rgba(255, 255, 255, 0.08);
+			
+			--glass-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+			
+			--text-bright: #ffffff;
+			
+			--text-main: #E0E0E0;
+			
+			--text-muted: #A0A0A0;
+			
+			--text-dark: #111111;
+			
+			--dt-table-bg: rgba(0, 0, 0, 0.15);
+			
+			--dt-header-bg: rgba(0, 0, 0, 0.25);
+			
+			--dt-row-border: rgba(255, 255, 255, 0.03);
+			
+			--dt-row-hover: rgba(255, 255, 255, 0.07);
+			
+			--dt-input-bg: rgba(0, 0, 0, 0.2);
+			
+
+			/* --- 4. TIER DYNAMICS (Loop with logic) --- */
+			
+			--color-bird: #7AB5E0;
+			--color-bird-bg: #7AB5E014;
+			
+			--color-fox: #E55555;
+			--color-fox-bg: #E5555514;
+			
+			--color-rabbit: #F2C14E;
+			--color-rabbit-bg: #F2C14E14;
+			
+			--color-mouse: #F49E52;
+			--color-mouse-bg: #F49E5214;
+			
+			--color-squirrel: #94C160;
+			--color-squirrel-bg: #94C16014;
+			
+			--color-stag: #C686FF;
+			--color-stag-bg: #C686FF14;
+			
+			--color-bear: #ffffff;
+			--color-bear-bg: #ffffff14;
+			
+			--color-frog: #918F08;
+			--color-frog-bg: #918F0814;
+			
+			--color-default: #ffffff;
+			--color-default-bg: #ffffff14;
+			
+
+			/* --- 5. PAGE THEME --- */
+			--main-color: #918F08;
+		}
+    </style>
+	
+	
+	<meta name="robots" content="noindex, follow">
+	
+	
+	<meta name="google-site-verification" content="xNfE9mY0Df8BsQAl4g5S0I_C4MvFC8nnJVNVWJJpqAg" />
+
+	
+	<meta name="description" content="Unveiling player allegiances and networks. Click a clearing to filter members.">
+	
+
+	<meta property="og:type" content="website">
+	<meta property="og:url" content="https://tricholome.github.io/rootelo">
+	<meta property="og:title" content="ROOTELO">
+	<meta property="og:description" content="A Metric of Woodland Skill and Will">
+	<meta property="og:image" content="https://tricholome.github.io/rootelo/assets/meta/rootelo-preview.webp">
+	
+	<link rel="icon" type="image/png" sizes="192x192" href="https://tricholome.github.io/rootelo/assets/meta/favicon.png">
+	<link rel="icon" type="image/svg+xml" href="../assets/meta/favicon.svg">
+	<link rel="apple-touch-icon" href="https://tricholome.github.io/rootelo/assets/meta/favicon.png">
+
+    
+	
+</head>
+
+<body class="" data-page="network" data-section="network">
+    
+    <div class="container">
+	
+        <header class="app-banner window-box">
+		
+            <div class="banner-container">
+                <div class="banner-icons left">
+                    <a href="javascript:void(0)" onclick="openTierModal('stag')" class="tooltip-link js-double-tap banner-icon-stag">
+                        <img src="../assets/icons/stag.webp" alt="Stag">
+                        <span class="tooltip-text"><strong class="tier-stag">Stag (1600+)</strong> — The Legend</span>
+                    </a>
+					<a href="javascript:void(0)" onclick="openTierModal('bird')" class="tooltip-link js-double-tap">
+                        <img src="../assets/icons/bird.webp" alt="Bird">
+                        <span class="tooltip-text"><strong class="tier-bird">Bird (1500+)</strong> — The Grandmasters</span>
+                    </a>
+                    <a href="javascript:void(0)" onclick="openTierModal('fox')" class="tooltip-link js-double-tap">
+                        <img src="../assets/icons/fox.webp" alt="Fox">
+                        <span class="tooltip-text"><strong class="tier-fox">Fox (1400+)</strong> — The Cunning Tacticians</span>
+                    </a>
+                </div>
+                <div class="banner-center">
+                    <h1 class="site-title">ROOTELO</h1>
+                    <p class="site-subtitle">A Metric of Woodland&nbsp;Skill&nbsp;and&nbsp;Will</p>
+                </div>
+                <div class="banner-icons right">
+                    <a href="javascript:void(0)" onclick="openTierModal('rabbit')" class="tooltip-link js-double-tap">
+                        <img src="../assets/icons/rabbit.webp" alt="Rabbit">
+                        <span class="tooltip-text"><strong class="tier-rabbit">Rabbit (1300+)</strong> — The Agile Contenders</span>
+                    </a>
+                    <a href="javascript:void(0)" onclick="openTierModal('mouse')" class="tooltip-link js-double-tap">
+                        <img src="../assets/icons/mouse.webp" alt="Mouse">
+                        <span class="tooltip-text"><strong class="tier-mouse">Mouse (1200+)</strong> — The Steady Foragers</span>
+                    </a>
+					<a href="javascript:void(0)" onclick="openTierModal('squirrel')" class="tooltip-link js-double-tap banner-icon-squirrel">
+                        <img src="../assets/icons/squirrel.webp" alt="Squirrel">
+                        <span class="tooltip-text"><strong class="tier-squirrel">Squirrel (&lt; 1200)</strong> — The Hapless Stragglers</span>
+                    </a>
+                </div>
+            </div>
+            
+            <div class="nav-separator"></div>
+
+            <nav>
+				
+
+				
+					
+						
+					
+					
+					<a href="index.html" class="">Leaderboard</a>
+				
+					
+						
+					
+					
+					<a href="matches.html" class="">Top Tables</a>
+				
+					
+						
+					
+					
+					<a href="trends.html" class="">Player's Journey</a>
+				
+					
+						
+					
+					
+					<a href="about.html" class="">Codex</a>
+				
+				<a href="cache.html" class="nav-secret ">Undergrowth</a>
+			</nav>
+			
+        </header>
+        
+        <div class="screen-deco right-deco">
+			
+		</div>
+
+        <div id="view" class="app-viewport window-box">
+            <header class="page-intro">
+				<h2>Homelands</h2>
+				<p>Unveiling player allegiances and networks. Click a clearing to filter members.</p>
+
+				
+<!-- Carte interactive des clairières -->
+<div id="tribeMapContainer" style="width: 100%; height: 380px; margin: 10px 0 25px 0; position: relative; overflow: hidden;">
+    <svg id="tribeMapSvg" style="width: 100%; height: 100%; display: block;"></svg>
+</div>
+<!-- Date selector controls -->
+    <div class="date-controls" style="display: flex; align-items: center; justify-content: center; gap: 10px; margin: 20px 0;">
+        <button id="earliestDateBtn" class="btn">Earliest Date</button>
+        <button id="prevDateBtn" class="btn">&laquo; Prev. Day</button>
+        <input type="date" id="datePicker" style="padding: 6px 12px; font-size: 1rem;">
+        <button id="nextDateBtn" class="btn">Next Day &raquo;</button>
+        <button id="latestDateBtn" class="btn">Latest Date</button>
+    </div>
+
+
+				<div class="season-selector-group">
+				
+					
+					<div class="season-selector">
+						<span class="season-label">League</span>
+						<select onchange="if (this.value) window.location.href=this.value;">
+							
+								<option value=".././network.html" >
+									ROOT DIGITAL LEAGUE
+								</option>
+							
+								<option value="../hoot/network.html" selected>
+									HOOT RANKINGS
+								</option>
+							
+						</select>	
+					</div>
+					
+				
+					
+
+					
+					<div class="season-selector">
+						<span class="season-label">Player</span>
+						<div class="search-box">
+							<input type="search" id="playerName" list="playerAutocompleteList" value="" placeholder="Search..." autocomplete="off">
+							<datalist id="playerAutocompleteList">
+								
+									
+										<option value=".doe"></option>
+									
+										<option value="Aedalus"></option>
+									
+										<option value="Aeliott"></option>
+									
+										<option value="AnOkayPotato"></option>
+									
+										<option value="BW"></option>
+									
+										<option value="Briony"></option>
+									
+										<option value="Bustin"></option>
+									
+										<option value="CUA"></option>
+									
+										<option value="ChefBoyardee"></option>
+									
+										<option value="Chicken_X"></option>
+									
+										<option value="Cookies"></option>
+									
+										<option value="Coola101"></option>
+									
+										<option value="Cosmic Cant"></option>
+									
+										<option value="Dark Owl"></option>
+									
+										<option value="Darkwonderer"></option>
+									
+										<option value="DarthPuniceus (MonteCristo24601)"></option>
+									
+										<option value="Davee_39"></option>
+									
+										<option value="Dekiru"></option>
+									
+										<option value="DemaRogue"></option>
+									
+										<option value="Dr. Seal"></option>
+									
+										<option value="Eletto21"></option>
+									
+										<option value="Extortionator (AUS)"></option>
+									
+										<option value="Gregoola"></option>
+									
+										<option value="Hasan"></option>
+									
+										<option value="House Addict"></option>
+									
+										<option value="Hurple"></option>
+									
+										<option value="IcarusPanda (cringelordirl)"></option>
+									
+										<option value="IceeCream"></option>
+									
+										<option value="Jalapeno"></option>
+									
+										<option value="Jed"></option>
+									
+										<option value="Kethem"></option>
+									
+										<option value="KeyserSoze"></option>
+									
+										<option value="KingLuigiNL"></option>
+									
+										<option value="Kvan_"></option>
+									
+										<option value="KyloBot"></option>
+									
+										<option value="Lilac Teddy Bear"></option>
+									
+										<option value="Litch Queen of Hyena Necrocracy"></option>
+									
+										<option value="Lobster (GMT-4)(Indiana)"></option>
+									
+										<option value="Lylethebrick"></option>
+									
+										<option value="Malleable Frog"></option>
+									
+										<option value="MarcustheCat"></option>
+									
+										<option value="MentalMendel"></option>
+									
+										<option value="Meryn"></option>
+									
+										<option value="Moss"></option>
+									
+										<option value="MrDrouf"></option>
+									
+										<option value="MrKent (UTC+7)"></option>
+									
+										<option value="Nadav253"></option>
+									
+										<option value="NadtyLite"></option>
+									
+										<option value="NattyKash"></option>
+									
+										<option value="Piechu"></option>
+									
+										<option value="PokerFace126"></option>
+									
+										<option value="Quents"></option>
+									
+										<option value="RabbitWarlord"></option>
+									
+										<option value="Requiem"></option>
+									
+										<option value="Rho Sternjäger"></option>
+									
+										<option value="Riverman"></option>
+									
+										<option value="RondamGemas"></option>
+									
+										<option value="SEironed"></option>
+									
+										<option value="SNCuller"></option>
+									
+										<option value="Schnaga"></option>
+									
+										<option value="Silver"></option>
+									
+										<option value="Simber"></option>
+									
+										<option value="Slaith"></option>
+									
+										<option value="Starhard_Fishrinse"></option>
+									
+										<option value="SunkistDragon"></option>
+									
+										<option value="Sweenss"></option>
+									
+										<option value="True American Patriot"></option>
+									
+										<option value="Tungsten"></option>
+									
+										<option value="WillRevolt"></option>
+									
+										<option value="WyvernElement"></option>
+									
+										<option value="Zaandaa"></option>
+									
+										<option value="aaron_dangerman"></option>
+									
+										<option value="abbreviatedman (he/him)"></option>
+									
+										<option value="batmaster"></option>
+									
+										<option value="benssoon"></option>
+									
+										<option value="bunniesandcandy"></option>
+									
+										<option value="clinicalindication"></option>
+									
+										<option value="countthemsheep"></option>
+									
+										<option value="coyote"></option>
+									
+										<option value="euler's fool"></option>
+									
+										<option value="fajfar"></option>
+									
+										<option value="fraaab"></option>
+									
+										<option value="idyll"></option>
+									
+										<option value="jakattak14"></option>
+									
+										<option value="jermcurry"></option>
+									
+										<option value="jonismiff"></option>
+									
+										<option value="kaiser"></option>
+									
+										<option value="lazarus210"></option>
+									
+										<option value="lumpyprol"></option>
+									
+										<option value="magiczamboni"></option>
+									
+										<option value="mcauthor"></option>
+									
+										<option value="militech2078"></option>
+									
+										<option value="mwalt92"></option>
+									
+										<option value="nvt2508"></option>
+									
+										<option value="pheobii"></option>
+									
+										<option value="plegbot"></option>
+									
+										<option value="pooge"></option>
+									
+										<option value="punkstarman"></option>
+									
+										<option value="pwarren8590"></option>
+									
+										<option value="salo_solomon"></option>
+									
+										<option value="scotchbonnet"></option>
+									
+										<option value="sda1611"></option>
+									
+										<option value="smeichel"></option>
+									
+										<option value="stockbot"></option>
+									
+										<option value="talleyrand19"></option>
+									
+										<option value="tentacultist_"></option>
+									
+										<option value="theSOFLY"></option>
+									
+										<option value="trippingrannys"></option>
+									
+										<option value="turmoilbyrd"></option>
+									
+										<option value="uwtron"></option>
+									
+										<option value="xinoehp512"></option>
+									
+								
+							</datalist>
+							<a id="root-db-btn" 
+							   href="#" 
+							   target="_blank" 
+							   rel="noopener noreferrer" 
+							   class="db-btn js-double-tap disabled" 
+							   aria-label="View profile on The Root Database">
+							   <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+								 <path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"></path>
+								 <path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"></path>
+							   </svg>
+							   <span class="tooltip-text">View profile on The Root Database</span>
+							</a>
+						</div>
+					</div>
+					
+				</div>
+			</header>
+			
+            <main>
+                
+<div style="max-width: clamp(600px, 60vw, 1600px); margin: 0 auto;">
+
+    <table id="frogTable" class="display nowrap" style="width: 100%; table-layout: fixed;">
+        <thead>
+            <tr>
+                <th style="width: 25%; text-align: left; overflow: hidden; text-overflow: ellipsis;">Player</th>
+                <th style="width: 10%; text-align: center;">Games</th>
+                <th style="text-align: center;"><img src="assets/items/tea.png" title="TEA" alt="TEA" style="height:26px; width:26px; vertical-align:middle; object-fit:contain;"></th>
+                <th style="text-align: center;"><img src="assets/items/bag.png" title="BAG" alt="BAG" style="height:26px; width:26px; vertical-align:middle; object-fit:contain;"></th>
+                <th style="text-align: center;"><img src="assets/items/sword.png" title="SWORD" alt="SWORD" style="height:26px; width:26px; vertical-align:middle; object-fit:contain;"></th>
+                <th style="text-align: center;"><img src="assets/items/coins.png" title="COINS" alt="COINS" style="height:26px; width:26px; vertical-align:middle; object-fit:contain;"></th>
+                <th style="text-align: center;"><img src="assets/items/hammer.png" title="HAMMER" alt="HAMMER" style="height:26px; width:26px; vertical-align:middle; object-fit:contain;"></th>
+                <th style="text-align: center;"><img src="assets/items/crossbow.png" title="CROSSBOW" alt="CROSSBOW" style="height:26px; width:26px; vertical-align:middle; object-fit:contain;"></th>
+                <th style="text-align: center;"><img src="assets/items/boot.png" title="BOOT" alt="BOOT" style="height:26px; width:26px; vertical-align:middle; object-fit:contain;"></th>
+            </tr>
+        </thead>
+        <tbody>
+            <!-- Table body populated dynamically by JS -->
+        </tbody>
+    </table>
+</div>
+
+            </main>
+			
+			<div class="footer-table">
+				
+			</div>
+			
+        </div>
+        
+        <div class="screen-deco left-deco">
+			
+		</div>
+
+        <footer class="app-footer window-box">
+			<div class="footer-content">
+				<div class="footer-credits">
+					<span>Powered by <strong>Tʀɪᴄʜᴏʟᴏᴍᴇ</strong></span>
+					<span>Woodland visions by
+						<a class="cl" href="../cache.html">𝕩𝕝𝕦𝕖𝕧𝕚</a>
+						<a class="insta" href="https://www.instagram.com/xluevi.art/" target="_blank" aria-label="Instagram de xluevi">
+							<svg viewBox="0 0 24 24" width="16" height="16" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round">
+								<rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
+								<path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
+								<line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
+							</svg>
+						</a>
+					</span>
+				</div>
+				<div class="footer-date">Updated on 2026-09-22 13:21 UTC</div>
+			</div>
+		</footer>
+    </div>
+    
+    <div id="tierModal" class="modal-overlay">
+		<div class="modal-content window-box">
+			<button class="modal-close" aria-label="Close">&times;</button>
+			<div id="modalBody">
+				<div class="modal-image-side">
+					<img id="modalIcon" src="" alt="Tier Icon">
+					<img id="modalCrown" src="" alt="Crown">
+				</div>
+				
+				<div class="modal-text-side">
+					<div class="title-row">
+						<h2 id="modalTitle"></h2>
+						<h3 id="modalElo"></h3>
+					</div>
+					<div id="modalSubtitle"></div>
+					<div class="modal-divider"></div>
+					<div id="modalText"></div>
+					<div id="modalFinal"></div>
+				</div>
+			</div>
+		</div>
+	</div>
+	
+	<div id="mystic-gate"></div>
+
+    <script src="https://code.jquery.com/jquery-3.7.0.min.js"></script>
+    <script src="https://cdn.datatables.net/1.13.6/js/jquery.dataTables.min.js"></script>
+	<script src="https://cdn.datatables.net/responsive/2.5.0/js/dataTables.responsive.min.js"></script>
+    
+    <script>
+		window.PLAYER_PROFILE_MAP = {"militech2078": "militech2078", "AnOkayPotato": "anokaypotato-4405", "talleyrand19": "talleyrand19", "Kvan_": "kvan", "Moss": "mossfusion", "nvt2508": "nvt2508_78037", "SunkistDragon": "sunkistdragon", "IcarusPanda (cringelordirl)": "icaruspanda", "Silver": "silver", "Hasan": "g7asan", "ChefBoyardee": "chefboyardee8120", "Dekiru": "dekiru", "trippingrannys": "trippingrannys", "aaron_dangerman": "aaron_dangerman", "Simber": "simber_2925", "Sweenss": "sweenss", "batmaster": "batmaster", "BW": "bw", "mcauthor": "mcauthor", "IceeCream": "iceecream", "Lylethebrick": "lylethebrick-1438", "Slaith": "slaith", "True American Patriot": "commanderasn", "Extortionator (AUS)": "extortionator", "pwarren8590": "pwarren8590", "pheobii": "pheobii", "euler's fool": "eulers_fool", "MarcustheCat": "marcusthecat", "Cosmic Cant": "cosmiccant", "magiczamboni": "magiczamboni", "DarthPuniceus (MonteCristo24601)": "darthpuniceus", "fraaab": "fraaab", "Requiem": "6requiem", "House Addict": "beans8201", "SNCuller": "snculler", "Schnaga": "malefic7m", "coyote": "gcoyote", "smeichel": "smeichel", "PokerFace126": "pokerface126_11986", "Starhard_Fishrinse": "starhardfishrinse", "Davee_39": "davee_39", "KeyserSoze": "stoneofjas", "Coola101": "coola101", "salo_solomon": "salo_solomon", "pooge": "pooge", "DemaRogue": "jaredjm41", "Zaandaa": "zaandaa", "Litch Queen of Hyena Necrocracy": "green_flame", "Nadav253": "nadav253_57576", "scotchbonnet": "scotchbonnet11", "bunniesandcandy": "bunniesandcandy", "jermcurry": "jermcurry", "jakattak14": "jakattak14", "MrDrouf": "mrdrouf", "stockbot": "stockbot", "Quents": "quents1493", "Darkwonderer": "darkwonderer", "MrKent (UTC+7)": "rootvietnam", "Eletto21": "eletto21", "xinoehp512": "xinoehp512", "Bustin": "bustin", "Dark Owl": "dark_owl", "Piechu": "piechu28", "clinicalindication": "clinicalindication", "Hurple": "hurple0", "Kethem": "kethem", "Aedalus": "aedalus", "benssoon": "benssoon", "idyll": "idyll", "RabbitWarlord": "rabbitwarlord", "fajfar": "fajfar", "WyvernElement": "wyvernelement", "RondamGemas": "rondamgemas", "MentalMendel": "mentalmendel", "Rho Sternj\u00e4ger": "rho_sternjaeger", "Lobster (GMT-4)(Indiana)": "lesslobster", "Meryn": "meryn", "mwalt92": "mwalt92", "abbreviatedman (he/him)": "abbreviatedman", "Lilac Teddy Bear": "lilacteddybear", "Cookies": "gmoa", "Briony": "ashadeferal", "SEironed": "seironed", "CUA": "powerful_dragon_23094", "Gregoola": "gregoola", "uwtron": "uwtron", "WillRevolt": "willrevolt", ".doe": "doe", "theSOFLY": "thesofly", "KyloBot": "kylobot", "Tungsten": "tungsten", "turmoilbyrd": "turmoilbyrd", "jonismiff": "jonismiff", "Jed": "jorbbb", "Chicken_X": "chicken_x", "Dr. Seal": "drseal", "KingLuigiNL": "kingluiginl", "lazarus210": "lazarus210", "Malleable Frog": "flowercardianwillow", "sda1611": "sda1611", "plegbot": "plegbot", "lumpyprol": "lumpyprol", "Jalapeno": "jalapeno", "NattyKash": "nattykash", "tentacultist_": "tentacultist", "countthemsheep": "countthemsheep", "NadtyLite": "cbernadt", "Riverman": "riverman", "kaiser": "victorvee", "Aeliott": "aeliott", "punkstarman": "punkstarman"};
+		window.PLAYER_DATA_MAP = {"Hasan": {"elo": 1163, "games": 3, "is_ranked": false}, "lazarus210": {"elo": 1247, "games": 4, "is_ranked": false}, "militech2078": {"elo": 1138, "games": 6, "is_ranked": false}, "MrDrouf": {"elo": 1151, "games": 16, "is_ranked": false}, "CUA": {"elo": 1165, "games": 3, "is_ranked": false}, "Nadav253": {"elo": 1252, "games": 9, "is_ranked": false}, "RabbitWarlord": {"elo": 1169, "games": 7, "is_ranked": false}, "Kvan_": {"elo": 1138, "games": 6, "is_ranked": false}, "scotchbonnet": {"elo": 1184, "games": 10, "is_ranked": false}, "turmoilbyrd": {"elo": 1165, "games": 3, "is_ranked": false}, "pwarren8590": {"elo": 1164, "games": 8, "is_ranked": false}, "aaron_dangerman": {"elo": 1190, "games": 5, "is_ranked": false}, "trippingrannys": {"elo": 1232, "games": 13, "is_ranked": false}, "Starhard_Fishrinse": {"elo": 1118, "games": 9, "is_ranked": false}, "talleyrand19": {"elo": 1244, "games": 9, "is_ranked": false}, "uwtron": {"elo": 1372, "games": 17, "is_ranked": false}, "xinoehp512": {"elo": 1282, "games": 5, "is_ranked": false}, "Chicken_X": {"elo": 1272, "games": 13, "is_ranked": false}, "Cosmic Cant": {"elo": 1191, "games": 13, "is_ranked": false}, "coyote": {"elo": 1273, "games": 6, "is_ranked": false}, "Silver": {"elo": 1188, "games": 5, "is_ranked": false}, "KingLuigiNL": {"elo": 1164, "games": 3, "is_ranked": false}, "punkstarman": {"elo": 1163, "games": 3, "is_ranked": false}, "DarthPuniceus (MonteCristo24601)": {"elo": 1242, "games": 12, "is_ranked": false}, "lumpyprol": {"elo": 1202, "games": 9, "is_ranked": false}, "clinicalindication": {"elo": 1190, "games": 5, "is_ranked": false}, "Gregoola": {"elo": 1185, "games": 10, "is_ranked": false}, "Slaith": {"elo": 1311, "games": 12, "is_ranked": false}, "Eletto21": {"elo": 1276, "games": 12, "is_ranked": false}, "PokerFace126": {"elo": 1263, "games": 18, "is_ranked": false}, "Lylethebrick": {"elo": 1288, "games": 13, "is_ranked": false}, "BW": {"elo": 1355, "games": 35, "is_ranked": false}, "Jed": {"elo": 1190, "games": 5, "is_ranked": false}, "magiczamboni": {"elo": 1167, "games": 3, "is_ranked": false}, "bunniesandcandy": {"elo": 1202, "games": 4, "is_ranked": false}, "Kethem": {"elo": 1249, "games": 4, "is_ranked": false}, "Hurple": {"elo": 1140, "games": 6, "is_ranked": false}, "SNCuller": {"elo": 1248, "games": 11, "is_ranked": false}, "Davee_39": {"elo": 1213, "games": 7, "is_ranked": false}, "jakattak14": {"elo": 1227, "games": 6, "is_ranked": false}, ".doe": {"elo": 1189, "games": 5, "is_ranked": false}, "sda1611": {"elo": 1279, "games": 5, "is_ranked": false}, "Riverman": {"elo": 1140, "games": 6, "is_ranked": false}, "Cookies": {"elo": 1167, "games": 7, "is_ranked": false}, "jonismiff": {"elo": 1167, "games": 3, "is_ranked": false}, "fajfar": {"elo": 1167, "games": 3, "is_ranked": false}, "Coola101": {"elo": 1166, "games": 3, "is_ranked": false}, "Briony": {"elo": 1198, "games": 4, "is_ranked": false}, "Litch Queen of Hyena Necrocracy": {"elo": 1191, "games": 5, "is_ranked": false}, "Simber": {"elo": 1244, "games": 12, "is_ranked": false}, "theSOFLY": {"elo": 1175, "games": 2, "is_ranked": false}, "RondamGemas": {"elo": 1166, "games": 3, "is_ranked": false}, "benssoon": {"elo": 1164, "games": 3, "is_ranked": false}, "salo_solomon": {"elo": 1153, "games": 4, "is_ranked": false}, "pooge": {"elo": 1132, "games": 11, "is_ranked": false}, "Schnaga": {"elo": 1128, "games": 8, "is_ranked": false}, "True American Patriot": {"elo": 1245, "games": 8, "is_ranked": false}, "KeyserSoze": {"elo": 1185, "games": 7, "is_ranked": false}, "plegbot": {"elo": 1200, "games": 4, "is_ranked": false}, "abbreviatedman (he/him)": {"elo": 1210, "games": 8, "is_ranked": false}, "MentalMendel": {"elo": 1128, "games": 21, "is_ranked": false}, "idyll": {"elo": 1164, "games": 3, "is_ranked": false}, "fraaab": {"elo": 1167, "games": 3, "is_ranked": false}, "euler's fool": {"elo": 1193, "games": 5, "is_ranked": false}, "ChefBoyardee": {"elo": 1200, "games": 4, "is_ranked": false}, "Quents": {"elo": 1165, "games": 3, "is_ranked": false}, "mwalt92": {"elo": 1167, "games": 3, "is_ranked": false}, "Aedalus": {"elo": 1201, "games": 13, "is_ranked": false}, "MrKent (UTC+7)": {"elo": 1197, "games": 9, "is_ranked": false}, "Piechu": {"elo": 1185, "games": 11, "is_ranked": false}, "stockbot": {"elo": 1190, "games": 5, "is_ranked": false}, "Moss": {"elo": 1168, "games": 3, "is_ranked": false}, "Jalapeno": {"elo": 1169, "games": 3, "is_ranked": false}, "IceeCream": {"elo": 1165, "games": 3, "is_ranked": false}, "WyvernElement": {"elo": 1351, "games": 8, "is_ranked": false}, "Tungsten": {"elo": 1203, "games": 4, "is_ranked": false}, "WillRevolt": {"elo": 1202, "games": 8, "is_ranked": false}, "batmaster": {"elo": 1163, "games": 3, "is_ranked": false}, "Meryn": {"elo": 1297, "games": 13, "is_ranked": false}, "Requiem": {"elo": 1158, "games": 4, "is_ranked": false}, "Dekiru": {"elo": 1229, "games": 6, "is_ranked": false}, "SEironed": {"elo": 1168, "games": 3, "is_ranked": false}, "KyloBot": {"elo": 1164, "games": 3, "is_ranked": false}, "kaiser": {"elo": 1214, "games": 16, "is_ranked": false}, "mcauthor": {"elo": 1193, "games": 5, "is_ranked": false}, "House Addict": {"elo": 1166, "games": 3, "is_ranked": false}, "countthemsheep": {"elo": 1192, "games": 5, "is_ranked": false}, "NattyKash": {"elo": 1213, "games": 12, "is_ranked": false}, "Dark Owl": {"elo": 1166, "games": 3, "is_ranked": false}, "DemaRogue": {"elo": 1214, "games": 16, "is_ranked": false}, "Darkwonderer": {"elo": 1203, "games": 4, "is_ranked": false}, "Extortionator (AUS)": {"elo": 1267, "games": 6, "is_ranked": false}, "Bustin": {"elo": 1186, "games": 1, "is_ranked": false}, "smeichel": {"elo": 1172, "games": 3, "is_ranked": false}, "Sweenss": {"elo": 1188, "games": 1, "is_ranked": false}, "Lobster (GMT-4)(Indiana)": {"elo": 1188, "games": 5, "is_ranked": false}, "AnOkayPotato": {"elo": 1167, "games": 3, "is_ranked": false}, "Zaandaa": {"elo": 1227, "games": 10, "is_ranked": false}, "jermcurry": {"elo": 1234, "games": 10, "is_ranked": false}, "nvt2508": {"elo": 1213, "games": 3, "is_ranked": false}, "Aeliott": {"elo": 1224, "games": 2, "is_ranked": false}, "Rho Sternj\u00e4ger": {"elo": 1187, "games": 1, "is_ranked": false}, "pheobii": {"elo": 1163, "games": 4, "is_ranked": false}, "NadtyLite": {"elo": 1214, "games": 3, "is_ranked": false}, "tentacultist_": {"elo": 1189, "games": 1, "is_ranked": false}, "MarcustheCat": {"elo": 1172, "games": 3, "is_ranked": false}, "SunkistDragon": {"elo": 1190, "games": 1, "is_ranked": false}, "Dr. Seal": {"elo": 1175, "games": 2, "is_ranked": false}, "Malleable Frog": {"elo": 1191, "games": 1, "is_ranked": false}, "Lilac Teddy Bear": {"elo": 1176, "games": 3, "is_ranked": false}, "IcarusPanda (cringelordirl)": {"elo": 1239, "games": 1, "is_ranked": false}};
+		window.PROFILE_BASE_URL = "https://www.therootdatabase.com/profile";
+		window.K_CONFIG = {"exp_decay": 9.0, "k_cap_new": 50.0, "k_cap_ranked": 50.0, "k_floor": 25.0, "k_start": 50.0, "t_inactivity": 90};
+
+		const PATH_PREFIX = "../";
+
+		const CONFIG = {
+			colors: {"bear": "#ffffff", "bird": "#7AB5E0", "default": "#ffffff", "fox": "#E55555", "frog": "#918F08", "mouse": "#F49E52", "rabbit": "#F2C14E", "squirrel": "#94C160", "stag": "#C686FF"},
+			icons: {
+				
+					"bird": "../" + "assets/icons/bird.webp",
+				
+					"fox": "../" + "assets/icons/fox.webp",
+				
+					"rabbit": "../" + "assets/icons/rabbit.webp",
+				
+					"mouse": "../" + "assets/icons/mouse.webp",
+				
+					"squirrel": "../" + "assets/icons/squirrel.webp",
+				
+					"stag": "../" + "assets/icons/stag.webp",
+				
+					"bear": "../" + "assets/icons/bear.webp",
+				
+					"frog": "../" + "",
+				
+			},
+			currentTier: "frog",
+			chartData: {},
+			champMatch: null
+		};
+		
+		const TIER_DATA = {
+			'bird': {
+				name: 'Bird',
+				elo: '1500+',
+				subtitle: 'The Grandmasters',
+				desc: 'These elite sovereigns sit at the absolute pinnacle of the Woodland canopy. Remaining on this prestigious throne is a dizzying battle against shifting winds and ambitious rivals. They rule the skies by maintaining flawless execution and unerring control under pressure.'
+			},
+			'fox': {
+				name: 'Fox',
+				elo: '1400+',
+				subtitle: 'The Cunning Tacticians',
+				desc: 'These keen strategists dominate the ladder by thriving on sharp wit over brute force. The hunt presses close from all sides, and a single moment of hesitation can prove fatal. They prevail by measuring every step with care and exploiting weakness with signature flair.'
+			},
+			'rabbit': {
+				name: 'Rabbit',
+				elo: '1300+',
+				subtitle: 'The Agile Contenders',
+				desc: 'These nimble wanderers gracefully weave through the crowded paths of the rankings. Routine strategies falter here, threatening to trap anyone who cannot adapt to sudden chaos. They leap ahead where others see only barriers, turning dead ends into daring escapes.'
+			},
+			'mouse': {
+				name: 'Mouse',
+				elo: '1200+',
+				subtitle: 'The Steady Foragers',
+				desc: 'These resilient souls rise above the casual fray to mark a milestone of mastery. The wild now demands pure stamina, where early momentum easily fades into exhaustion. They hold their ground through quiet consistency, proving that patience outlasts blind luck.'
+			},
+			'squirrel': {
+				name: 'Squirrel',
+				elo: '< 1200',
+				subtitle: 'The Hapless Stragglers',
+				desc: 'These frantic collectors dwell in the tangled undergrowth of the ranking system. Clumsy errors and brutal defeats often force them to fall back while fiercer beasts surge ahead. Yet, they bravely endure by turning every painful lesson into a seed for next season’s harvest.'
+			},
+			'stag': {
+				name: 'Stag',
+				elo: '1600+',
+				subtitle: 'The Legend',
+				desc: 'Has anyone truly seen this mythical beast, or is it only an echo of the wild? What happens to the predator when the woods turn hollow and every path leads back to a mirror of its own perfection? With nothing left to be claimed, is the true crown the silence that follows the chase?'
+			},
+			'bear': {
+				name: 'Bear',
+				elo: CONFIG.champMatch ? CONFIG.champMatch.champion : '',
+				subtitle: CONFIG.champMatch ? `Season ${CONFIG.champMatch.season} Champion` : '',
+				final: CONFIG.champMatch ? `An epic <a href="${CONFIG.champMatch.match_link}" target="_blank" class="cl">final battle</a> pitted the top four titans of the league against each other. On ${CONFIG.champMatch.date}, <strong>${CONFIG.champMatch.champion}</strong> secured the seasonal crown by shutting out the ambitions of <strong>${CONFIG.champMatch.player2}</strong>, <strong>${CONFIG.champMatch.player3}</strong> and <strong>${CONFIG.champMatch.player4}</strong>. Surely, the woodland floor shook from the sheer force of their clash.` : '',
+				crown: '../assets/images/crown.webp'
+			}
+		};
+	</script>
+	
+    <script src="../static/script.js"></script>
+    
+<script src="https://d3js.org/d3.v7.min.js"></script>
+<script>
+    const snapshots = {};
+    const availableDates = [];
+    const TARGET_TRIBES = ["TEA", "BAG", "SWORD", "COINS", "HAMMER", "CROSSBOW", "BOOT"];
+
+    let activeTribeFilter = null;
+    let simulation = null;
+
+    $(document).ready(function () {
+        if (!availableDates || availableDates.length === 0) return;
+
+        const table = $('#frogTable').DataTable({
+            "order": [[1, "desc"]],
+            "responsive": false,
+            "autoWidth": false,
+            "pageLength": 50,
+            "dom": 'rt<"bottom"p><"clear">',
+            "columnDefs": [
+                { "className": "dt-nowrap", "targets": "_all" },
+                { "className": "dt-center", "targets": [1, 2, 3, 4, 5, 6, 7, 8] }
+            ]
+        });
+
+        const $datePicker =$('#datePicker');
+        const $earliestBtn =$('#earliestDateBtn');
+        const $prevBtn =$('#prevDateBtn');
+        const $nextBtn =$('#nextDateBtn');
+        const $latestBtn =$('#latestDateBtn');
+
+        $datePicker.attr('min', availableDates[0]);$datePicker.attr('max', availableDates[availableDates.length - 1]);
+
+        let currentIndex = availableDates.length - 1;
+
+        function renderTribeCell(scoreData, isMainTribe) {
+            if (!scoreData) {
+                return `<div style="display:flex; justify-content:center;"><span style="color:#a0aec0;">-</span></div>`;
+            }
+            
+            if (!isMainTribe && scoreData.pct < 10) {
+                return `<div style="display:flex; justify-content:center;"><span style="color:#a0aec0;">-</span></div>`;
+            }
+            
+            const pctStr = `<span style="font-weight:600; font-size:0.82rem;">${scoreData.pct}%</span>`;
+            
+            if (!isMainTribe || !scoreData.status) {
+                return `<div style="display:inline-flex; align-items:center; justify-content:center; gap:4px; width:100%;">${pctStr}</div>`;
+            }
+
+            let bgColor = "#4a5568"; 
+
+            if (scoreData.status === "Partisan") {
+                bgColor = "#918F08";
+            } else if (scoreData.status === "Squire") {
+                bgColor = "#256D75";
+            } else if (scoreData.status === "Friend") {
+                bgColor = "#B8681A";
+            } else if (scoreData.status === "Favoring") {
+                bgColor = "#A0402B";
+            }
+
+            const badge = `<span style="background:${bgColor}; color:#fff; padding:1px 5px; border-radius:4px; font-size:0.68rem; font-weight:600; white-space:nowrap;">${scoreData.status}</span>`;
+
+            return `<div style="display:inline-flex; align-items:center; justify-content:center; gap:4px; width:100%;">${pctStr} ${badge}</div>`;
+        }
+
+        function getStatusBadgeColor(status) {
+            switch (status) {
+                case "Partisan": return "#2e7d32";
+                case "Squire":   return "#1565c0";
+                case "Friend":   return "#d97706";
+                case "Favoring": return "#c62828";
+                default:         return "#4a5568";
+            }
+        }
+
+        function renderTribeGraph(snapshot) {
+            const svg = d3.select("#tribeMapSvg");
+            const container = document.getElementById('tribeMapContainer');
+            const width = container.clientWidth || 800;
+            const height = 380;
+            const duration = 500;
+
+            if (svg.select("g.links-layer").empty()) {
+                svg.append("g").attr("class", "links-layer");
+                svg.append("g").attr("class", "nodes-layer");
+            }
+
+            const activeTribes = snapshot.active_tribes || [];
+            const tribeLayout = snapshot.tribe_layout || {};
+            const playersMap = new Map((snapshot.players || []).map(p => [p.name, p]));
+
+            let newNodes = [];
+            let newLinks = [];
+
+            if (!activeTribeFilter) {
+                // =========================================================
+                // 1. VUE GLOBALE : TOUTES LES CLAIRIÈRES
+                // =========================================================
+                newNodes = activeTribes.map(t => {
+                    const count = (snapshot.summary && snapshot.summary[t]) ? snapshot.summary[t] : 0;
+                    return {
+                        id: t,
+                        type: 'tribe',
+                        label: (snapshot.tribe_labels && snapshot.tribe_labels[t]) ? snapshot.tribe_labels[t] : t,
+                        count: count,
+                        radius: Math.max(30, 22 + Math.sqrt(count) * 10)
+                    };
+                });
+
+                // Sentiers inter-clairières
+                for (let i = 0; i < activeTribes.length; i++) {
+                    for (let j = i + 1; j < activeTribes.length; j++) {
+                        const t1 = activeTribes[i];
+                        const t2 = activeTribes[j];
+                        let totalAffinity = 0;
+                        let count = 0;
+
+                        (snapshot.players || []).forEach(p => {
+                            if (p.main_tribe === t1 && p.scores && p.scores[t2]) {
+                                totalAffinity += p.scores[t2].pct;
+                                count++;
+                            } else if (p.main_tribe === t2 && p.scores && p.scores[t1]) {
+                                totalAffinity += p.scores[t1].pct;
+                                count++;
+                            }
+                        });
+
+                        const avg = count > 0 ? (totalAffinity / count) : 0;
+                        if (avg > 2) {
+                            newLinks.push({ source: t1, target: t2, value: avg, type: 'inter-tribe' });
+                        }
+                    }
+                }
+            } else {
+                // =========================================================
+                // 2. VUE CONSTELLATION : CLAIRIÈRE UNIQUE + PILIERS & MEMBRES
+                // =========================================================
+                const tribe = activeTribeFilter;
+                const count = (snapshot.summary && snapshot.summary[tribe]) ? snapshot.summary[tribe] : 0;
+                const layout = tribeLayout[tribe] || { pillars: [], satellites: [] };
+                const pillarsSet = new Set(layout.pillars || []);
+
+                // Nœud central de la clairière sélectionnée
+                const centerNode = {
+                    id: tribe,
+                    type: 'tribe',
+                    label: (snapshot.tribe_labels && snapshot.tribe_labels[tribe]) ? snapshot.tribe_labels[tribe] : tribe,
+                    count: count,
+                    radius: Math.max(36, 26 + Math.sqrt(count) * 10),
+                    fx: width / 2,
+                    fy: height / 2
+                };
+                newNodes.push(centerNode);
+
+                // Récupération des membres rattachés à cette clairière
+                const satellitesList = layout.satellites || (snapshot.players || [])
+                    .filter(p => p.main_tribe === tribe)
+                    .map(p => p.name);
+
+                const constellationMembers = Array.from(new Set([...(layout.pillars || []), ...satellitesList]));
+
+                // Rayons d'orbite resserrés ("plus proche")
+                const innerRadius = 75;  // Orbite rapprochée pour les Piliers
+                const outerRadius = 105; // Orbite secondaire pour les autres Membres
+
+                const pillarNodes = constellationMembers.filter(m => pillarsSet.has(m));
+                const memberNodes = constellationMembers.filter(m => !pillarsSet.has(m));
+
+                const placementList = [
+                    ...pillarNodes.map(m => ({ name: m, isPillar: true })),
+                    ...memberNodes.map(m => ({ name: m, isPillar: false }))
+                ];
+
+                const totalMembers = placementList.length || 1;
+
+                placementList.forEach((item, idx) => {
+                    const pData = playersMap.get(item.name);
+                    const scoreObj = (pData && pData.scores) ? pData.scores[tribe] : null;
+                    const pct = scoreObj ? scoreObj.pct : 0;
+                    const status = scoreObj ? scoreObj.status : null;
+
+                    const angle = (2 * Math.PI * idx / totalMembers) - (Math.PI / 2);
+                    const dist = item.isPillar ? innerRadius : outerRadius;
+                    const playerId = `player_${item.name}`;
+
+                    newNodes.push({
+                        id: playerId,
+                        type: 'player',
+                        name: item.name,
+                        isPillar: item.isPillar,
+                        pct: pct,
+                        status: status,
+                        color: item.isPillar ? "#48bb78" : getStatusBadgeColor(status),
+                        radius: item.isPillar ? 16 : 13,
+                        targetX: width / 2 + dist * Math.cos(angle),
+                        targetY: height / 2 + dist * Math.sin(angle)
+                    });
+
+                    newLinks.push({
+                        source: tribe,
+                        target: playerId,
+                        type: 'constellation-link',
+                        isPillar: item.isPillar
+                    });
+                });
+            }
+
+            // Conservation des coordonnées précédentes pour fluidifier l'animation
+            const prevNodesMap = new Map(simulation ? simulation.nodes().map(d => [d.id, d]) : []);
+            newNodes.forEach(d => {
+                if (prevNodesMap.has(d.id)) {
+                    const prev = prevNodesMap.get(d.id);
+                    d.x = prev.x;
+                    d.y = prev.y;
+                } else if (d.targetX !== undefined) {
+                    d.x = width / 2;
+                    d.y = height / 2;
+                }
+            });
+
+            // --- RENDU DES LIENS ---
+            const linkSel = svg.select("g.links-layer")
+                .selectAll("line")
+                .data(newLinks, d => `${d.source.id || d.source}-${d.target.id || d.target}`);
+
+            linkSel.exit()
+                .transition().duration(duration)
+                .attr("stroke-opacity", 0)
+                .remove();
+
+            const linkEnter = linkSel.enter().append("line")
+                .attr("stroke-opacity", 0);
+
+            const link = linkEnter.merge(linkSel);
+            link.transition().duration(duration)
+                .attr("stroke", d => d.type === 'constellation-link' ? (d.isPillar ? "#48bb78" : "rgba(255, 255, 255, 0.4)") : "rgba(255, 255, 255, 0.25)")
+                .attr("stroke-opacity", d => d.type === 'constellation-link' ? 0.75 : 0.35)
+                .attr("stroke-dasharray", d => d.type === 'constellation-link' ? "2, 3" : "4, 4")
+                .attr("stroke-width", d => d.type === 'constellation-link' ? (d.isPillar ? 2 : 1.2) : Math.max(1, d.value / 5));
+
+            // --- RENDU DES NOEUDS (CLAIRIÈRES / MEMBRES EN CONSTELLATION) ---
+            const nodeSel = svg.select("g.nodes-layer")
+                .selectAll("g.node-group")
+                .data(newNodes, d => d.id);
+
+            nodeSel.exit()
+                .transition().duration(duration)
+                .style("opacity", 0)
+                .remove();
+
+            const nodeEnter = nodeSel.enter().append("g")
+                .attr("class", "node-group")
+                .style("cursor", "pointer")
+                .style("opacity", 0);
+
+            nodeEnter.append("circle").attr("class", "node-circle");
+            nodeEnter.append("image").attr("class", "node-icon").attr("pointer-events", "none");
+            
+            const textGroup = nodeEnter.append("text")
+                .attr("class", "count-text")
+                .attr("text-anchor", "middle")
+                .attr("pointer-events", "none");
+
+            textGroup.append("tspan").attr("class", "num-span");
+            textGroup.append("tspan").attr("class", "lbl-span");
+
+            nodeEnter.append("text")
+                .attr("class", "player-label")
+                .attr("text-anchor", "middle")
+                .attr("pointer-events", "none");
+
+            const node = nodeEnter.merge(nodeSel);
+
+            node.transition().duration(duration)
+                .style("opacity", 1);
+
+            node.each(function(d) {
+                const g = d3.select(this);
+
+                if (d.type === 'tribe') {
+                    g.select(".node-circle")
+                        .transition().duration(duration)
+                        .attr("r", d.radius)
+                        .style("fill", activeTribeFilter === d.id ? "rgba(18, 38, 25, 0.95)" : "rgba(10, 22, 14, 0.65)")
+                        .style("stroke", activeTribeFilter === d.id ? "var(--main-color, #48bb78)" : "rgba(255, 255, 255, 0.35)")
+                        .style("stroke-width", activeTribeFilter === d.id ? "3px" : "1.5px");
+
+                    g.select(".node-icon")
+                        .attr("href", `assets/items/${d.id.toLowerCase()}.png`)
+                        .attr("xlink:href", `assets/items/${d.id.toLowerCase()}.png`)
+                        .attr("width", Math.max(24, d.radius * 0.7))
+                        .attr("height", Math.max(24, d.radius * 0.7))
+                        .attr("x", -Math.max(24, d.radius * 0.7) / 2)
+                        .attr("y", -Math.max(24, d.radius * 0.7) / 2 - 6)
+                        .style("display", "block");
+
+                    g.select(".count-text")
+                        .attr("transform", `translate(0, ${Math.max(24, d.radius * 0.7) / 2 + 8})`)
+                        .style("display", "block");
+
+                    g.select(".num-span")
+                        .text(d.count)
+                        .attr("x", 0)
+                        .attr("dy", "0")
+                        .style("font-size", "0.95rem")
+                        .style("font-weight", "800")
+                        .style("fill", "#ffffff");
+
+                    g.select(".lbl-span")
+                        .text(" membres")
+                        .attr("x", 0)
+                        .attr("dy", "1.15em")
+                        .style("font-size", "0.6rem")
+                        .style("font-weight", "600")
+                        .style("fill", "rgba(255, 255, 255, 0.65)");
+
+                    g.select(".player-label").style("display", "none");
+
+                } else if (d.type === 'player') {
+                    g.select(".node-circle")
+                        .transition().duration(duration)
+                        .attr("r", d.radius)
+                        .style("fill", d.isPillar ? "rgba(72, 187, 120, 0.25)" : "rgba(26, 32, 44, 0.85)")
+                        .style("stroke", d.color)
+                        .style("stroke-width", d.isPillar ? "2.5px" : "1.5px");
+
+                    g.select(".node-icon").style("display", "none");
+                    g.select(".count-text").style("display", "none");
+
+                    const labelText = d.isPillar ? `★ ${d.name}` : d.name;
+                    g.select(".player-label")
+                        .style("display", "block")
+                        .text(labelText)
+                        .attr("dy", "0.35em")
+                        .style("font-size", d.isPillar ? "0.72rem" : "0.65rem")
+                        .style("font-weight", d.isPillar ? "800" : "600")
+                        .style("fill", d.isPillar ? "#68d391" : "#e2e8f0");
+                }
+            });
+
+            // Clic sur une clairière
+            node.on("click", (event, d) => {
+                if (d.type === 'tribe') {
+                    activeTribeFilter = (activeTribeFilter === d.id) ? null : d.id;
+                    updateTableForDate($datePicker.val());
+                }
+            });
+
+            // --- MOTEUR DE SIMULATION ---
+            if (!simulation) {
+                simulation = d3.forceSimulation();
+            }
+
+            if (!activeTribeFilter) {
+                simulation
+                    .force("link", d3.forceLink().id(d => d.id).distance(145))
+                    .force("charge", d3.forceManyBody().strength(-320))
+                    .force("x", d3.forceX(width / 2).strength(0.08))
+                    .force("y", d3.forceY(height / 2).strength(0.08))
+                    .force("center", d3.forceCenter(width / 2, height / 2))
+                    .force("collision", d3.forceCollide().radius(d => d.radius + 15));
+            } else {
+                simulation
+                    .force("link", d3.forceLink().id(d => d.id).distance(d => d.isPillar ? 75 : 105))
+                    .force("x", d3.forceX(d => d.targetX || width / 2).strength(0.35))
+                    .force("y", d3.forceY(d => d.targetY || height / 2).strength(0.35))
+                    .force("charge", d3.forceManyBody().strength(-40))
+                    .force("collision", d3.forceCollide().radius(d => d.radius + 10));
+            }
+
+            simulation.nodes(newNodes);
+            simulation.force("link").links(newLinks);
+            simulation.alpha(0.35).restart();
+
+            simulation.on("tick", () => {
+                link
+                    .attr("x1", d => d.source.x)
+                    .attr("y1", d => d.source.y)
+                    .attr("x2", d => d.target.x)
+                    .attr("y2", d => d.target.y);
+
+                node.attr("transform", d => `translate(${d.x},${d.y})`);
+            });
+        }
+
+        function updateTableForDate(selectedDate) {
+            $datePicker.val(selectedDate);
+            const snapshot = snapshots[selectedDate];
+            if (!snapshot) return;
+
+            const activeTribes = snapshot.active_tribes || [];
+
+            // 1. Rendu du graphe D3.js
+            renderTribeGraph(snapshot);
+
+            // 2. Visibilité dynamique des colonnes
+            TARGET_TRIBES.forEach((tribe, idx) => {
+                const colIdx = idx + 2; 
+                const isActive = activeTribes.includes(tribe);
+                
+                table.column(colIdx).visible(isActive, false);
+
+                if (isActive) {
+                    const displayLabel = (snapshot.tribe_labels && snapshot.tribe_labels[tribe]) ? snapshot.tribe_labels[tribe] : tribe;
+                    const iconPath = `assets/items/${tribe.toLowerCase()}.png`;
+                    $(table.column(colIdx).header()).html(`<img src="${iconPath}" title="${displayLabel}" alt="${displayLabel}" style="height:26px; width:26px; vertical-align:middle; object-fit:contain; display:inline-block;">`);
+                }
+            });
+
+            // 3. Filtrage des joueurs dans le tableau
+            let playersToDisplay = snapshot.players || [];
+            if (activeTribeFilter) {
+                playersToDisplay = playersToDisplay.filter(p => p.main_tribe === activeTribeFilter);
+            }
+
+            // 4. Construction des lignes du tableau
+            const newRows = playersToDisplay.map(p => {
+                return [
+                    p.name,
+                    p.games,
+                    ...TARGET_TRIBES.map(t => renderTribeCell(p.scores ? p.scores[t] : null, p.main_tribe === t))
+                ];
+            });
+
+            table.clear();
+            table.rows.add(newRows);
+            table.columns.adjust();
+            table.draw();
+
+            $prevBtn.prop('disabled', currentIndex <= 0);$nextBtn.prop('disabled', currentIndex >= availableDates.length - 1);
+        }
+
+        function setDateByIndex(index) {
+            if (index >= 0 && index < availableDates.length) {
+                currentIndex = index;
+                updateTableForDate(availableDates[currentIndex]);
+            }
+        }
+
+        $prevBtn.on('click', () => setDateByIndex(currentIndex - 1));$nextBtn.on('click', () => setDateByIndex(currentIndex + 1));
+        $latestBtn.on('click', () => setDateByIndex(availableDates.length - 1));$earliestBtn.on('click', () => setDateByIndex(0));
+
+        $datePicker.on('change', function () {
+            const val = $(this).val();
+            let matchIdx = availableDates.findIndex(d => d >= val);
+            currentIndex = matchIdx !== -1 ? matchIdx : availableDates.length - 1;
+            updateTableForDate(availableDates[currentIndex]);
+        });
+
+        $(window).on('resize', function() {
+            if (availableDates[currentIndex]) {
+                updateTableForDate(availableDates[currentIndex]);
+            }
+        });
+
+        setDateByIndex(currentIndex);
+    });
+</script>
+
+
+	<script>
+		if (
+			window.location.hostname === 'localhost' ||
+			window.location.hostname === '127.0.0.1' ||
+			window.location.href.includes('rootelo-dev') ||
+			window.location.pathname.includes('/dev/')
+		) {
+			window.goatcounter = { no_onload: true };
+		}
+	</script>
+	<script data-goatcounter="https://tricholome.goatcounter.com/count"
+            async src="//gc.zgo.at/count.js"></script>
+</body>
+</html>
