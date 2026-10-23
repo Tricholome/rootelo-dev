@@ -1588,48 +1588,24 @@
 			
             <main>
                 
-<!-- Interactive Map -->
-<div id="tribeMapContainer" class="tribe-map-container">
-    <svg id="tribeMapSvg" class="tribe-map-svg"></svg>
+<!-- En-tête minimaliste ou introduction si besoin -->
+<div class="page-intro" style="text-align: center; margin-bottom: 20px;">
+    <h2>Homelands</h2>
+    <p>Mapping the shifting allegiances and evolving hubs of the woodland.</p>
 </div>
 
-<!-- Date Selector Controls -->
-<div class="date-controls">
-    <button id="earliestDateBtn" class="btn">Earliest Date</button>
-    <button id="prevDateBtn" class="btn">&laquo; Prev. Day</button>
-    <input type="date" id="datePicker" class="date-picker">
-    <button id="nextDateBtn" class="btn">Next Day &raquo;</button>
-    <button id="latestDateBtn" class="btn">Latest Date</button>
+<!-- Carte interactive des Homelands -->
+<div id="tribeMapContainer" class="tribe-map-container" style="width: 100%; height: 450px; background: #1a202c; border-radius: 12px; position: relative; overflow: hidden; border: 1px solid #2d3748; margin-bottom: 20px;">
+    <svg id="tribeMapSvg" class="tribe-map-svg" style="width: 100%; height: 100%;"></svg>
 </div>
 
-<!-- Tribe Table -->
-<div class="network-container">
-    <table id="frogTable" class="display nowrap network-table">
-        <thead>
-            <tr>
-                <th class="player-col">Player</th>
-                <th class="games-col">Games</th>
-                
-                <th><img src="assets/items/tea.png" title="TEA" alt="TEA" class="tribe-icon"></th>
-                
-                <th><img src="assets/items/bag.png" title="BAG" alt="BAG" class="tribe-icon"></th>
-                
-                <th><img src="assets/items/sword.png" title="SWORD" alt="SWORD" class="tribe-icon"></th>
-                
-                <th><img src="assets/items/coins.png" title="COINS" alt="COINS" class="tribe-icon"></th>
-                
-                <th><img src="assets/items/hammer.png" title="HAMMER" alt="HAMMER" class="tribe-icon"></th>
-                
-                <th><img src="assets/items/crossbow.png" title="CROSSBOW" alt="CROSSBOW" class="tribe-icon"></th>
-                
-                <th><img src="assets/items/boot.png" title="BOOT" alt="BOOT" class="tribe-icon"></th>
-                
-            </tr>
-        </thead>
-        <tbody>
-            <!-- Table body populated dynamically by JS -->
-        </tbody>
-    </table>
+<!-- Contrôles temporels (Frise / Sélecteur de date) -->
+<div class="date-controls" style="display: flex; justify-content: center; align-items: center; gap: 10px; margin-top: 15px;">
+    <button id="earliestDateBtn" class="btn">Début</button>
+    <button id="prevDateBtn" class="btn">&laquo; Précédent</button>
+    <input type="date" id="datePicker" class="date-picker" style="background: #2d3748; color: #fff; border: 1px solid #4a5568; padding: 6px 12px; border-radius: 6px;">
+    <button id="nextDateBtn" class="btn">Suivant &raquo;</button>
+    <button id="latestDateBtn" class="btn">Aujourd'hui</button>
 </div>
 
             </main>
@@ -1659,7 +1635,7 @@
 						</a>
 					</span>
 				</div>
-				<div class="footer-date">Updated on 2026-10-23 06:42 UTC</div>
+				<div class="footer-date">Updated on 2026-10-23 07:46 UTC</div>
 			</div>
 		</footer>
     </div>
