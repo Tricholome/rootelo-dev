@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-30 11:14 UTC",
+  "updated_at": "2026-10-30 11:19 UTC",
   "players": {
     "glisteninggeetus-4225": {
       "player_id": "398",
@@ -3301,8 +3301,8 @@
       "wins": 1.0,
       "win_rate": "16.7%"
     },
-    "chosennuttso": {
-      "player_id": "2000",
+    "nuttsy-5282": {
+      "player_id": "2309",
       "elo": 1185,
       "rank": "-",
       "tier": "unassigned",
@@ -3323,8 +3323,8 @@
       "wins": 0.0,
       "win_rate": "0.0%"
     },
-    "nuttsy-5282": {
-      "player_id": "2309",
+    "chosennuttso": {
+      "player_id": "2000",
       "elo": 1185,
       "rank": "-",
       "tier": "unassigned",
