@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-30 07:53 UTC",
+  "updated_at": "2026-10-30 07:54 UTC",
   "players": {
     "nadav253-6419": {
       "player_id": "714",
@@ -3444,8 +3444,8 @@
       "wins": 0.0,
       "win_rate": "0.0%"
     },
-    "chosennuttso": {
-      "player_id": "chosennuttso",
+    "julien-5506": {
+      "player_id": "Julien+5506",
       "elo": 1185,
       "rank": "-",
       "tier": "unassigned",
@@ -3466,8 +3466,8 @@
       "wins": 0.0,
       "win_rate": "0.0%"
     },
-    "julien-5506": {
-      "player_id": "Julien+5506",
+    "chosennuttso": {
+      "player_id": "chosennuttso",
       "elo": 1185,
       "rank": "-",
       "tier": "unassigned",
@@ -3829,8 +3829,8 @@
       "wins": 0.0,
       "win_rate": "0.0%"
     },
-    "wubba-8903": {
-      "player_id": "2687",
+    "homietone-6801": {
+      "player_id": "2686",
       "elo": 1183,
       "rank": "-",
       "tier": "unassigned",
@@ -3840,8 +3840,8 @@
       "wins": 0.0,
       "win_rate": "0.0%"
     },
-    "homietone-6801": {
-      "player_id": "2686",
+    "wubba-8903": {
+      "player_id": "2687",
       "elo": 1183,
       "rank": "-",
       "tier": "unassigned",
@@ -4071,8 +4071,8 @@
       "wins": 0.0,
       "win_rate": "0.0%"
     },
-    "actionman2222-4303": {
-      "player_id": "Actionman2222+4303",
+    "gibbs-3656": {
+      "player_id": "Gibbs+3656",
       "elo": 1180,
       "rank": "-",
       "tier": "unassigned",
@@ -4082,8 +4082,8 @@
       "wins": 0.0,
       "win_rate": "0.0%"
     },
-    "gibbs-3656": {
-      "player_id": "Gibbs+3656",
+    "actionman2222-4303": {
+      "player_id": "Actionman2222+4303",
       "elo": 1180,
       "rank": "-",
       "tier": "unassigned",
