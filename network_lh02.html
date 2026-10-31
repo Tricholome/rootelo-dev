@@ -1592,29 +1592,38 @@
 			
             <main>
                 
-<div id="networkWrapper" class="network-container" data-view="hm">
+	<div class="unranked-toggle-container">
+		<input type="checkbox" 
+			   id="spotFrogsCheckbox" 
+			   checked 
+			   autocomplete="off" 
+			   onchange="if(!this.checked) window.location.href='index_lh02.html';">
+		<label for="spotFrogsCheckbox">Spot the frogs</label>
+	</div>
 
-    <div id="tribeMapContainer" class="tribe-map-container">
-        <div id="mapHeaderTitle" class="map-header-title" title="Click to reset to Homelands Map">
-            HOMELANDS MAP
-        </div>
-        <div id="mapLegend" class="map-legend"></div>
-        <div id="playerLedger" class="allegiance-ledger"></div>
-        <svg id="tribeMapSvg" class="tribe-map-svg">
-            <g class="links-layer"></g>
-            <g class="nodes-layer"></g>
-        </svg>
-    </div>
-	
-	<div id="dateControls" class="date-controls">
-        <button id="earliestDateBtn" class="btn">Start</button>
-        <button id="prevDateBtn" class="btn">&laquo; Prev</button>
-        <input type="date" id="datePicker" class="date-picker">
-        <button id="nextDateBtn" class="btn">Next &raquo;</button>
-        <button id="latestDateBtn" class="btn">End</button>
-    </div>
+	<div id="networkWrapper" class="network-container" data-view="hm">
 
-</div>
+		<div id="tribeMapContainer" class="tribe-map-container">
+			<div id="mapHeaderTitle" class="map-header-title" title="Click to reset to Homelands Map">
+				HOMELANDS MAP
+			</div>
+			<div id="mapLegend" class="map-legend"></div>
+			<div id="playerLedger" class="allegiance-ledger"></div>
+			<svg id="tribeMapSvg" class="tribe-map-svg">
+				<g class="links-layer"></g>
+				<g class="nodes-layer"></g>
+			</svg>
+		</div>
+		
+		<div id="dateControls" class="date-controls">
+			<button id="earliestDateBtn" class="btn">Start</button>
+			<button id="prevDateBtn" class="btn">&laquo; Prev</button>
+			<input type="date" id="datePicker" class="date-picker">
+			<button id="nextDateBtn" class="btn">Next &raquo;</button>
+			<button id="latestDateBtn" class="btn">End</button>
+		</div>
+
+	</div>
 
             </main>
 			
@@ -1643,7 +1652,7 @@
 						</a>
 					</span>
 				</div>
-				<div class="footer-date">Updated on 2026-10-31 18:22 UTC</div>
+				<div class="footer-date">Updated on 2026-10-31 18:29 UTC</div>
 			</div>
 		</footer>
     </div>
