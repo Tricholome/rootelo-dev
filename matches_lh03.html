@@ -173,6 +173,11 @@
 </head>
 
 <body class="archive-view " data-page="matches" data-section="matches">
+	<script>
+        if (document.body.dataset.page === 'index' && localStorage.getItem('spotFrogs') === 'true') {
+            document.body.classList.add('homelands-mode');
+        }
+    </script>
     
     <div class="container">
 	
@@ -49035,7 +49040,7 @@
 						</a>
 					</span>
 				</div>
-				<div class="footer-date">Updated on 2026-11-01 15:41 UTC</div>
+				<div class="footer-date">Updated on 2026-11-01 15:46 UTC</div>
 			</div>
 		</footer>
     </div>
