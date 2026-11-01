@@ -172,14 +172,14 @@
 	
 </head>
 
-<body class="" data-page="league" data-section="codex">
+<body class=" " data-page="league" data-section="codex">
     
     <div class="container">
 	
         <header class="app-banner window-box">
 		
-			
-            <div class="banner-container">
+            <!-- 1. BANNIÈRE STANDARD (Canopée & Paliers Elo) -->
+            <div class="banner-container banner-standard">
                 <div class="banner-icons left">
                     <a href="javascript:void(0)" onclick="openTierModal('stag')" class="tooltip-link js-double-tap banner-icon-stag">
                         <img src="assets/icons/stag.webp" alt="Stag">
@@ -213,12 +213,19 @@
                     </a>
                 </div>
             </div>
-			
+
+            <!-- 2. BANNIÈRE HOMELANDS (Univers des Marais) -->
+            <div class="banner-container banner-homelands">
+                <div class="banner-center">
+                    <h1 class="site-title">ROOTELO</h1>
+                    <p class="site-subtitle">Homelands &bull; The Woodland Fellowships</p>
+                </div>
+            </div>
             
             <div class="nav-separator"></div>
 
-			
-            <nav>
+            <!-- 1. NAVIGATION STANDARD DU SITE -->
+            <nav class="nav-standard">
 				
 
 				
@@ -248,7 +255,14 @@
 				
 				<a href="cache.html" class="nav-secret ">Undergrowth</a>
 			</nav>
-			
+
+            <!-- 2. NAVIGATION HOMELANDS -->
+            <nav id="homelandsNav" class="nav-homelands">
+                <a href="index.html" class="homelands-tab-link " data-tab="leaderboard">Leaderboard</a>
+                <a href="network.html#map" class="homelands-tab-link " data-tab="map">Homelands Map</a>
+                <a href="network.html#circle" class="homelands-tab-link" data-tab="circle">Player's Circle</a>
+                <a href="network.html#guide" class="homelands-tab-link" data-tab="guide">Guide</a>
+            </nav>
 			
         </header>
         
@@ -367,7 +381,7 @@
 						</a>
 					</span>
 				</div>
-				<div class="footer-date">Updated on 2026-11-01 13:58 UTC</div>
+				<div class="footer-date">Updated on 2026-11-01 15:17 UTC</div>
 			</div>
 		</footer>
     </div>
