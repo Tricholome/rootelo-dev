@@ -315,12 +315,12 @@
 						<span class="season-label">League</span>
 						<select onchange="if (this.value) window.location.href=this.value;">
 							
-								<option value="hoot/index.html" >
-									HOOT RANKINGS
-								</option>
-							
 								<option value="./index.html" selected>
 									ROOT DIGITAL LEAGUE
+								</option>
+							
+								<option value="hoot/index.html" >
+									HOOT RANKINGS
 								</option>
 							
 						</select>	
@@ -2229,8 +2229,8 @@
             </tr>
             
             <tr data-tier="rabbit" 
-                 
-                class="">
+                data-settler="true" 
+                class=" settler-row">
                 <td>19</td>
                 <td>
                     
@@ -2244,6 +2244,14 @@
                     
 
                     
+						<a href="javascript:void(0)" 
+						   onclick="openTierModal('frog', 'LucianTheFak', 'coins')" 
+						   class="tier-anchor-link frog-leader-icon">
+							<div class="tier-icon-container">
+								<img src="assets/icons/frog.webp" alt="frog">
+							</div>
+						</a>
+					
                 </td>
                 <td>LucianTheFak</td>
                 <td>1376</td>
@@ -2989,8 +2997,8 @@
             </tr>
             
             <tr data-tier="mouse" 
-                data-settler="true" 
-                class=" settler-row">
+                 
+                class="">
                 <td>42</td>
                 <td>
                     
@@ -3004,14 +3012,6 @@
                     
 
                     
-						<a href="javascript:void(0)" 
-						   onclick="openTierModal('frog', 'NadtyLite', 'hammer')" 
-						   class="tier-anchor-link frog-leader-icon">
-							<div class="tier-icon-container">
-								<img src="assets/icons/frog.webp" alt="frog">
-							</div>
-						</a>
-					
                 </td>
                 <td>NadtyLite</td>
                 <td>1289</td>
@@ -8248,7 +8248,7 @@
 						</a>
 					</span>
 				</div>
-				<div class="footer-date">Updated on 2026-11-03 21:50 UTC</div>
+				<div class="footer-date">Updated on 2026-11-03 21:53 UTC</div>
 			</div>
 		</footer>
     </div>
