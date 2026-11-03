@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-11-03 21:53 UTC",
+  "updated_at": "2026-11-03 21:57 UTC",
   "players": {
     "nadav253-6419": {
       "player_id": "714",
@@ -3290,8 +3290,8 @@
       "wins": 0.0,
       "win_rate": "0.0%"
     },
-    "nuttsy-5282": {
-      "player_id": "2309",
+    "chosennuttso": {
+      "player_id": "2000",
       "elo": 1185,
       "rank": "-",
       "tier": "unassigned",
@@ -3301,8 +3301,8 @@
       "wins": 0.0,
       "win_rate": "0.0%"
     },
-    "chosennuttso": {
-      "player_id": "2000",
+    "nuttsy-5282": {
+      "player_id": "2309",
       "elo": 1185,
       "rank": "-",
       "tier": "unassigned",
