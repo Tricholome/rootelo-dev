@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-11-03 21:57 UTC",
+  "updated_at": "2026-11-04 15:57 UTC",
   "players": {
     "nadav253-6419": {
       "player_id": "714",
@@ -67,6 +67,17 @@
       "wins": 1.0,
       "win_rate": "100.0%"
     },
+    "dramsss-5465": {
+      "player_id": "2261",
+      "elo": 1539,
+      "rank": 2,
+      "tier": "bird",
+      "bg_color": "#7AB5E0",
+      "icon_url": "https://tricholome.github.io/rootelo/assets/icons/bird.webp",
+      "games": 20,
+      "wins": 15.0,
+      "win_rate": "75.0%"
+    },
     "tofuwater-4853": {
       "player_id": "1512",
       "elo": 1533,
@@ -110,17 +121,6 @@
       "games": 1,
       "wins": 1.0,
       "win_rate": "100.0%"
-    },
-    "dramsss-5465": {
-      "player_id": "2261",
-      "elo": 1495,
-      "rank": 2,
-      "tier": "fox",
-      "bg_color": "#E55555",
-      "icon_url": "https://tricholome.github.io/rootelo/assets/icons/fox.webp",
-      "games": 16,
-      "wins": 11.0,
-      "win_rate": "68.8%"
     },
     "ctfox-5431": {
       "player_id": "235",
@@ -265,6 +265,17 @@
       "wins": 0.0,
       "win_rate": "0.0%"
     },
+    "dumbledore-1135": {
+      "player_id": "2320",
+      "elo": 1429,
+      "rank": "-",
+      "tier": "unassigned",
+      "bg_color": null,
+      "icon_url": null,
+      "games": 8,
+      "wins": 5.0,
+      "win_rate": "62.5%"
+    },
     "chippzamoose-906": {
       "player_id": "1912",
       "elo": 1407,
@@ -275,17 +286,6 @@
       "games": 0,
       "wins": 0.0,
       "win_rate": "0.0%"
-    },
-    "dumbledore-1135": {
-      "player_id": "2320",
-      "elo": 1405,
-      "rank": "-",
-      "tier": "unassigned",
-      "bg_color": null,
-      "icon_url": null,
-      "games": 7,
-      "wins": 4.0,
-      "win_rate": "57.1%"
     },
     "tricholome-4276": {
       "player_id": "2141",
@@ -364,27 +364,27 @@
       "wins": 0.0,
       "win_rate": "0.0%"
     },
+    "merelymyself-4235": {
+      "player_id": "2650",
+      "elo": 1386,
+      "rank": 5,
+      "tier": "rabbit",
+      "bg_color": "#F2C14E",
+      "icon_url": "https://tricholome.github.io/rootelo/assets/icons/rabbit.webp",
+      "games": 63,
+      "wins": 25.5,
+      "win_rate": "40.5%"
+    },
     "radiantchaos-5523": {
       "player_id": "828",
       "elo": 1382,
-      "rank": 5,
+      "rank": 6,
       "tier": "rabbit",
       "bg_color": "#F2C14E",
       "icon_url": "https://tricholome.github.io/rootelo/assets/icons/rabbit.webp",
       "games": 13,
       "wins": 6.0,
       "win_rate": "46.2%"
-    },
-    "merelymyself-4235": {
-      "player_id": "2650",
-      "elo": 1380,
-      "rank": 6,
-      "tier": "rabbit",
-      "bg_color": "#F2C14E",
-      "icon_url": "https://tricholome.github.io/rootelo/assets/icons/rabbit.webp",
-      "games": 61,
-      "wins": 24.5,
-      "win_rate": "40.2%"
     },
     "emperia-9282": {
       "player_id": "325",
@@ -418,6 +418,17 @@
       "games": 8,
       "wins": 3.0,
       "win_rate": "37.5%"
+    },
+    "cliuless-2304": {
+      "player_id": "1959",
+      "elo": 1367,
+      "rank": 7,
+      "tier": "rabbit",
+      "bg_color": "#F2C14E",
+      "icon_url": "https://tricholome.github.io/rootelo/assets/icons/rabbit.webp",
+      "games": 10,
+      "wins": 5.0,
+      "win_rate": "50.0%"
     },
     "ufancyhuh-8404": {
       "player_id": "1149",
@@ -455,7 +466,7 @@
     "kfull-1226": {
       "player_id": "542",
       "elo": 1362,
-      "rank": 7,
+      "rank": 8,
       "tier": "rabbit",
       "bg_color": "#F2C14E",
       "icon_url": "https://tricholome.github.io/rootelo/assets/icons/rabbit.webp",
@@ -550,17 +561,6 @@
       "games": 0,
       "wins": 0.0,
       "win_rate": "0.0%"
-    },
-    "cliuless-2304": {
-      "player_id": "1959",
-      "elo": 1343,
-      "rank": "-",
-      "tier": "unassigned",
-      "bg_color": null,
-      "icon_url": null,
-      "games": 9,
-      "wins": 4.0,
-      "win_rate": "44.4%"
     },
     "baregammon-82": {
       "player_id": "2130",
@@ -671,17 +671,6 @@
       "games": 6,
       "wins": 1.0,
       "win_rate": "16.7%"
-    },
-    "dravortex-5198": {
-      "player_id": "2645",
-      "elo": 1323,
-      "rank": 8,
-      "tier": "rabbit",
-      "bg_color": "#F2C14E",
-      "icon_url": "https://tricholome.github.io/rootelo/assets/icons/rabbit.webp",
-      "games": 30,
-      "wins": 9.0,
-      "win_rate": "30.0%"
     },
     "darkwonderer-1035": {
       "player_id": "2335",
@@ -804,6 +793,17 @@
       "wins": 1.0,
       "win_rate": "100.0%"
     },
+    "dravortex-5198": {
+      "player_id": "2645",
+      "elo": 1314,
+      "rank": 9,
+      "tier": "rabbit",
+      "bg_color": "#F2C14E",
+      "icon_url": "https://tricholome.github.io/rootelo/assets/icons/rabbit.webp",
+      "games": 31,
+      "wins": 9.0,
+      "win_rate": "29.0%"
+    },
     "potatosgonnacrushya-428": {
       "player_id": "2390",
       "elo": 1312,
@@ -814,17 +814,6 @@
       "games": 0,
       "wins": 0.0,
       "win_rate": "0.0%"
-    },
-    "cringelordirl-3838": {
-      "player_id": "232",
-      "elo": 1312,
-      "rank": 9,
-      "tier": "rabbit",
-      "bg_color": "#F2C14E",
-      "icon_url": "https://tricholome.github.io/rootelo/assets/icons/rabbit.webp",
-      "games": 12,
-      "wins": 2.0,
-      "win_rate": "16.7%"
     },
     "nadtylite-7330": {
       "player_id": "715",
@@ -935,6 +924,17 @@
       "games": 0,
       "wins": 0.0,
       "win_rate": "0.0%"
+    },
+    "cringelordirl-3838": {
+      "player_id": "232",
+      "elo": 1299,
+      "rank": 12,
+      "tier": "mouse",
+      "bg_color": "#F49E52",
+      "icon_url": "https://tricholome.github.io/rootelo/assets/icons/mouse.webp",
+      "games": 13,
+      "wins": 2.0,
+      "win_rate": "15.4%"
     },
     "businesspancake-5194": {
       "player_id": "1899",
@@ -1145,6 +1145,17 @@
       "wins": 0.0,
       "win_rate": "0.0%"
     },
+    "clingclang-701": {
+      "player_id": "1689",
+      "elo": 1276,
+      "rank": "-",
+      "tier": "unassigned",
+      "bg_color": null,
+      "icon_url": null,
+      "games": 5,
+      "wins": 2.0,
+      "win_rate": "40.0%"
+    },
     "saintstonet-7390": {
       "player_id": "2348",
       "elo": 1276,
@@ -1178,16 +1189,16 @@
       "wins": 0.0,
       "win_rate": "0.0%"
     },
-    "mouseinabox-992": {
-      "player_id": "1646",
+    "spacenugget-7305": {
+      "player_id": "2581",
       "elo": 1274,
-      "rank": 12,
+      "rank": 13,
       "tier": "mouse",
       "bg_color": "#F49E52",
       "icon_url": "https://tricholome.github.io/rootelo/assets/icons/mouse.webp",
-      "games": 25,
-      "wins": 8.5,
-      "win_rate": "34.0%"
+      "games": 91,
+      "wins": 24.0,
+      "win_rate": "26.4%"
     },
     "notthethreat-4569": {
       "player_id": "1172",
@@ -1199,17 +1210,6 @@
       "games": 0,
       "wins": 0.0,
       "win_rate": "0.0%"
-    },
-    "spacenugget-7305": {
-      "player_id": "2581",
-      "elo": 1272,
-      "rank": 13,
-      "tier": "mouse",
-      "bg_color": "#F49E52",
-      "icon_url": "https://tricholome.github.io/rootelo/assets/icons/mouse.webp",
-      "games": 87,
-      "wins": 23.0,
-      "win_rate": "26.4%"
     },
     "deejaythink-9834": {
       "player_id": "265",
@@ -1420,6 +1420,17 @@
       "wins": 0.0,
       "win_rate": "0.0%"
     },
+    "mouseinabox-992": {
+      "player_id": "1646",
+      "elo": 1256,
+      "rank": 14,
+      "tier": "mouse",
+      "bg_color": "#F49E52",
+      "icon_url": "https://tricholome.github.io/rootelo/assets/icons/mouse.webp",
+      "games": 28,
+      "wins": 8.5,
+      "win_rate": "30.4%"
+    },
     "gabobs-7758": {
       "player_id": "2356",
       "elo": 1256,
@@ -1551,17 +1562,6 @@
       "games": 0,
       "wins": 0.0,
       "win_rate": "0.0%"
-    },
-    "drnugget-2875": {
-      "player_id": "2685",
-      "elo": 1246,
-      "rank": "-",
-      "tier": "unassigned",
-      "bg_color": null,
-      "icon_url": null,
-      "games": 5,
-      "wins": 2.0,
-      "win_rate": "40.0%"
     },
     "pwarren8590-4047": {
       "player_id": "822",
@@ -1709,7 +1709,7 @@
     "eightestuary-8000": {
       "player_id": "2675",
       "elo": 1239,
-      "rank": 14,
+      "rank": 15,
       "tier": "mouse",
       "bg_color": "#F49E52",
       "icon_url": "https://tricholome.github.io/rootelo/assets/icons/mouse.webp",
@@ -1775,7 +1775,7 @@
     "tjudge-8299": {
       "player_id": "1027",
       "elo": 1235,
-      "rank": 15,
+      "rank": 16,
       "tier": "mouse",
       "bg_color": "#F49E52",
       "icon_url": "https://tricholome.github.io/rootelo/assets/icons/mouse.webp",
@@ -1904,6 +1904,17 @@
       "wins": 0.0,
       "win_rate": "0.0%"
     },
+    "drnugget-2875": {
+      "player_id": "2685",
+      "elo": 1228,
+      "rank": "-",
+      "tier": "unassigned",
+      "bg_color": null,
+      "icon_url": null,
+      "games": 6,
+      "wins": 2.0,
+      "win_rate": "33.3%"
+    },
     "hungryjeff-6786": {
       "player_id": "1957",
       "elo": 1228,
@@ -1947,17 +1958,6 @@
       "games": 6,
       "wins": 2.0,
       "win_rate": "33.3%"
-    },
-    "clingclang-701": {
-      "player_id": "1689",
-      "elo": 1225,
-      "rank": "-",
-      "tier": "unassigned",
-      "bg_color": null,
-      "icon_url": null,
-      "games": 4,
-      "wins": 1.0,
-      "win_rate": "25.0%"
     },
     "fadingnovel-7335": {
       "player_id": "1978",
@@ -2190,17 +2190,6 @@
       "wins": 0.0,
       "win_rate": "0.0%"
     },
-    "magzeppelin-4248": {
-      "player_id": "2380",
-      "elo": 1215,
-      "rank": 16,
-      "tier": "mouse",
-      "bg_color": "#F49E52",
-      "icon_url": "https://tricholome.github.io/rootelo/assets/icons/mouse.webp",
-      "games": 28,
-      "wins": 6.0,
-      "win_rate": "21.4%"
-    },
     "bodnamax-6783": {
       "player_id": "2210",
       "elo": 1214,
@@ -2267,6 +2256,17 @@
       "wins": 0.0,
       "win_rate": "0.0%"
     },
+    "magzeppelin-4248": {
+      "player_id": "2380",
+      "elo": 1210,
+      "rank": 19,
+      "tier": "mouse",
+      "bg_color": "#F49E52",
+      "icon_url": "https://tricholome.github.io/rootelo/assets/icons/mouse.webp",
+      "games": 29,
+      "wins": 6.0,
+      "win_rate": "20.7%"
+    },
     "ionou21-8459": {
       "player_id": "2480",
       "elo": 1209,
@@ -2277,17 +2277,6 @@
       "games": 0,
       "wins": 0.0,
       "win_rate": "0.0%"
-    },
-    "lumpyprol-3206": {
-      "player_id": "619",
-      "elo": 1209,
-      "rank": "-",
-      "tier": "unassigned",
-      "bg_color": null,
-      "icon_url": null,
-      "games": 8,
-      "wins": 1.0,
-      "win_rate": "12.5%"
     },
     "odinius-897": {
       "player_id": "1963",
@@ -2343,6 +2332,17 @@
       "games": 0,
       "wins": 0.0,
       "win_rate": "0.0%"
+    },
+    "skyfish192-5548": {
+      "player_id": "2610",
+      "elo": 1206,
+      "rank": "-",
+      "tier": "unassigned",
+      "bg_color": null,
+      "icon_url": null,
+      "games": 4,
+      "wins": 1.0,
+      "win_rate": "25.0%"
     },
     "klishu-3272": {
       "player_id": "1889",
@@ -2442,6 +2442,17 @@
       "games": 0,
       "wins": 0.0,
       "win_rate": "0.0%"
+    },
+    "lumpyprol-3206": {
+      "player_id": "619",
+      "elo": 1200,
+      "rank": "-",
+      "tier": "unassigned",
+      "bg_color": null,
+      "icon_url": null,
+      "games": 9,
+      "wins": 1.0,
+      "win_rate": "11.1%"
     },
     "hydro033-5014": {
       "player_id": "447",
@@ -2905,17 +2916,6 @@
       "wins": 0.0,
       "win_rate": "0.0%"
     },
-    "bryan-5518": {
-      "player_id": "2661",
-      "elo": 1188,
-      "rank": "-",
-      "tier": "squirrel",
-      "bg_color": "#94C160",
-      "icon_url": "https://tricholome.github.io/rootelo/assets/icons/squirrel.webp",
-      "games": 18,
-      "wins": 3.0,
-      "win_rate": "16.7%"
-    },
     "yoten-6060": {
       "player_id": "2582",
       "elo": 1188,
@@ -3301,8 +3301,8 @@
       "wins": 0.0,
       "win_rate": "0.0%"
     },
-    "nuttsy-5282": {
-      "player_id": "2309",
+    "julien-5506": {
+      "player_id": "2311",
       "elo": 1185,
       "rank": "-",
       "tier": "unassigned",
@@ -3312,8 +3312,8 @@
       "wins": 0.0,
       "win_rate": "0.0%"
     },
-    "julien-5506": {
-      "player_id": "2311",
+    "nuttsy-5282": {
+      "player_id": "2309",
       "elo": 1185,
       "rank": "-",
       "tier": "unassigned",
@@ -3532,8 +3532,8 @@
       "wins": 0.0,
       "win_rate": "0.0%"
     },
-    "wubba-8903": {
-      "player_id": "2687",
+    "homietone-6801": {
+      "player_id": "2686",
       "elo": 1183,
       "rank": "-",
       "tier": "unassigned",
@@ -3543,8 +3543,8 @@
       "wins": 0.0,
       "win_rate": "0.0%"
     },
-    "homietone-6801": {
-      "player_id": "2686",
+    "wubba-8903": {
+      "player_id": "2687",
       "elo": 1183,
       "rank": "-",
       "tier": "unassigned",
@@ -3565,8 +3565,8 @@
       "wins": 0.0,
       "win_rate": "0.0%"
     },
-    "azdontek-1234": {
-      "player_id": "89",
+    "welllll-4899": {
+      "player_id": "2493",
       "elo": 1183,
       "rank": "-",
       "tier": "unassigned",
@@ -3576,8 +3576,8 @@
       "wins": 0.0,
       "win_rate": "0.0%"
     },
-    "welllll-4899": {
-      "player_id": "2493",
+    "azdontek-1234": {
+      "player_id": "89",
       "elo": 1183,
       "rank": "-",
       "tier": "unassigned",
@@ -3639,17 +3639,6 @@
       "bg_color": null,
       "icon_url": null,
       "games": 0,
-      "wins": 0.0,
-      "win_rate": "0.0%"
-    },
-    "entaro-0": {
-      "player_id": "2185",
-      "elo": 1183,
-      "rank": "-",
-      "tier": "unassigned",
-      "bg_color": null,
-      "icon_url": null,
-      "games": 1,
       "wins": 0.0,
       "win_rate": "0.0%"
     },
@@ -3862,6 +3851,17 @@
       "wins": 0.0,
       "win_rate": "0.0%"
     },
+    "onrnc-2141": {
+      "player_id": "2705",
+      "elo": 1180,
+      "rank": "-",
+      "tier": "unassigned",
+      "bg_color": null,
+      "icon_url": null,
+      "games": 1,
+      "wins": 0.0,
+      "win_rate": "0.0%"
+    },
     "gibbs-3656": {
       "player_id": "1454",
       "elo": 1180,
@@ -3883,6 +3883,17 @@
       "games": 0,
       "wins": 0.0,
       "win_rate": "0.0%"
+    },
+    "bryan-5518": {
+      "player_id": "2661",
+      "elo": 1180,
+      "rank": "-",
+      "tier": "squirrel",
+      "bg_color": "#94C160",
+      "icon_url": "https://tricholome.github.io/rootelo/assets/icons/squirrel.webp",
+      "games": 19,
+      "wins": 3.0,
+      "win_rate": "15.8%"
     },
     "elmoo-6190": {
       "player_id": "2537",
@@ -4060,17 +4071,6 @@
       "wins": 0.0,
       "win_rate": "0.0%"
     },
-    "tolfan": {
-      "player_id": "2119",
-      "elo": 1177,
-      "rank": "-",
-      "tier": "squirrel",
-      "bg_color": "#94C160",
-      "icon_url": "https://tricholome.github.io/rootelo/assets/icons/squirrel.webp",
-      "games": 20,
-      "wins": 3.0,
-      "win_rate": "15.0%"
-    },
     "cocomocoman-3134": {
       "player_id": "2506",
       "elo": 1177,
@@ -4178,6 +4178,17 @@
       "bg_color": null,
       "icon_url": null,
       "games": 0,
+      "wins": 0.0,
+      "win_rate": "0.0%"
+    },
+    "entaro-0": {
+      "player_id": "2185",
+      "elo": 1175,
+      "rank": "-",
+      "tier": "unassigned",
+      "bg_color": null,
+      "icon_url": null,
+      "games": 2,
       "wins": 0.0,
       "win_rate": "0.0%"
     },
@@ -4356,6 +4367,17 @@
       "games": 0,
       "wins": 0.0,
       "win_rate": "0.0%"
+    },
+    "tolfan": {
+      "player_id": "2119",
+      "elo": 1172,
+      "rank": "-",
+      "tier": "squirrel",
+      "bg_color": "#94C160",
+      "icon_url": "https://tricholome.github.io/rootelo/assets/icons/squirrel.webp",
+      "games": 22,
+      "wins": 3.0,
+      "win_rate": "13.6%"
     },
     "hazelnut19-2913": {
       "player_id": "431",
@@ -4544,17 +4566,6 @@
       "wins": 1.0,
       "win_rate": "14.3%"
     },
-    "timber-7880": {
-      "player_id": "2697",
-      "elo": 1168,
-      "rank": "-",
-      "tier": "unassigned",
-      "bg_color": null,
-      "icon_url": null,
-      "games": 2,
-      "wins": 0.0,
-      "win_rate": "0.0%"
-    },
     "bitto-476": {
       "player_id": "123",
       "elo": 1168,
@@ -4728,17 +4739,6 @@
       "bg_color": null,
       "icon_url": null,
       "games": 0,
-      "wins": 0.0,
-      "win_rate": "0.0%"
-    },
-    "skyfish192-5548": {
-      "player_id": "2610",
-      "elo": 1164,
-      "rank": "-",
-      "tier": "unassigned",
-      "bg_color": null,
-      "icon_url": null,
-      "games": 3,
       "wins": 0.0,
       "win_rate": "0.0%"
     },
@@ -5094,6 +5094,17 @@
       "wins": 0.0,
       "win_rate": "0.0%"
     },
+    "timber-7880": {
+      "player_id": "2697",
+      "elo": 1158,
+      "rank": "-",
+      "tier": "unassigned",
+      "bg_color": null,
+      "icon_url": null,
+      "games": 3,
+      "wins": 0.0,
+      "win_rate": "0.0%"
+    },
     "lante-1268": {
       "player_id": "579",
       "elo": 1158,
@@ -5204,17 +5215,6 @@
       "wins": 0.0,
       "win_rate": "0.0%"
     },
-    "maxlovesyou-9434": {
-      "player_id": "2525",
-      "elo": 1154,
-      "rank": "-",
-      "tier": "squirrel",
-      "bg_color": "#94C160",
-      "icon_url": "https://tricholome.github.io/rootelo/assets/icons/squirrel.webp",
-      "games": 12,
-      "wins": 2.0,
-      "win_rate": "16.7%"
-    },
     "fakeski-4232": {
       "player_id": "343",
       "elo": 1154,
@@ -5270,17 +5270,6 @@
       "wins": 0.0,
       "win_rate": "0.0%"
     },
-    "buurn-343": {
-      "player_id": "1706",
-      "elo": 1153,
-      "rank": "-",
-      "tier": "squirrel",
-      "bg_color": "#94C160",
-      "icon_url": "https://tricholome.github.io/rootelo/assets/icons/squirrel.webp",
-      "games": 17,
-      "wins": 3.0,
-      "win_rate": "17.6%"
-    },
     "cloudere-8085": {
       "player_id": "2265",
       "elo": 1152,
@@ -5291,17 +5280,6 @@
       "games": 0,
       "wins": 0.0,
       "win_rate": "0.0%"
-    },
-    "cjahwon-6865": {
-      "player_id": "2287",
-      "elo": 1151,
-      "rank": "-",
-      "tier": "squirrel",
-      "bg_color": "#94C160",
-      "icon_url": "https://tricholome.github.io/rootelo/assets/icons/squirrel.webp",
-      "games": 29,
-      "wins": 5.0,
-      "win_rate": "17.2%"
     },
     "naysmith-3702": {
       "player_id": "2169",
@@ -5380,6 +5358,17 @@
       "wins": 0.0,
       "win_rate": "0.0%"
     },
+    "buurn-343": {
+      "player_id": "1706",
+      "elo": 1147,
+      "rank": "-",
+      "tier": "squirrel",
+      "bg_color": "#94C160",
+      "icon_url": "https://tricholome.github.io/rootelo/assets/icons/squirrel.webp",
+      "games": 18,
+      "wins": 3.0,
+      "win_rate": "16.7%"
+    },
     "theindustrialrevoloution-3880": {
       "player_id": "1008",
       "elo": 1146,
@@ -5412,6 +5401,17 @@
       "games": 4,
       "wins": 0.0,
       "win_rate": "0.0%"
+    },
+    "maxlovesyou-9434": {
+      "player_id": "2525",
+      "elo": 1146,
+      "rank": "-",
+      "tier": "squirrel",
+      "bg_color": "#94C160",
+      "icon_url": "https://tricholome.github.io/rootelo/assets/icons/squirrel.webp",
+      "games": 13,
+      "wins": 2.0,
+      "win_rate": "15.4%"
     },
     "ssr_mike-6444": {
       "player_id": "2308",
@@ -5478,6 +5478,17 @@
       "games": 0,
       "wins": 0.0,
       "win_rate": "0.0%"
+    },
+    "cjahwon-6865": {
+      "player_id": "2287",
+      "elo": 1142,
+      "rank": "-",
+      "tier": "squirrel",
+      "bg_color": "#94C160",
+      "icon_url": "https://tricholome.github.io/rootelo/assets/icons/squirrel.webp",
+      "games": 33,
+      "wins": 5.0,
+      "win_rate": "15.2%"
     },
     "soluna-2127": {
       "player_id": "938",
@@ -5608,17 +5619,6 @@
       "bg_color": null,
       "icon_url": null,
       "games": 3,
-      "wins": 0.0,
-      "win_rate": "0.0%"
-    },
-    "pommedeterregreaves-6356": {
-      "player_id": "2681",
-      "elo": 1136,
-      "rank": "-",
-      "tier": "unassigned",
-      "bg_color": null,
-      "icon_url": null,
-      "games": 4,
       "wins": 0.0,
       "win_rate": "0.0%"
     },
@@ -5927,6 +5927,17 @@
       "bg_color": null,
       "icon_url": null,
       "games": 0,
+      "wins": 0.0,
+      "win_rate": "0.0%"
+    },
+    "pommedeterregreaves-6356": {
+      "player_id": "2681",
+      "elo": 1122,
+      "rank": "-",
+      "tier": "unassigned",
+      "bg_color": null,
+      "icon_url": null,
+      "games": 5,
       "wins": 0.0,
       "win_rate": "0.0%"
     },
@@ -6513,17 +6524,6 @@
       "wins": 0.0,
       "win_rate": "0.0%"
     },
-    "mrmushroomman-3221": {
-      "player_id": "2550",
-      "elo": 1079,
-      "rank": "-",
-      "tier": "squirrel",
-      "bg_color": "#94C160",
-      "icon_url": "https://tricholome.github.io/rootelo/assets/icons/squirrel.webp",
-      "games": 21,
-      "wins": 1.5,
-      "win_rate": "7.1%"
-    },
     "wehrledominance-8011": {
       "player_id": "2585",
       "elo": 1078,
@@ -6567,6 +6567,17 @@
       "games": 0,
       "wins": 0.0,
       "win_rate": "0.0%"
+    },
+    "mrmushroomman-3221": {
+      "player_id": "2550",
+      "elo": 1072,
+      "rank": "-",
+      "tier": "squirrel",
+      "bg_color": "#94C160",
+      "icon_url": "https://tricholome.github.io/rootelo/assets/icons/squirrel.webp",
+      "games": 24,
+      "wins": 1.5,
+      "win_rate": "6.2%"
     },
     "jqekel-9710": {
       "player_id": "2617",
@@ -6623,17 +6634,6 @@
       "wins": 0.0,
       "win_rate": "0.0%"
     },
-    "kelton-3123": {
-      "player_id": "2641",
-      "elo": 1067,
-      "rank": "-",
-      "tier": "unassigned",
-      "bg_color": null,
-      "icon_url": null,
-      "games": 8,
-      "wins": 0.5,
-      "win_rate": "6.2%"
-    },
     "doordecat-1475": {
       "player_id": "1331",
       "elo": 1066,
@@ -6677,6 +6677,17 @@
       "games": 17,
       "wins": 2.0,
       "win_rate": "11.8%"
+    },
+    "kelton-3123": {
+      "player_id": "2641",
+      "elo": 1064,
+      "rank": "-",
+      "tier": "unassigned",
+      "bg_color": null,
+      "icon_url": null,
+      "games": 9,
+      "wins": 0.5,
+      "win_rate": "5.6%"
     },
     "tonydeloreanesq-4756": {
       "player_id": "1240",
@@ -6911,12 +6922,12 @@
     },
     "mpeiii-9205": {
       "player_id": "2611",
-      "elo": 1008,
+      "elo": 1006,
       "rank": "-",
       "tier": "unassigned",
       "bg_color": null,
       "icon_url": null,
-      "games": 8,
+      "games": 9,
       "wins": 0.0,
       "win_rate": "0.0%"
     },
