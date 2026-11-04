@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-11-04 15:57 UTC",
+  "updated_at": "2026-11-04 16:05 UTC",
   "players": {
     "bw": {
       "player_id": "326",
@@ -674,7 +674,7 @@
     },
     "nattykash": {
       "player_id": "1367",
-      "elo": 1190,
+      "elo": 1191,
       "rank": "-",
       "tier": "squirrel",
       "bg_color": "#94C160",
@@ -773,7 +773,7 @@
     },
     "demarogue": {
       "player_id": "2760",
-      "elo": 1188,
+      "elo": 1189,
       "rank": "-",
       "tier": "squirrel",
       "bg_color": "#94C160",
@@ -894,7 +894,7 @@
     },
     "pooge": {
       "player_id": "173",
-      "elo": 1173,
+      "elo": 1172,
       "rank": "-",
       "tier": "squirrel",
       "bg_color": "#94C160",
@@ -969,8 +969,8 @@
       "wins": 0.0,
       "win_rate": "0.0%"
     },
-    "plasma": {
-      "player_id": "1953",
+    "seironed": {
+      "player_id": "2525",
       "elo": 1168,
       "rank": "-",
       "tier": "unassigned",
@@ -980,8 +980,8 @@
       "wins": 0.0,
       "win_rate": "0.0%"
     },
-    "seironed": {
-      "player_id": "2525",
+    "plasma": {
+      "player_id": "1953",
       "elo": 1168,
       "rank": "-",
       "tier": "unassigned",
@@ -1024,8 +1024,8 @@
       "wins": 0.0,
       "win_rate": "0.0%"
     },
-    "mwalt92": {
-      "player_id": "458",
+    "jonismiff": {
+      "player_id": "76",
       "elo": 1167,
       "rank": "-",
       "tier": "unassigned",
@@ -1035,8 +1035,8 @@
       "wins": 0.0,
       "win_rate": "0.0%"
     },
-    "jonismiff": {
-      "player_id": "76",
+    "mwalt92": {
+      "player_id": "458",
       "elo": 1167,
       "rank": "-",
       "tier": "unassigned",
@@ -1079,8 +1079,8 @@
       "wins": 0.0,
       "win_rate": "0.0%"
     },
-    "dark owl": {
-      "player_id": "2759",
+    "coola101": {
+      "player_id": "2399",
       "elo": 1166,
       "rank": "-",
       "tier": "unassigned",
@@ -1090,8 +1090,8 @@
       "wins": 0.0,
       "win_rate": "0.0%"
     },
-    "coola101": {
-      "player_id": "2399",
+    "dark owl": {
+      "player_id": "2759",
       "elo": 1166,
       "rank": "-",
       "tier": "unassigned",

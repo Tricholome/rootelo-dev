@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-11-04 15:57 UTC",
+  "updated_at": "2026-11-04 16:05 UTC",
   "players": {
     "nadav253-6419": {
       "player_id": "714",
@@ -3290,6 +3290,17 @@
       "wins": 0.0,
       "win_rate": "0.0%"
     },
+    "nuttsy-5282": {
+      "player_id": "2309",
+      "elo": 1185,
+      "rank": "-",
+      "tier": "unassigned",
+      "bg_color": null,
+      "icon_url": null,
+      "games": 0,
+      "wins": 0.0,
+      "win_rate": "0.0%"
+    },
     "chosennuttso": {
       "player_id": "2000",
       "elo": 1185,
@@ -3303,17 +3314,6 @@
     },
     "julien-5506": {
       "player_id": "2311",
-      "elo": 1185,
-      "rank": "-",
-      "tier": "unassigned",
-      "bg_color": null,
-      "icon_url": null,
-      "games": 0,
-      "wins": 0.0,
-      "win_rate": "0.0%"
-    },
-    "nuttsy-5282": {
-      "player_id": "2309",
       "elo": 1185,
       "rank": "-",
       "tier": "unassigned",
