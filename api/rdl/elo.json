@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-11-10 10:51 UTC",
+  "updated_at": "2026-11-10 11:03 UTC",
   "players": {
     "bapgo-7254": {
       "player_id": "99",
@@ -2927,8 +2927,8 @@
       "wins": 0.0,
       "win_rate": "0.0%"
     },
-    "julien-5506": {
-      "player_id": "2311",
+    "chosennuttso": {
+      "player_id": "2000",
       "elo": 1185,
       "rank": "-",
       "tier": "unassigned",
@@ -2938,8 +2938,8 @@
       "wins": 0.0,
       "win_rate": "0.0%"
     },
-    "chosennuttso": {
-      "player_id": "2000",
+    "julien-5506": {
+      "player_id": "2311",
       "elo": 1185,
       "rank": "-",
       "tier": "unassigned",
