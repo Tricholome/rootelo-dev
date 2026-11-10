@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-11-10 15:05 UTC",
+  "updated_at": "2026-11-10 15:07 UTC",
   "players": {
     "led_slash-3579": {
       "player_id": "1661",
@@ -3444,8 +3444,8 @@
       "wins": 0.0,
       "win_rate": "0.0%"
     },
-    "demand-3288": {
-      "player_id": "2198",
+    "clink-5884": {
+      "player_id": "2199",
       "elo": 1184,
       "rank": "-",
       "tier": "unassigned",
@@ -3455,8 +3455,8 @@
       "wins": 0.0,
       "win_rate": "0.0%"
     },
-    "clink-5884": {
-      "player_id": "2199",
+    "demand-3288": {
+      "player_id": "2198",
       "elo": 1184,
       "rank": "-",
       "tier": "unassigned",
