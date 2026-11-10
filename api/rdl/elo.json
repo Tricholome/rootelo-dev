@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-11-10 13:17 UTC",
+  "updated_at": "2026-11-10 13:31 UTC",
   "players": {
     "doejurko-3088": {
       "player_id": "2089",
@@ -3829,8 +3829,8 @@
       "wins": 0.0,
       "win_rate": "0.0%"
     },
-    "julien-5506": {
-      "player_id": "2311",
+    "chosennuttso": {
+      "player_id": "2000",
       "elo": 1171,
       "rank": "-",
       "tier": "unassigned",
@@ -3851,8 +3851,8 @@
       "wins": 0.0,
       "win_rate": "0.0%"
     },
-    "chosennuttso": {
-      "player_id": "2000",
+    "julien-5506": {
+      "player_id": "2311",
       "elo": 1171,
       "rank": "-",
       "tier": "unassigned",
