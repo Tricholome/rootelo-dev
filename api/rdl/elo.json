@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-11-10 14:15 UTC",
+  "updated_at": "2026-11-10 14:27 UTC",
   "players": {
     "led_slash-3579": {
       "player_id": "1661",
@@ -3037,8 +3037,8 @@
       "wins": 0.0,
       "win_rate": "0.0%"
     },
-    "chosennuttso": {
-      "player_id": "2000",
+    "nuttsy-5282": {
+      "player_id": "2309",
       "elo": 1185,
       "rank": "-",
       "tier": "unassigned",
@@ -3048,8 +3048,8 @@
       "wins": 0.0,
       "win_rate": "0.0%"
     },
-    "nuttsy-5282": {
-      "player_id": "2309",
+    "chosennuttso": {
+      "player_id": "2000",
       "elo": 1185,
       "rank": "-",
       "tier": "unassigned",
@@ -3125,8 +3125,8 @@
       "wins": 0.0,
       "win_rate": "0.0%"
     },
-    "clink-5884": {
-      "player_id": "2199",
+    "demand-3288": {
+      "player_id": "2198",
       "elo": 1184,
       "rank": "-",
       "tier": "unassigned",
@@ -3136,8 +3136,8 @@
       "wins": 0.0,
       "win_rate": "0.0%"
     },
-    "demand-3288": {
-      "player_id": "2198",
+    "clink-5884": {
+      "player_id": "2199",
       "elo": 1184,
       "rank": "-",
       "tier": "unassigned",
@@ -3235,8 +3235,8 @@
       "wins": 0.0,
       "win_rate": "0.0%"
     },
-    "welllll-4899": {
-      "player_id": "2493",
+    "azdontek-1234": {
+      "player_id": "89",
       "elo": 1183,
       "rank": "-",
       "tier": "unassigned",
@@ -3246,8 +3246,8 @@
       "wins": 0.0,
       "win_rate": "0.0%"
     },
-    "azdontek-1234": {
-      "player_id": "89",
+    "welllll-4899": {
+      "player_id": "2493",
       "elo": 1183,
       "rank": "-",
       "tier": "unassigned",
@@ -5754,17 +5754,6 @@
       "wins": 0.0,
       "win_rate": "0.0%"
     },
-    "juf3333-2975": {
-      "player_id": "2594",
-      "elo": 1108,
-      "rank": "-",
-      "tier": "unassigned",
-      "bg_color": null,
-      "icon_url": null,
-      "games": 3,
-      "wins": 0.0,
-      "win_rate": "0.0%"
-    },
     "hollykat902-1703": {
       "player_id": "2429",
       "elo": 1108,
@@ -5773,6 +5762,17 @@
       "bg_color": null,
       "icon_url": null,
       "games": 0,
+      "wins": 0.0,
+      "win_rate": "0.0%"
+    },
+    "juf3333-2975": {
+      "player_id": "2594",
+      "elo": 1107,
+      "rank": "-",
+      "tier": "unassigned",
+      "bg_color": null,
+      "icon_url": null,
+      "games": 3,
       "wins": 0.0,
       "win_rate": "0.0%"
     },
@@ -6084,17 +6084,6 @@
       "wins": 0.0,
       "win_rate": "0.0%"
     },
-    "joshi69-4249": {
-      "player_id": "2541",
-      "elo": 1079,
-      "rank": "-",
-      "tier": "unassigned",
-      "bg_color": null,
-      "icon_url": null,
-      "games": 7,
-      "wins": 0.0,
-      "win_rate": "0.0%"
-    },
     "kangourouiambic-846": {
       "player_id": "2606",
       "elo": 1079,
@@ -6105,6 +6094,17 @@
       "games": 59,
       "wins": 6.0,
       "win_rate": "10.2%"
+    },
+    "joshi69-4249": {
+      "player_id": "2541",
+      "elo": 1079,
+      "rank": "-",
+      "tier": "unassigned",
+      "bg_color": null,
+      "icon_url": null,
+      "games": 7,
+      "wins": 0.0,
+      "win_rate": "0.0%"
     },
     "plushcultist-9901": {
       "player_id": "2552",
@@ -6680,7 +6680,7 @@
     },
     "hyenadon-4502": {
       "player_id": "1095",
-      "elo": 938,
+      "elo": 937,
       "rank": "-",
       "tier": "squirrel",
       "bg_color": "#94C160",
