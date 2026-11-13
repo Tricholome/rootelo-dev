@@ -174,11 +174,17 @@
 
 <body class=" " data-page="simulator" data-section="codex">
 	<script>
-        if (document.body.dataset.page === 'index' && localStorage.getItem('spotFrogs') === 'true') {
-            document.body.classList.add('homelands-mode');
-        }
-    </script>
-    
+		(function() {
+			const page = document.body.dataset.page;
+			if (page !== 'index' && page !== 'network' && page !== 'homelands') {
+				sessionStorage.removeItem('spotFrogs');
+			}
+			else if (page === 'index' && sessionStorage.getItem('spotFrogs') === 'true') {
+				document.body.classList.add('homelands-mode');
+			}
+		})();
+	</script>
+		
     <div class="container">
 	
         <header class="app-banner window-box">
@@ -1736,7 +1742,7 @@
 						</a>
 					</span>
 				</div>
-				<div class="footer-date">Updated on 2026-11-13 11:42 UTC</div>
+				<div class="footer-date">Updated on 2026-11-13 12:02 UTC</div>
 			</div>
 		</footer>
     </div>
