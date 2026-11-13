@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-11-13 12:12 UTC",
+  "updated_at": "2026-11-13 12:35 UTC",
   "players": {
     "glisteninggeetus-4225": {
       "player_id": "398",
@@ -3312,8 +3312,8 @@
       "wins": 0.0,
       "win_rate": "0.0%"
     },
-    "julien-5506": {
-      "player_id": "2311",
+    "chosennuttso": {
+      "player_id": "2000",
       "elo": 1185,
       "rank": "-",
       "tier": "unassigned",
@@ -3323,8 +3323,8 @@
       "wins": 0.0,
       "win_rate": "0.0%"
     },
-    "chosennuttso": {
-      "player_id": "2000",
+    "julien-5506": {
+      "player_id": "2311",
       "elo": 1185,
       "rank": "-",
       "tier": "unassigned",
@@ -3422,8 +3422,8 @@
       "wins": 0.0,
       "win_rate": "0.0%"
     },
-    "clink-5884": {
-      "player_id": "2199",
+    "demand-3288": {
+      "player_id": "2198",
       "elo": 1184,
       "rank": "-",
       "tier": "unassigned",
@@ -3433,8 +3433,8 @@
       "wins": 0.0,
       "win_rate": "0.0%"
     },
-    "demand-3288": {
-      "player_id": "2198",
+    "clink-5884": {
+      "player_id": "2199",
       "elo": 1184,
       "rank": "-",
       "tier": "unassigned",
@@ -3576,8 +3576,8 @@
       "wins": 0.0,
       "win_rate": "0.0%"
     },
-    "azdontek-1234": {
-      "player_id": "89",
+    "welllll-4899": {
+      "player_id": "2493",
       "elo": 1183,
       "rank": "-",
       "tier": "unassigned",
@@ -3587,8 +3587,8 @@
       "wins": 0.0,
       "win_rate": "0.0%"
     },
-    "welllll-4899": {
-      "player_id": "2493",
+    "azdontek-1234": {
+      "player_id": "89",
       "elo": 1183,
       "rank": "-",
       "tier": "unassigned",
