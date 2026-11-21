@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-11-21 17:25 UTC",
+  "updated_at": "2026-11-21 17:29 UTC",
   "players": {
     "led_slash-3579": {
       "player_id": "1661",
@@ -3444,8 +3444,8 @@
       "wins": 0.0,
       "win_rate": "0.0%"
     },
-    "julien-5506": {
-      "player_id": "2311",
+    "nuttsy-5282": {
+      "player_id": "2309",
       "elo": 1185,
       "rank": "-",
       "tier": "unassigned",
@@ -3466,8 +3466,8 @@
       "wins": 0.0,
       "win_rate": "0.0%"
     },
-    "nuttsy-5282": {
-      "player_id": "2309",
+    "julien-5506": {
+      "player_id": "2311",
       "elo": 1185,
       "rank": "-",
       "tier": "unassigned",
@@ -3565,8 +3565,8 @@
       "wins": 0.0,
       "win_rate": "0.0%"
     },
-    "demand-3288": {
-      "player_id": "2198",
+    "clink-5884": {
+      "player_id": "2199",
       "elo": 1184,
       "rank": "-",
       "tier": "unassigned",
@@ -3576,8 +3576,8 @@
       "wins": 0.0,
       "win_rate": "0.0%"
     },
-    "clink-5884": {
-      "player_id": "2199",
+    "demand-3288": {
+      "player_id": "2198",
       "elo": 1184,
       "rank": "-",
       "tier": "unassigned",
