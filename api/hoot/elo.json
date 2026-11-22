@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-11-22 21:14 UTC",
+  "updated_at": "2026-11-22 21:18 UTC",
   "players": {
     "uwtron": {
       "player_id": "1629",
@@ -7,7 +7,7 @@
       "rank": 1,
       "tier": "rabbit",
       "bg_color": "#F2C14E",
-      "icon_url": "https://tricholome.github.io/rootelo/assets/icons/rabbit.webp",
+      "icon_url": "https://tricholome.github.io/rootelo-dev/assets/icons/rabbit.webp",
       "games": 22,
       "wins": 12.0,
       "win_rate": "54.5%"
@@ -18,7 +18,7 @@
       "rank": 2,
       "tier": "rabbit",
       "bg_color": "#F2C14E",
-      "icon_url": "https://tricholome.github.io/rootelo/assets/icons/rabbit.webp",
+      "icon_url": "https://tricholome.github.io/rootelo-dev/assets/icons/rabbit.webp",
       "games": 12,
       "wins": 7.0,
       "win_rate": "58.3%"
@@ -29,7 +29,7 @@
       "rank": 3,
       "tier": "rabbit",
       "bg_color": "#F2C14E",
-      "icon_url": "https://tricholome.github.io/rootelo/assets/icons/rabbit.webp",
+      "icon_url": "https://tricholome.github.io/rootelo-dev/assets/icons/rabbit.webp",
       "games": 54,
       "wins": 26.0,
       "win_rate": "48.1%"
@@ -51,7 +51,7 @@
       "rank": 4,
       "tier": "rabbit",
       "bg_color": "#F2C14E",
-      "icon_url": "https://tricholome.github.io/rootelo/assets/icons/rabbit.webp",
+      "icon_url": "https://tricholome.github.io/rootelo-dev/assets/icons/rabbit.webp",
       "games": 15,
       "wins": 8.0,
       "win_rate": "53.3%"
@@ -73,7 +73,7 @@
       "rank": 5,
       "tier": "rabbit",
       "bg_color": "#F2C14E",
-      "icon_url": "https://tricholome.github.io/rootelo/assets/icons/rabbit.webp",
+      "icon_url": "https://tricholome.github.io/rootelo-dev/assets/icons/rabbit.webp",
       "games": 13,
       "wins": 6.0,
       "win_rate": "46.2%"
@@ -84,7 +84,7 @@
       "rank": 6,
       "tier": "rabbit",
       "bg_color": "#F2C14E",
-      "icon_url": "https://tricholome.github.io/rootelo/assets/icons/rabbit.webp",
+      "icon_url": "https://tricholome.github.io/rootelo-dev/assets/icons/rabbit.webp",
       "games": 17,
       "wins": 8.0,
       "win_rate": "47.1%"
@@ -95,7 +95,7 @@
       "rank": 7,
       "tier": "rabbit",
       "bg_color": "#F2C14E",
-      "icon_url": "https://tricholome.github.io/rootelo/assets/icons/rabbit.webp",
+      "icon_url": "https://tricholome.github.io/rootelo-dev/assets/icons/rabbit.webp",
       "games": 17,
       "wins": 7.0,
       "win_rate": "41.2%"
@@ -106,7 +106,7 @@
       "rank": 8,
       "tier": "mouse",
       "bg_color": "#F49E52",
-      "icon_url": "https://tricholome.github.io/rootelo/assets/icons/mouse.webp",
+      "icon_url": "https://tricholome.github.io/rootelo-dev/assets/icons/mouse.webp",
       "games": 13,
       "wins": 6.0,
       "win_rate": "46.2%"
@@ -139,7 +139,7 @@
       "rank": 9,
       "tier": "mouse",
       "bg_color": "#F49E52",
-      "icon_url": "https://tricholome.github.io/rootelo/assets/icons/mouse.webp",
+      "icon_url": "https://tricholome.github.io/rootelo-dev/assets/icons/mouse.webp",
       "games": 13,
       "wins": 5.0,
       "win_rate": "38.5%"
@@ -150,7 +150,7 @@
       "rank": 10,
       "tier": "mouse",
       "bg_color": "#F49E52",
-      "icon_url": "https://tricholome.github.io/rootelo/assets/icons/mouse.webp",
+      "icon_url": "https://tricholome.github.io/rootelo-dev/assets/icons/mouse.webp",
       "games": 13,
       "wins": 6.0,
       "win_rate": "46.2%"
@@ -183,7 +183,7 @@
       "rank": 11,
       "tier": "mouse",
       "bg_color": "#F49E52",
-      "icon_url": "https://tricholome.github.io/rootelo/assets/icons/mouse.webp",
+      "icon_url": "https://tricholome.github.io/rootelo-dev/assets/icons/mouse.webp",
       "games": 19,
       "wins": 7.0,
       "win_rate": "36.8%"
@@ -194,7 +194,7 @@
       "rank": 12,
       "tier": "mouse",
       "bg_color": "#F49E52",
-      "icon_url": "https://tricholome.github.io/rootelo/assets/icons/mouse.webp",
+      "icon_url": "https://tricholome.github.io/rootelo-dev/assets/icons/mouse.webp",
       "games": 26,
       "wins": 8.0,
       "win_rate": "30.8%"
@@ -205,7 +205,7 @@
       "rank": 13,
       "tier": "mouse",
       "bg_color": "#F49E52",
-      "icon_url": "https://tricholome.github.io/rootelo/assets/icons/mouse.webp",
+      "icon_url": "https://tricholome.github.io/rootelo-dev/assets/icons/mouse.webp",
       "games": 16,
       "wins": 6.0,
       "win_rate": "37.5%"
@@ -216,7 +216,7 @@
       "rank": 14,
       "tier": "mouse",
       "bg_color": "#F49E52",
-      "icon_url": "https://tricholome.github.io/rootelo/assets/icons/mouse.webp",
+      "icon_url": "https://tricholome.github.io/rootelo-dev/assets/icons/mouse.webp",
       "games": 17,
       "wins": 6.0,
       "win_rate": "35.3%"
@@ -238,7 +238,7 @@
       "rank": 15,
       "tier": "mouse",
       "bg_color": "#F49E52",
-      "icon_url": "https://tricholome.github.io/rootelo/assets/icons/mouse.webp",
+      "icon_url": "https://tricholome.github.io/rootelo-dev/assets/icons/mouse.webp",
       "games": 15,
       "wins": 5.0,
       "win_rate": "33.3%"
@@ -249,7 +249,7 @@
       "rank": 16,
       "tier": "mouse",
       "bg_color": "#F49E52",
-      "icon_url": "https://tricholome.github.io/rootelo/assets/icons/mouse.webp",
+      "icon_url": "https://tricholome.github.io/rootelo-dev/assets/icons/mouse.webp",
       "games": 14,
       "wins": 5.0,
       "win_rate": "35.7%"
@@ -271,7 +271,7 @@
       "rank": 17,
       "tier": "mouse",
       "bg_color": "#F49E52",
-      "icon_url": "https://tricholome.github.io/rootelo/assets/icons/mouse.webp",
+      "icon_url": "https://tricholome.github.io/rootelo-dev/assets/icons/mouse.webp",
       "games": 18,
       "wins": 6.0,
       "win_rate": "33.3%"
@@ -282,7 +282,7 @@
       "rank": 18,
       "tier": "mouse",
       "bg_color": "#F49E52",
-      "icon_url": "https://tricholome.github.io/rootelo/assets/icons/mouse.webp",
+      "icon_url": "https://tricholome.github.io/rootelo-dev/assets/icons/mouse.webp",
       "games": 23,
       "wins": 8.0,
       "win_rate": "34.8%"
@@ -304,7 +304,7 @@
       "rank": 19,
       "tier": "mouse",
       "bg_color": "#F49E52",
-      "icon_url": "https://tricholome.github.io/rootelo/assets/icons/mouse.webp",
+      "icon_url": "https://tricholome.github.io/rootelo-dev/assets/icons/mouse.webp",
       "games": 21,
       "wins": 6.0,
       "win_rate": "28.6%"
@@ -326,7 +326,7 @@
       "rank": 20,
       "tier": "mouse",
       "bg_color": "#F49E52",
-      "icon_url": "https://tricholome.github.io/rootelo/assets/icons/mouse.webp",
+      "icon_url": "https://tricholome.github.io/rootelo-dev/assets/icons/mouse.webp",
       "games": 16,
       "wins": 5.0,
       "win_rate": "31.2%"
@@ -337,7 +337,7 @@
       "rank": 21,
       "tier": "mouse",
       "bg_color": "#F49E52",
-      "icon_url": "https://tricholome.github.io/rootelo/assets/icons/mouse.webp",
+      "icon_url": "https://tricholome.github.io/rootelo-dev/assets/icons/mouse.webp",
       "games": 27,
       "wins": 7.0,
       "win_rate": "25.9%"
@@ -348,7 +348,7 @@
       "rank": 22,
       "tier": "mouse",
       "bg_color": "#F49E52",
-      "icon_url": "https://tricholome.github.io/rootelo/assets/icons/mouse.webp",
+      "icon_url": "https://tricholome.github.io/rootelo-dev/assets/icons/mouse.webp",
       "games": 13,
       "wins": 4.0,
       "win_rate": "30.8%"
@@ -436,7 +436,7 @@
       "rank": 23,
       "tier": "mouse",
       "bg_color": "#F49E52",
-      "icon_url": "https://tricholome.github.io/rootelo/assets/icons/mouse.webp",
+      "icon_url": "https://tricholome.github.io/rootelo-dev/assets/icons/mouse.webp",
       "games": 13,
       "wins": 3.0,
       "win_rate": "23.1%"
@@ -458,7 +458,7 @@
       "rank": 24,
       "tier": "mouse",
       "bg_color": "#F49E52",
-      "icon_url": "https://tricholome.github.io/rootelo/assets/icons/mouse.webp",
+      "icon_url": "https://tricholome.github.io/rootelo-dev/assets/icons/mouse.webp",
       "games": 15,
       "wins": 4.0,
       "win_rate": "26.7%"
@@ -480,7 +480,7 @@
       "rank": 25,
       "tier": "mouse",
       "bg_color": "#F49E52",
-      "icon_url": "https://tricholome.github.io/rootelo/assets/icons/mouse.webp",
+      "icon_url": "https://tricholome.github.io/rootelo-dev/assets/icons/mouse.webp",
       "games": 12,
       "wins": 3.0,
       "win_rate": "25.0%"
@@ -491,7 +491,7 @@
       "rank": 26,
       "tier": "mouse",
       "bg_color": "#F49E52",
-      "icon_url": "https://tricholome.github.io/rootelo/assets/icons/mouse.webp",
+      "icon_url": "https://tricholome.github.io/rootelo-dev/assets/icons/mouse.webp",
       "games": 17,
       "wins": 4.0,
       "win_rate": "23.5%"
@@ -590,7 +590,7 @@
       "rank": "-",
       "tier": "squirrel",
       "bg_color": "#94C160",
-      "icon_url": "https://tricholome.github.io/rootelo/assets/icons/squirrel.webp",
+      "icon_url": "https://tricholome.github.io/rootelo-dev/assets/icons/squirrel.webp",
       "games": 18,
       "wins": 4.0,
       "win_rate": "22.2%"
@@ -601,7 +601,7 @@
       "rank": "-",
       "tier": "squirrel",
       "bg_color": "#94C160",
-      "icon_url": "https://tricholome.github.io/rootelo/assets/icons/squirrel.webp",
+      "icon_url": "https://tricholome.github.io/rootelo-dev/assets/icons/squirrel.webp",
       "games": 11,
       "wins": 2.0,
       "win_rate": "18.2%"
@@ -656,7 +656,7 @@
       "rank": "-",
       "tier": "squirrel",
       "bg_color": "#94C160",
-      "icon_url": "https://tricholome.github.io/rootelo/assets/icons/squirrel.webp",
+      "icon_url": "https://tricholome.github.io/rootelo-dev/assets/icons/squirrel.webp",
       "games": 15,
       "wins": 3.0,
       "win_rate": "20.0%"
@@ -766,7 +766,7 @@
       "rank": "-",
       "tier": "squirrel",
       "bg_color": "#94C160",
-      "icon_url": "https://tricholome.github.io/rootelo/assets/icons/squirrel.webp",
+      "icon_url": "https://tricholome.github.io/rootelo-dev/assets/icons/squirrel.webp",
       "games": 20,
       "wins": 4.0,
       "win_rate": "20.0%"
@@ -821,7 +821,7 @@
       "rank": "-",
       "tier": "squirrel",
       "bg_color": "#94C160",
-      "icon_url": "https://tricholome.github.io/rootelo/assets/icons/squirrel.webp",
+      "icon_url": "https://tricholome.github.io/rootelo-dev/assets/icons/squirrel.webp",
       "games": 11,
       "wins": 2.0,
       "win_rate": "18.2%"
@@ -1063,7 +1063,7 @@
       "rank": "-",
       "tier": "squirrel",
       "bg_color": "#94C160",
-      "icon_url": "https://tricholome.github.io/rootelo/assets/icons/squirrel.webp",
+      "icon_url": "https://tricholome.github.io/rootelo-dev/assets/icons/squirrel.webp",
       "games": 16,
       "wins": 3.0,
       "win_rate": "18.8%"
@@ -1415,7 +1415,7 @@
       "rank": "-",
       "tier": "squirrel",
       "bg_color": "#94C160",
-      "icon_url": "https://tricholome.github.io/rootelo/assets/icons/squirrel.webp",
+      "icon_url": "https://tricholome.github.io/rootelo-dev/assets/icons/squirrel.webp",
       "games": 11,
       "wins": 1.0,
       "win_rate": "9.1%"
@@ -1448,7 +1448,7 @@
       "rank": "-",
       "tier": "squirrel",
       "bg_color": "#94C160",
-      "icon_url": "https://tricholome.github.io/rootelo/assets/icons/squirrel.webp",
+      "icon_url": "https://tricholome.github.io/rootelo-dev/assets/icons/squirrel.webp",
       "games": 10,
       "wins": 1.0,
       "win_rate": "10.0%"
@@ -1514,7 +1514,7 @@
       "rank": "-",
       "tier": "squirrel",
       "bg_color": "#94C160",
-      "icon_url": "https://tricholome.github.io/rootelo/assets/icons/squirrel.webp",
+      "icon_url": "https://tricholome.github.io/rootelo-dev/assets/icons/squirrel.webp",
       "games": 16,
       "wins": 1.0,
       "win_rate": "6.2%"
@@ -1558,7 +1558,7 @@
       "rank": "-",
       "tier": "squirrel",
       "bg_color": "#94C160",
-      "icon_url": "https://tricholome.github.io/rootelo/assets/icons/squirrel.webp",
+      "icon_url": "https://tricholome.github.io/rootelo-dev/assets/icons/squirrel.webp",
       "games": 30,
       "wins": 2.0,
       "win_rate": "6.7%"
