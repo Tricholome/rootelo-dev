@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-11-26 08:41 UTC",
+  "updated_at": "2026-11-26 15:04 UTC",
   "players": {
     "led_slash-3579": {
       "player_id": "1661",
@@ -4071,8 +4071,8 @@
       "wins": 0.0,
       "win_rate": "0.0%"
     },
-    "actionman2222-4303": {
-      "player_id": "2315",
+    "gibbs-3656": {
+      "player_id": "1454",
       "elo": 1180,
       "rank": "-",
       "tier": "unassigned",
@@ -4082,8 +4082,8 @@
       "wins": 0.0,
       "win_rate": "0.0%"
     },
-    "gibbs-3656": {
-      "player_id": "1454",
+    "actionman2222-4303": {
+      "player_id": "2315",
       "elo": 1180,
       "rank": "-",
       "tier": "unassigned",
