@@ -327,7 +327,7 @@
 							
 								
 								<option value="../hoot/index.html"
-										data-no-homelands
+										
 										selected
 										>
 									HOOT RANKINGS
@@ -665,6 +665,9 @@
         <input type="checkbox" id="tierFilterCheckbox" checked autocomplete="off">
         <label for="tierFilterCheckbox">Show tierless players</label>
 		
+		<input type="checkbox" id="spotFrogsCheckbox" autocomplete="off">
+        <label for="spotFrogsCheckbox">Spot the frogs</label>
+		
     </div>
 
     <table id="leaderboard" class="display nowrap" style="width:100%">
@@ -684,8 +687,8 @@
         <tbody>
             
             <tr data-tier="fox" 
-                 
-                class="">
+                data-settler="true" 
+                class=" settler-row">
                 <td>1</td>
                 <td>
                     
@@ -699,6 +702,14 @@
                     
 
                     
+						<a href="javascript:void(0)" 
+						   onclick="openTierModal('frog', 'BW', 'hammer')" 
+						   class="tier-anchor-link frog-leader-icon">
+							<div class="tier-icon-container">
+								<img src="../assets/icons/frog.webp" alt="frog">
+							</div>
+						</a>
+					
                 </td>
                 <td>BW</td>
                 <td>1400</td>
@@ -736,8 +747,8 @@
             </tr>
             
             <tr data-tier="rabbit" 
-                 
-                class="">
+                data-settler="true" 
+                class=" settler-row">
                 <td>3</td>
                 <td>
                     
@@ -751,6 +762,14 @@
                     
 
                     
+						<a href="javascript:void(0)" 
+						   onclick="openTierModal('frog', 'uwtron', 'torch')" 
+						   class="tier-anchor-link frog-leader-icon">
+							<div class="tier-icon-container">
+								<img src="../assets/icons/frog.webp" alt="frog">
+							</div>
+						</a>
+					
                 </td>
                 <td>uwtron</td>
                 <td>1357</td>
@@ -3577,7 +3596,7 @@
 						</a>
 					</span>
 				</div>
-				<div class="footer-date">Updated on 2026-11-26 08:30 UTC</div>
+				<div class="footer-date">Updated on 2026-11-26 08:41 UTC</div>
 			</div>
 		</footer>
     </div>
