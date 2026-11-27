@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-11-27 15:27 UTC",
+  "updated_at": "2026-11-27 15:30 UTC",
   "players": {
     "bw": {
       "player_id": "326",
@@ -598,7 +598,7 @@
     "stoneofjas": {
       "player_id": "2750",
       "elo": 1194,
-      "rank": "-",
+      "rank": 29,
       "tier": "squirrel",
       "bg_color": "#94C160",
       "icon_url": "https://tricholome.github.io/rootelo-dev/assets/icons/squirrel.webp",
@@ -653,7 +653,7 @@
     "nattykash": {
       "player_id": "1367",
       "elo": 1191,
-      "rank": "-",
+      "rank": 30,
       "tier": "squirrel",
       "bg_color": "#94C160",
       "icon_url": "https://tricholome.github.io/rootelo-dev/assets/icons/squirrel.webp",
@@ -785,7 +785,7 @@
     "jaredjm41": {
       "player_id": "2760",
       "elo": 1189,
-      "rank": "-",
+      "rank": 31,
       "tier": "squirrel",
       "bg_color": "#94C160",
       "icon_url": "https://tricholome.github.io/rootelo-dev/assets/icons/squirrel.webp",
@@ -840,7 +840,7 @@
     "piechu28": {
       "player_id": "2748",
       "elo": 1185,
-      "rank": "-",
+      "rank": 32,
       "tier": "squirrel",
       "bg_color": "#94C160",
       "icon_url": "https://tricholome.github.io/rootelo-dev/assets/icons/squirrel.webp",
@@ -1082,7 +1082,7 @@
     "pooge": {
       "player_id": "173",
       "elo": 1167,
-      "rank": "-",
+      "rank": 33,
       "tier": "squirrel",
       "bg_color": "#94C160",
       "icon_url": "https://tricholome.github.io/rootelo-dev/assets/icons/squirrel.webp",
@@ -1412,7 +1412,7 @@
     "eulers_fool": {
       "player_id": "2520",
       "elo": 1152,
-      "rank": "-",
+      "rank": 34,
       "tier": "squirrel",
       "bg_color": "#94C160",
       "icon_url": "https://tricholome.github.io/rootelo-dev/assets/icons/squirrel.webp",
@@ -1434,7 +1434,7 @@
     "lesslobster": {
       "player_id": "2450",
       "elo": 1145,
-      "rank": "-",
+      "rank": 35,
       "tier": "squirrel",
       "bg_color": "#94C160",
       "icon_url": "https://tricholome.github.io/rootelo-dev/assets/icons/squirrel.webp",
@@ -1467,7 +1467,7 @@
     "gmoa": {
       "player_id": "2761",
       "elo": 1141,
-      "rank": "-",
+      "rank": 36,
       "tier": "squirrel",
       "bg_color": "#94C160",
       "icon_url": "https://tricholome.github.io/rootelo-dev/assets/icons/squirrel.webp",
@@ -1533,7 +1533,7 @@
     "malefic7m": {
       "player_id": "248",
       "elo": 1128,
-      "rank": "-",
+      "rank": 37,
       "tier": "squirrel",
       "bg_color": "#94C160",
       "icon_url": "https://tricholome.github.io/rootelo-dev/assets/icons/squirrel.webp",
@@ -1577,7 +1577,7 @@
     "mentalmendel": {
       "player_id": "2519",
       "elo": 1089,
-      "rank": "-",
+      "rank": 38,
       "tier": "squirrel",
       "bg_color": "#94C160",
       "icon_url": "https://tricholome.github.io/rootelo-dev/assets/icons/squirrel.webp",
