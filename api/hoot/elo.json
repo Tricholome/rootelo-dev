@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-11-27 05:54 UTC",
+  "updated_at": "2026-11-27 15:27 UTC",
   "players": {
     "bw": {
       "player_id": "326",
@@ -78,7 +78,7 @@
       "wins": 6.0,
       "win_rate": "46.2%"
     },
-    "lylethebrick": {
+    "lylethebrick-1438": {
       "player_id": "3244",
       "elo": 1308,
       "rank": 7,
@@ -100,7 +100,7 @@
       "wins": 7.0,
       "win_rate": "41.2%"
     },
-    "ssss": {
+    "supersupersupportivesupporter": {
       "player_id": "3534",
       "elo": 1299,
       "rank": "-",
@@ -144,7 +144,7 @@
       "wins": 3.0,
       "win_rate": "60.0%"
     },
-    "true american patriot": {
+    "commanderasn": {
       "player_id": "2407",
       "elo": 1277,
       "rank": 10,
@@ -155,7 +155,7 @@
       "wins": 5.0,
       "win_rate": "38.5%"
     },
-    "coyote": {
+    "gcoyote": {
       "player_id": "44",
       "elo": 1273,
       "rank": "-",
@@ -166,7 +166,7 @@
       "wins": 3.0,
       "win_rate": "50.0%"
     },
-    "nadav253": {
+    "nadav253_57576": {
       "player_id": "317",
       "elo": 1267,
       "rank": 11,
@@ -177,7 +177,7 @@
       "wins": 6.0,
       "win_rate": "42.9%"
     },
-    "extortionator (aus)": {
+    "extortionator": {
       "player_id": "2839",
       "elo": 1267,
       "rank": "-",
@@ -210,7 +210,7 @@
       "wins": 6.0,
       "win_rate": "37.5%"
     },
-    "simber": {
+    "simber_2925": {
       "player_id": "2374",
       "elo": 1263,
       "rank": 14,
@@ -254,7 +254,7 @@
       "wins": 2.0,
       "win_rate": "50.0%"
     },
-    "cosmic cant": {
+    "cosmiccant": {
       "player_id": "632",
       "elo": 1249,
       "rank": 17,
@@ -287,7 +287,7 @@
       "wins": 2.0,
       "win_rate": "50.0%"
     },
-    "kaiser": {
+    "victorvee": {
       "player_id": "2757",
       "elo": 1240,
       "rank": 19,
@@ -298,7 +298,7 @@
       "wins": 6.0,
       "win_rate": "28.6%"
     },
-    "pokerface126": {
+    "pokerface126_11986": {
       "player_id": "2769",
       "elo": 1239,
       "rank": 20,
@@ -309,7 +309,7 @@
       "wins": 8.0,
       "win_rate": "33.3%"
     },
-    "icaruspanda (cringelordirl)": {
+    "icaruspanda": {
       "player_id": "2753",
       "elo": 1239,
       "rank": "-",
@@ -320,7 +320,7 @@
       "wins": 1.0,
       "win_rate": "100.0%"
     },
-    "scotchbonnet": {
+    "scotchbonnet11": {
       "player_id": "2755",
       "elo": 1237,
       "rank": 21,
@@ -386,7 +386,7 @@
       "wins": 2.0,
       "win_rate": "33.3%"
     },
-    "sugiecube": {
+    "sugie": {
       "player_id": "3638",
       "elo": 1225,
       "rank": "-",
@@ -408,7 +408,7 @@
       "wins": 1.0,
       "win_rate": "50.0%"
     },
-    "mrkent (utc+7)": {
+    "rootvietnam": {
       "player_id": "2747",
       "elo": 1216,
       "rank": 24,
@@ -419,7 +419,7 @@
       "wins": 5.0,
       "win_rate": "25.0%"
     },
-    "geetus": {
+    "glisteninggeetus": {
       "player_id": "515",
       "elo": 1214,
       "rank": "-",
@@ -452,7 +452,7 @@
       "wins": 2.0,
       "win_rate": "28.6%"
     },
-    "darthpuniceus (montecristo24601)": {
+    "darthpuniceus": {
       "player_id": "140",
       "elo": 1212,
       "rank": 26,
@@ -474,7 +474,7 @@
       "wins": 1.0,
       "win_rate": "25.0%"
     },
-    "abbreviatedman (he/him)": {
+    "abbreviatedman": {
       "player_id": "2706",
       "elo": 1207,
       "rank": 27,
@@ -496,7 +496,7 @@
       "wins": 4.0,
       "win_rate": "23.5%"
     },
-    "nadtylite": {
+    "cbernadt": {
       "player_id": "2749",
       "elo": 1205,
       "rank": "-",
@@ -562,7 +562,7 @@
       "wins": 1.0,
       "win_rate": "25.0%"
     },
-    "chefboyardee": {
+    "chefboyardee8120": {
       "player_id": "3011",
       "elo": 1200,
       "rank": "-",
@@ -584,7 +584,7 @@
       "wins": 1.0,
       "win_rate": "25.0%"
     },
-    "briony": {
+    "ashadeferal": {
       "player_id": "2396",
       "elo": 1198,
       "rank": "-",
@@ -595,7 +595,7 @@
       "wins": 1.0,
       "win_rate": "25.0%"
     },
-    "keysersoze": {
+    "stoneofjas": {
       "player_id": "2750",
       "elo": 1194,
       "rank": "-",
@@ -639,7 +639,7 @@
       "wins": 0.0,
       "win_rate": "0.0%"
     },
-    "litch queen of hyena necrocracy": {
+    "green_flame": {
       "player_id": "261",
       "elo": 1191,
       "rank": "-",
@@ -672,7 +672,7 @@
       "wins": 1.0,
       "win_rate": "20.0%"
     },
-    "darkcat9000": {
+    "mes10": {
       "player_id": "2563",
       "elo": 1190,
       "rank": "-",
@@ -694,7 +694,7 @@
       "wins": 1.0,
       "win_rate": "20.0%"
     },
-    "sai s d": {
+    "saisanthand": {
       "player_id": "3540",
       "elo": 1190,
       "rank": "-",
@@ -705,7 +705,7 @@
       "wins": 0.0,
       "win_rate": "0.0%"
     },
-    "happy^!": {
+    "happy4320": {
       "player_id": "3878",
       "elo": 1190,
       "rank": "-",
@@ -727,7 +727,7 @@
       "wins": 1.0,
       "win_rate": "20.0%"
     },
-    "jed": {
+    "jorbbb": {
       "player_id": "456",
       "elo": 1190,
       "rank": "-",
@@ -749,7 +749,7 @@
       "wins": 0.0,
       "win_rate": "0.0%"
     },
-    ".doe": {
+    "doe": {
       "player_id": "2139",
       "elo": 1189,
       "rank": "-",
@@ -771,7 +771,7 @@
       "wins": 0.0,
       "win_rate": "0.0%"
     },
-    "tentacultist_": {
+    "tentacultist": {
       "player_id": "2928",
       "elo": 1189,
       "rank": "-",
@@ -782,7 +782,7 @@
       "wins": 0.0,
       "win_rate": "0.0%"
     },
-    "demarogue": {
+    "jaredjm41": {
       "player_id": "2760",
       "elo": 1189,
       "rank": "-",
@@ -815,7 +815,7 @@
       "wins": 1.0,
       "win_rate": "20.0%"
     },
-    "rho sternjäger": {
+    "rho_sternjaeger": {
       "player_id": "2937",
       "elo": 1187,
       "rank": "-",
@@ -837,7 +837,7 @@
       "wins": 0.0,
       "win_rate": "0.0%"
     },
-    "piechu": {
+    "piechu28": {
       "player_id": "2748",
       "elo": 1185,
       "rank": "-",
@@ -859,7 +859,7 @@
       "wins": 0.0,
       "win_rate": "0.0%"
     },
-    "empress octavia": {
+    "empress_octavia": {
       "player_id": "3498",
       "elo": 1181,
       "rank": "-",
@@ -870,7 +870,7 @@
       "wins": 0.0,
       "win_rate": "0.0%"
     },
-    "itay chang": {
+    "itaychang": {
       "player_id": "3517",
       "elo": 1180,
       "rank": "-",
@@ -914,7 +914,7 @@
       "wins": 0.0,
       "win_rate": "0.0%"
     },
-    "nvt2508": {
+    "nvt2508_78037": {
       "player_id": "1937",
       "elo": 1173,
       "rank": "-",
@@ -947,7 +947,7 @@
       "wins": 0.0,
       "win_rate": "0.0%"
     },
-    "north abbot (he/him/his)": {
+    "northabbot": {
       "player_id": "1027",
       "elo": 1170,
       "rank": "-",
@@ -969,7 +969,7 @@
       "wins": 0.0,
       "win_rate": "0.0%"
     },
-    "blazeboy": {
+    "blazeboy0784": {
       "player_id": "3508",
       "elo": 1168,
       "rank": "-",
@@ -980,7 +980,7 @@
       "wins": 0.0,
       "win_rate": "0.0%"
     },
-    "moss": {
+    "mossfusion": {
       "player_id": "365",
       "elo": 1168,
       "rank": "-",
@@ -1002,7 +1002,7 @@
       "wins": 0.0,
       "win_rate": "0.0%"
     },
-    "agent narcos": {
+    "meisnertechnique": {
       "player_id": "3566",
       "elo": 1168,
       "rank": "-",
@@ -1013,7 +1013,7 @@
       "wins": 0.0,
       "win_rate": "0.0%"
     },
-    "hồ hà nguyễn": {
+    "hohanguyen2451": {
       "player_id": "3509",
       "elo": 1167,
       "rank": "-",
@@ -1057,7 +1057,7 @@
       "wins": 0.0,
       "win_rate": "0.0%"
     },
-    "anokaypotato": {
+    "anokaypotato-4405": {
       "player_id": "2762",
       "elo": 1167,
       "rank": "-",
@@ -1112,7 +1112,7 @@
       "wins": 0.0,
       "win_rate": "0.0%"
     },
-    "dark owl": {
+    "dark_owl": {
       "player_id": "2759",
       "elo": 1166,
       "rank": "-",
@@ -1145,7 +1145,7 @@
       "wins": 0.0,
       "win_rate": "0.0%"
     },
-    "kernel_": {
+    "kernel": {
       "player_id": "1514",
       "elo": 1166,
       "rank": "-",
@@ -1156,7 +1156,7 @@
       "wins": 0.0,
       "win_rate": "0.0%"
     },
-    "house addict": {
+    "beans8201": {
       "player_id": "3012",
       "elo": 1166,
       "rank": "-",
@@ -1167,7 +1167,7 @@
       "wins": 0.0,
       "win_rate": "0.0%"
     },
-    "cua": {
+    "powerful_dragon_23094": {
       "player_id": "2400",
       "elo": 1165,
       "rank": "-",
@@ -1178,7 +1178,7 @@
       "wins": 0.0,
       "win_rate": "0.0%"
     },
-    "quents": {
+    "quents1493": {
       "player_id": "3013",
       "elo": 1165,
       "rank": "-",
@@ -1211,7 +1211,7 @@
       "wins": 0.0,
       "win_rate": "0.0%"
     },
-    "dias": {
+    "niasdias": {
       "player_id": "1574",
       "elo": 1165,
       "rank": "-",
@@ -1310,7 +1310,7 @@
       "wins": 0.0,
       "win_rate": "0.0%"
     },
-    "hasan": {
+    "g7asan": {
       "player_id": "2402",
       "elo": 1163,
       "rank": "-",
@@ -1321,7 +1321,7 @@
       "wins": 0.0,
       "win_rate": "0.0%"
     },
-    "matthijs": {
+    "luengi": {
       "player_id": "3493",
       "elo": 1163,
       "rank": "-",
@@ -1354,7 +1354,7 @@
       "wins": 1.0,
       "win_rate": "12.5%"
     },
-    "malleable frog": {
+    "flowercardianwillow": {
       "player_id": "3414",
       "elo": 1160,
       "rank": "-",
@@ -1365,7 +1365,7 @@
       "wins": 0.0,
       "win_rate": "0.0%"
     },
-    "lilac teddy bear": {
+    "lilacteddybear": {
       "player_id": "3440",
       "elo": 1160,
       "rank": "-",
@@ -1409,7 +1409,7 @@
       "wins": 0.0,
       "win_rate": "0.0%"
     },
-    "euler's fool": {
+    "eulers_fool": {
       "player_id": "2520",
       "elo": 1152,
       "rank": "-",
@@ -1431,7 +1431,7 @@
       "wins": 0.0,
       "win_rate": "0.0%"
     },
-    "lobster (gmt-4)(indiana)": {
+    "lesslobster": {
       "player_id": "2450",
       "elo": 1145,
       "rank": "-",
@@ -1442,7 +1442,7 @@
       "wins": 1.0,
       "win_rate": "9.1%"
     },
-    "dr. seal": {
+    "drseal": {
       "player_id": "2825",
       "elo": 1144,
       "rank": "-",
@@ -1464,7 +1464,7 @@
       "wins": 0.0,
       "win_rate": "0.0%"
     },
-    "cookies": {
+    "gmoa": {
       "player_id": "2761",
       "elo": 1141,
       "rank": "-",
@@ -1475,7 +1475,7 @@
       "wins": 1.0,
       "win_rate": "10.0%"
     },
-    "hurple": {
+    "hurple0": {
       "player_id": "2774",
       "elo": 1140,
       "rank": "-",
@@ -1497,7 +1497,7 @@
       "wins": 0.0,
       "win_rate": "0.0%"
     },
-    "calvinfunfun": {
+    "calvinfun": {
       "player_id": "3250",
       "elo": 1139,
       "rank": "-",
@@ -1508,7 +1508,7 @@
       "wins": 0.0,
       "win_rate": "0.0%"
     },
-    "kvan_": {
+    "kvan": {
       "player_id": "289",
       "elo": 1138,
       "rank": "-",
@@ -1530,7 +1530,7 @@
       "wins": 0.0,
       "win_rate": "0.0%"
     },
-    "schnaga": {
+    "malefic7m": {
       "player_id": "248",
       "elo": 1128,
       "rank": "-",
@@ -1541,7 +1541,7 @@
       "wins": 1.0,
       "win_rate": "6.2%"
     },
-    "requiem": {
+    "6requiem": {
       "player_id": "2457",
       "elo": 1126,
       "rank": "-",
@@ -1552,7 +1552,7 @@
       "wins": 0.0,
       "win_rate": "0.0%"
     },
-    "riverman(luigi)": {
+    "riverman": {
       "player_id": "1295",
       "elo": 1121,
       "rank": "-",
@@ -1563,7 +1563,7 @@
       "wins": 0.0,
       "win_rate": "0.0%"
     },
-    "starhard_fishrinse": {
+    "starhardfishrinse": {
       "player_id": "645",
       "elo": 1118,
       "rank": "-",
